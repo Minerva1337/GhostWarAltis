@@ -58,6 +58,7 @@ _padWest = [padWest0, padWest1, padWest2, padWest3];
 	sleep 0.1;
 } forEach teamWest;
 _int1 = 0;
+
 _padEast = [padEast0, padEast1, padEast2, padEast3];
 {
 	_select5 = teamEast select _forEachIndex;

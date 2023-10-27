@@ -20,7 +20,7 @@ while {ctr} do {
 
 
 /*
-hint format ["%1", _cnt1];		//Debugging
+hint format ["%1", _cnt1];		//teamSwitch
 sleep 1;
 hint format ["%1", _cnt1];
 sleep 1;

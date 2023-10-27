@@ -17,3 +17,4 @@
 	//[] spawn compileFinal preprocessFileLineNumbers "setRandomWeather-lukas.sqf";
 	//nul = execVM "watchtower\watchtower.sqf";
 	//nul = execVM "mechanics\setRandomWeather-lukas.sqf";
+	//TEST

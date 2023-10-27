@@ -1,5 +1,10 @@
-
-//123
+/*
+- Liste von allen Spielern	DONE
+- Checken ob jeder Spieler anwesend ist -> Wenn Ja, dann weiter, wenn nein, dann mit objNull ersetzen - DONE
+- Checken welcher Spieler auf welcher Seite		DONE
+- zwei neue Arrays mit sortierten Spielern (Nach Seite)	DONE
+- Im Loop checken ob alle Spieler in sortieren Array Tod, dann ENDE
+*/
 
 terminate execVM "mechanics\gameInit.sqf";		//soll Start script beenden (sicherheit)
 //disableUserInput true;
@@ -30,7 +35,7 @@ _num2 = 0;
 	_num2 = _num2 + 1;
 } forEach Players;
 
-//123
+
 
 sleep 1;
 [hint str teamWest] remoteExec ["hint", 0];		//Debugging
@@ -53,6 +58,7 @@ _padWest = [padWest0, padWest1, padWest2, padWest3];
 	sleep 0.1;
 } forEach teamWest;
 _int1 = 0;
+
 _padEast = [padEast0, padEast1, padEast2, padEast3];
 {
 	_select5 = teamEast select _forEachIndex;

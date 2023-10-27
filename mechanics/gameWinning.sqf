@@ -1,11 +1,8 @@
 //Variablen werden von gameTimer.sqf als globale Variable übergeben.
 
-//NEU 789
-//NEU 122334
-//asdasdas
 
 
-//5315645656
+//Lukas Branch
 
 _ctr = true;
 unconsciousTeamEast = [];

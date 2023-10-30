@@ -49,20 +49,24 @@ while {_ctr} do {
 		_ctr = false;
 		//hint "Blufor has won!";
 		"Blufor has won!" remoteExec ["hint", 0];	
-		"SideScore" call BIS_fnc_endMissionServer;		//Mission wird beendet
+		"endBlufor" call BIS_fnc_endMissionServer;		//Mission wird beendet
 		sleep 3;
-		"trolly1" serverCommand "#restart";		//ServerSidePassword = trolly1
+		"trolly1" serverCommand "#missions";		//ServerSidePassword = trolly1
+		unconsciousTeamEast = unconsciousTeamEast - unconsciousTeamEast;	//Array wird wieder auf 0 Elemente gesetzt
+		unconsciousTeamWest = unconsciousTeamWest - unconsciousTeamWest;
 	};
 	if (count unconsciousTeamEast == count teamEast) then {		//Wenn 
 		_ctr = false;
 		//hint "Opfor has won!";
 		"Opfor has won!" remoteExec ["hint", 0];
-		"SideScore" call BIS_fnc_endMissionServer;		//Mission wird beendet
+		"endOpfor" call BIS_fnc_endMissionServer;		//Mission wird beendet
 		sleep 3;
-		"trolly1" serverCommand "#restart";
+		"trolly1" serverCommand "#missions";
+		unconsciousTeamEast = unconsciousTeamEast - unconsciousTeamEast;	//Array wird wieder auf 0 Elemente gesetzt
+		unconsciousTeamWest = unconsciousTeamWest - unconsciousTeamWest;
 	} else {
-		unconsciousTeamEast deleteRange [0,3];		//Array wird wieder auf 0 Elemente gesetzt
-		unconsciousTeamWest deleteRange [0,3];		//Array wird wieder auf 0 Elemente gesetzt
+		unconsciousTeamEast = unconsciousTeamEast - unconsciousTeamEast;	//Array wird wieder auf 0 Elemente gesetzt
+		unconsciousTeamWest = unconsciousTeamWest - unconsciousTeamWest;		//Array wird wieder auf 0 Elemente gesetzt
 	};
 	sleep 0.5;
 
@@ -74,21 +78,21 @@ while {_ctr} do {
 		if (_lifeStateEast == "INCAPACITATED") then {
 			unconsciousTeamEast pushBack _lifeStateEast;	//Ein weiterer INCAPACITATED Status wird verschoben
 			//hint "IF Funktioniert";
-			"IF Funktioniert" remoteExec ["hintSilent", 0];		//Debugging
+			//"IF Funktioniert" remoteExec ["hintSilent", 0];		//Debugging
 			sleep 0.5;
 			//hint str unconsciousTeamEast;
-			[hint str unconsciousTeamEast] remoteExec ["hintSilent", 0];	//Debugging
-			sleep 0.5;
-			hintSilent "";
+			//[hint str unconsciousTeamEast] remoteExec ["hintSilent", 0];	//Debugging
+			//sleep 0.5;
+			//hintSilent "";
 		};
 		if (_lifeStateEast == "DEAD-RESPAWN") then {
 			unconsciousTeamEast pushBack _lifeStateEast;	//Ein weiterer INCAPACITATED Status wird verschoben
-			"IF2 Funktioniert" remoteExec ["hintSilent", 0];
+			//"IF2 Funktioniert" remoteExec ["hintSilent", 0];
 			sleep 0.5;
 			//hint str unconsciousTeamEast;
-			[hint str unconsciousTeamEast] remoteExec ["hintSilent", 0];
-			sleep 0.5;
-			hintSilent "";
+			//[hint str unconsciousTeamEast] remoteExec ["hintSilent", 0];
+			//sleep 0.5;
+			//hintSilent "";
 		};	
 			
 		sleep 0.1;
@@ -101,21 +105,21 @@ while {_ctr} do {
 			
 		if (_lifeStateWest == "INCAPACITATED") then {
 			unconsciousTeamWest pushBack _lifeStateWest;	//Ein weiterer INCAPACITATED Status wird verschoben
-			"IF Funktioniert" remoteExec ["hintSilent", 0];		//Debugging
+			//"IF Funktioniert" remoteExec ["hintSilent", 0];		//Debugging
 			sleep 0.5;
 			//hint str unconsciousTeamWest;	//Debugging
-			[hint str unconsciousTeamWest] remoteExec ["hintSilent", 0];
-			sleep 0.5;
-			hintSilent "";
+			//[hint str unconsciousTeamWest] remoteExec ["hintSilent", 0];
+			//sleep 0.5;
+			//hintSilent "";
 		};
 		if (_lifeStateWest == "DEAD-RESPAWN") then {
 			unconsciousTeamWest pushBack _lifeStateWest;	//Ein weiterer INCAPACITATED Status wird verschoben
-			"IF2 Funktioniert" remoteExec ["hintSilent", 0];
+			//"IF2 Funktioniert" remoteExec ["hintSilent", 0];
 			sleep 0.5;
 			//hint str unconsciousTeamWest;
-			[hint str unconsciousTeamWest] remoteExec ["hintSilent", 0];
-			sleep 0.5;
-			hintSilent "";
+			//[hint str unconsciousTeamWest] remoteExec ["hintSilent", 0];
+			//sleep 0.5;
+			//hintSilent "";
 		};	
 			
 		sleep 0.1;

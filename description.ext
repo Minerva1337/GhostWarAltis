@@ -234,4 +234,35 @@ class CfgSounds {
 	*/
 };
 
+class CfgDebriefing
+	{  
+	class endBlufor
+	{
+		title = "Blufor has won!";
+		subtitle = "";
+		description = "All Opfor players were eliminated";
+		pictureBackground = "";
+		picture = "b_inf";
+		pictureColor[] = {0.0,0.3,0.6,1};
+	};
+	class endOpfor
+	{
+		title = "Opfor has won!";
+		subtitle = "";
+		description = "All Blufor players were eliminated";
+		pictureBackground = "";
+		picture = "b_inf";
+		pictureColor[] = {0.0,0.3,0.6,1};
+	};
+	class endDraw
+	{
+		title = "DRAW - Time is up!";
+		subtitle = "";
+		description = "It is distinguished! Opposing players are still alive!";
+		pictureBackground = "";
+		picture = "b_inf";
+		pictureColor[] = {0.0,0.3,0.6,1};
+	};
+};
+
 enableDebugConsole = 1;

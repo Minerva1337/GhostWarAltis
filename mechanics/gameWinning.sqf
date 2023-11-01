@@ -54,6 +54,7 @@ while {_ctr} do {
 		"trolly1" serverCommand "#missions";		//ServerSidePassword = trolly1
 		unconsciousTeamEast = unconsciousTeamEast - unconsciousTeamEast;	//Array wird wieder auf 0 Elemente gesetzt
 		unconsciousTeamWest = unconsciousTeamWest - unconsciousTeamWest;
+		[[], "mechanics\gamePointsWest.sqf"] remoteExec ["execVM", 2];		//Script zum zählen der gewonnen Runden wird nur auf dem Server asugeführt
 	};
 	if (count unconsciousTeamEast == count teamEast) then {		//Wenn 
 		_ctr = false;

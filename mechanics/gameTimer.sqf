@@ -7,8 +7,6 @@
 */
 
 terminate execVM "mechanics\gameInit.sqf";		//soll Start script beenden (sicherheit)
-//disableUserInput true;
-
 //Array wird erstellt mit exestierenden Elementen:
 Players = ["p1", "p2", "p3", "p4", "p5", "p6", "p7", "p8"] select {!isNil _x} apply {missionNamespace getVariable _x}; //Dannach sind nurnoch die Elemnte drinnen, welche exestieren (!isNil)
 _num = 0;
@@ -35,8 +33,6 @@ _num2 = 0;
 	_num2 = _num2 + 1;
 } forEach Players;
 
-
-
 sleep 1;
 [hint str teamWest] remoteExec ["hint", 0];		//Debugging
 sleep 0.5;
@@ -44,33 +40,6 @@ sleep 0.5;
 sleep 0.5;
 "Players has been sorted!" remoteExec ["hint", 0];
 sleep 1;
-
-
-
-//Spieler werden auf Startpositionen teleportiert und countdown für alle		
-_padWest = [padWest0, padWest1, padWest2, padWest3];
-{
-	_select4 = teamWest select _forEachIndex;
-	//_slectPadWest = _padWest select _forEachIndex;
-	getPosWest = getPosASL (_padWest select _forEachIndex);
-
-	_select4 setPosASL getPosWest;
-	sleep 0.1;
-} forEach teamWest;
-_int1 = 0;
-
-_padEast = [padEast0, padEast1, padEast2, padEast3];
-{
-	_select5 = teamEast select _forEachIndex;
-	//_slectPadEast = _padEast select _forEachIndex;
-	getPosEast = getPosASL (_padEast select _forEachIndex);
-
-	_select5 setPosASL getPosEast;
-	sleep 0.1;
-	_int1 = _int1 + 1;
-} forEach teamEast;
-
-sleep 1.5;
 
 nul = execVM "mechanics\gameWinning.sqf";		//dasscript zum Spielbeenden wird ausgeführt
 
@@ -82,8 +51,9 @@ sleep 1;
 sleep 1;
 "1" remoteExec ["hintSilent", 0, true];
 sleep 1;
-disableUserInput false;
+
 "Go!" remoteExec ["hint", 0, true];
+[player, ""] remoteExec ["switchMove", 0, true];
 taskInit = execVM "watchtower\task.sqf";
 sleep 3;
 "" remoteExec ["hintSilent", 0, true];
@@ -131,65 +101,6 @@ while {_GameTime > 0} do {
 		[""] remoteExec ["hintSilent", 0, true];
 	};
 
-	/*
-	if (teamEast findIf {alive _x} == -1) then {
-   		systemChat "all units in teamEast are dead";
-		sleep 1;
-		"SideScore" call BIS_fnc_endMissionServer;
-		_GameTime = 0;
-	};
-	
-	if (teamWest findIf {alive _x} == -1) then {
-   		systemChat "all units in teamWest are dead";
-		sleep 1;
-		"SideScore" call BIS_fnc_endMissionServer;
-		_GameTime = 0;
-	};
-	*/
-
-
 _GameTime = _GameTime - 1;
 sleep 1;
 };
-
-//Unentschieden:
-
-/*
-waitUntil { _GameTime == 0 };
-
-if (check1 && {		//Wenn alle Tod
-	check2 && {
-	check3 && {
-	check4 && {
-	check5 && {
-	check6 && {
-	check7 && {
-	check8}}}}}}}) 
-	then {
-	titleText ["<t color='#ff0000' size='5'>DRAWN!</t><br/>", "PLAIN", -1, true, true];
-	disableUserInput true;
-	sleep 3;
-	disableUserInput false;
-			
-			
-	"EveryoneLost" call BIS_fnc_endMissionServer;
-};
-
-if (!check1 && {		//Wenn alle lebendig
-	!check2 && {
-	!check3 && {
-	!check4 && {
-	!check5 && {
-	!check6 && {
-	!check7 && {
-	!check8}}}}}}}) 
-	then {
-	titleText ["<t color='#ff0000' size='5'>DRAWN!</t><br/>", "PLAIN", -1, true, true];
-	disableUserInput true;
-	sleep 3;
-	disableUserInput false;
-			
-			
-	"EveryoneLost" call BIS_fnc_endMissionServer;
-};
-*/

@@ -23,12 +23,12 @@ if (GW_scoreDataEast == 3) then {
 	sleep 22;
 	{titleText ["<t color='#ab4648' size='5'></t><br/>", "PLAIN", 0, true, true];} remoteExec ["call", 0];
 	//sleep 23.5;
-	sleep 4;
+	sleep 3;
 	"trolly1" serverCommand "#missions";
 } else {
 	"Debugging - Opfor has won the round!" remoteExec ["hint", 0];
 	sleep 2;
 	"endBlufor" call BIS_fnc_endMissionServer;
-	sleep 5;
+	sleep 3;
 	"trolly1" serverCommand "#mission GhostWar.Altis customs";		//ServerSidePassword = trolly1
 };

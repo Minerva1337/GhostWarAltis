@@ -47,26 +47,26 @@ while {_ctr} do {
 
 	if (count unconsciousTeamWest == count teamWest) then {
 		_ctr = false;
-		//hint "Blufor has won!";
-		"Blufor has won!" remoteExec ["hint", 0];	
-		"endBlufor" call BIS_fnc_endMissionServer;		//Mission wird beendet
+		//hint "Opfor has won!";
+		"Opfor has won!" remoteExec ["hint", 0];
+		"endOpfor" call BIS_fnc_endMissionServer;		//Mission wird beendet
+		[[], "mechanics\gamePointsEast.sqf"] remoteExec ["execVM", 2];		//Script zum zählen der gewonnen Runden wird nur auf dem Server asugeführt
 		sleep 3;
 		unconsciousTeamEast = unconsciousTeamEast - unconsciousTeamEast;	//Array wird wieder auf 0 Elemente gesetzt
 		unconsciousTeamWest = unconsciousTeamWest - unconsciousTeamWest;
-		[[], "mechanics\gamePointsWest.sqf"] remoteExec ["execVM", 2];		//Script zum zählen der gewonnen Runden wird nur auf dem Server asugeführt
-		sleep 1;
+		sleep 2;
 		"trolly1" serverCommand "#missions";		//ServerSidePassword = trolly1
 	};
 	if (count unconsciousTeamEast == count teamEast) then {		//Wenn 
 		_ctr = false;
-		//hint "Opfor has won!";
-		"Opfor has won!" remoteExec ["hint", 0];
-		"endOpfor" call BIS_fnc_endMissionServer;		//Mission wird beendet
+		//hint "Blufor has won!";
+		"Blufor has won!" remoteExec ["hint", 0];	
+		"endBlufor" call BIS_fnc_endMissionServer;		//Mission wird beendet
+		[[], "mechanics\gamePointsWest.sqf"] remoteExec ["execVM", 2];
 		sleep 3;
 		unconsciousTeamEast = unconsciousTeamEast - unconsciousTeamEast;	//Array wird wieder auf 0 Elemente gesetzt
 		unconsciousTeamWest = unconsciousTeamWest - unconsciousTeamWest;
-		[[], "mechanics\gamePointsEast.sqf"] remoteExec ["execVM", 2];
-		sleep 1;
+		sleep 2;
 		"trolly1" serverCommand "#missions";
 	} else {
 		unconsciousTeamEast = unconsciousTeamEast - unconsciousTeamEast;	//Array wird wieder auf 0 Elemente gesetzt

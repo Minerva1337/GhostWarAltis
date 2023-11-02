@@ -14,9 +14,21 @@ sleep 0.2;
 sleep 1;
 
 if (GW_scoreDataEast == 3) then {
-	profileNamespace setVariable ["NS_scoreDataEast", 0];		//NameSpce wird wieder auf Null gesetzt
 	profileNamespace setVariable ["NS_scoreDataWest", 0];		//NameSpce wird wieder auf Null gesetzt
-	"Opfor has won!2" remoteExec ["hint", 0];
-	sleep 0.5;
-	hintSilent "";
+	profileNamespace setVariable ["NS_scoreDataEast", 0];		//NameSpce wird wieder auf Null gesetzt
+	["arma3"] remoteExec ["playSound", 0, true];
+	sleep 4;
+	//titleText ["<t color='#ab4648' size='5'>Opfor has won the game!</t><br/>", "PLAIN", 0, true, true];
+	{titleText ["<t color='#ab4648' size='5'>Opfor has won the game!</t><br/>", "PLAIN", 0, true, true];} remoteExec ["call", 0];
+	sleep 22;
+	{titleText ["<t color='#ab4648' size='5'></t><br/>", "PLAIN", 0, true, true];} remoteExec ["call", 0];
+	//sleep 23.5;
+	sleep 4;
+	"trolly1" serverCommand "#missions";
+} else {
+	"Debugging - Opfor has won the round!" remoteExec ["hint", 0];
+	sleep 2;
+	"endBlufor" call BIS_fnc_endMissionServer;
+	sleep 5;
+	"trolly1" serverCommand "#mission GhostWar.Altis customs";		//ServerSidePassword = trolly1
 };

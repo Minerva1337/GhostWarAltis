@@ -1,11 +1,3 @@
-/*
-- Liste von allen Spielern	DONE
-- Checken ob jeder Spieler anwesend ist -> Wenn Ja, dann weiter, wenn nein, dann mit objNull ersetzen - DONE
-- Checken welcher Spieler auf welcher Seite		DONE
-- zwei neue Arrays mit sortierten Spielern (Nach Seite)	DONE
-- Im Loop checken ob alle Spieler in sortieren Array Tod, dann ENDE
-*/
-
 terminate execVM "mechanics\gameInit.sqf";		//soll Start script beenden (sicherheit)
 //Array wird erstellt mit exestierenden Elementen:
 Players = ["p1", "p2", "p3", "p4", "p5", "p6", "p7", "p8"] select {!isNil _x} apply {missionNamespace getVariable _x}; //Dannach sind nurnoch die Elemnte drinnen, welche exestieren (!isNil)
@@ -53,7 +45,7 @@ sleep 1;
 sleep 1;
 
 "Go!" remoteExec ["hint", 0, true];
-[player, ""] remoteExec ["switchMove", 0, true];
+{player switchMove "";} remoteExec ["call", -2, true];
 taskInit = execVM "watchtower\task.sqf";
 sleep 3;
 "" remoteExec ["hintSilent", 0, true];

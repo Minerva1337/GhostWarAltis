@@ -9,13 +9,15 @@ while {ctr} do {
 	_cnt2 = count _inArea;
 	sleep 2;
 	if (_cnt1 == _cnt2) then {
-		
 		execVM "mechanics\gameTimer.sqf";
+		[[], "mechanics\showGamePoints.sqf"] remoteExec ["execVM", 2];
 		sleep 3;
 		
 		ctr = false;
 	};
 };
+
+
 
 
 

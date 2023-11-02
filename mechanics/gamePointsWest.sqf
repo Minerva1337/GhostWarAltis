@@ -1,8 +1,7 @@
 //Script nur auf dem Server ausführen:
 //[[], "mechanics\gamePointsWest.sqf"] remoteExec ["execVM", 2];
 
-"Debugging - Script läuft!" remoteExec ["hint", 0];		//Debugging
-
+"Debugging - gamePointsWest läuft!" remoteExec ["hint", 0];		//Debugging
 
 GW_scoreDataWest = profileNamespace getVariable ["NS_scoreDataWest", 0]; 	//NS_scoreDataWest ist der Name des Namespaces welcher im Serverprofil gespeichert wird
 
@@ -18,6 +17,7 @@ sleep 1;
 
 if (GW_scoreDataWest == 3) then {
 	profileNamespace setVariable ["NS_scoreDataWest", 0];		//NameSpce wird wieder auf Null gesetzt
+	profileNamespace setVariable ["NS_scoreDataEast", 0];		//NameSpce wird wieder auf Null gesetzt
 	"Blufor has won!2" remoteExec ["hint", 0];
 	sleep 0.5;
 	hintSilent "";

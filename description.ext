@@ -225,13 +225,12 @@ class CfgSounds {
 		titles[] = {};
 	};		
 
-	/*
-	class radio2 {
-		name="radio2";
-		sound[]={"sounds\radio2.ogg",4,1};
+	class arma3 {
+		name="arma3";
+		sound[]={"sounds\arma3.ogg",4,1};
 		titles[] = {};
 	};
-	*/
+	
 };
 
 class CfgDebriefing

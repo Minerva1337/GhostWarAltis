@@ -3,3 +3,4 @@ sleep 1;
 terminate taskInit;
 sleep 29;
 taskInit = execVM "watchtower\task.sqf";
+//Test

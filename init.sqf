@@ -1,5 +1,4 @@
 	[West, "MEDIC"] call BIS_fnc_addRespawnInventory;
-	[West, "SMOKE"] call BIS_fnc_addRespawnInventory;
 	[West, "AUTO"] call BIS_fnc_addRespawnInventory;
 	[West, "SNIPER"] call BIS_fnc_addRespawnInventory;
 	[West, "SCOUT"] call BIS_fnc_addRespawnInventory;
@@ -7,7 +6,6 @@
 	[West, "GRENADIER"] call BIS_fnc_addRespawnInventory;
 	[West, "MINE"] call BIS_fnc_addRespawnInventory;
 	[East, "MEDIC1"] call BIS_fnc_addRespawnInventory;
-	[East, "SMOKE1"] call BIS_fnc_addRespawnInventory;
 	[East, "AUTO1"] call BIS_fnc_addRespawnInventory;
 	[East, "SNIPER1"] call BIS_fnc_addRespawnInventory;
 	[East, "SCOUT1"] call BIS_fnc_addRespawnInventory;

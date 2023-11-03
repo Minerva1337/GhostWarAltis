@@ -45,7 +45,7 @@ sleep 1;
 sleep 1;
 
 "Go!" remoteExec ["hint", 0, true];
-{player switchMove "";} remoteExec ["call", -2, true];
+{player switchMove "";} remoteExec ["call", 0, true];
 taskInit = execVM "watchtower\task.sqf";
 sleep 3;
 "" remoteExec ["hintSilent", 0, true];

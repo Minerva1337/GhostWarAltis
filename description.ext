@@ -230,6 +230,12 @@ class CfgSounds {
 		sound[]={"sounds\arma3.ogg",4,1};
 		titles[] = {};
 	};
+
+	class draw {
+		name="draw";
+		sound[]={"sounds\draw.ogg",4,1};
+		titles[] = {};
+	};
 	
 };
 

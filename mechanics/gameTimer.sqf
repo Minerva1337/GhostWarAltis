@@ -65,7 +65,7 @@ hintSilent "";
 
 
 
-_GameTime = 597; //Runden Zeit
+_GameTime = 600; //Runden Zeit
 _true = true;
 while {_GameTime > 0} do {
 
@@ -82,18 +82,46 @@ while {_GameTime > 0} do {
 		[""] remoteExec ["hintSilent", 0, true];
 	};
 
-	if (_GameTime == 30) then {
-		["30 Seconds remaining!"] remoteExec ["hint", 0, true];
+	if (_GameTime == 84) then {
+		["draw"] remoteExec ["playSound", 0, true];
+	};
+
+	if (_GameTime == 60) then {
+		["1 Minute remaining!!"] remoteExec ["hint", 0, true];
 		sleep 5;
 		[""] remoteExec ["hintSilent", 0, true];
+	};
+
+	if (_GameTime == 30) then {
+		["30 Seconds remaining!"] remoteExec ["hintSilent", 0, true];
+		//sleep 5;
+		//[""] remoteExec ["hintSilent", 0, true];
 	};
 
 	if (_GameTime == 10) then {
 		["10 Seconds remaining!"] remoteExec ["hint", 0, true];
-		sleep 5;
+		//sleep 5;
+		//[""] remoteExec ["hintSilent", 0, true];
+	};
+
+	if (_GameTime == 3) then {
+		["3"] remoteExec ["hintSilent", 0, true];
+		sleep 1;
+		["2"] remoteExec ["hintSilent", 0, true];
+		sleep 1;
+		["1"] remoteExec ["hintSilent", 0, true];
+		sleep 1;
 		[""] remoteExec ["hintSilent", 0, true];
 	};
+
 
 _GameTime = _GameTime - 1;
 sleep 1;
 };
+
+//Unentschieden:
+waitUntil { _GameTime == 0; };
+{titleText ["<t color='#00000a' shadow='0' size='4' font='EtelkaNarrowMediumPro' valign='middle'>Time is up! <br/>Nobody has won the round! <br/><br/>Rematch will be played!</t><br/>", "WHITE OUT", nil, true, true];} remoteExec ["call", 0]; 
+sleep 10;
+{titleText ["<t color='#00000a' size='5'></t><br/>", "PLAIN", 0, true, true];} remoteExec ["call", 2];
+"trolly1" serverCommand "#mission GhostWar.Altis custom";

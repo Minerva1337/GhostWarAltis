@@ -31,5 +31,5 @@ if (GW_scoreDataWest == 3) then {
 	sleep 2;
 	"endBlufor" call BIS_fnc_endMissionServer;
 	sleep 3;
-	"trolly1" serverCommand "#mission GhostWar.Altis customs";		//ServerSidePassword = trolly1
+	"trolly1" serverCommand "#mission GhostWar.Altis custom";		//ServerSidePassword = trolly1
 };

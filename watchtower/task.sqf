@@ -1,7 +1,11 @@
+_title = "Watchtower";
+_description = "Hack the watchtower to get information about the position of the opposing players!";
+_waypoint = "";
+tsk = format ["tsk%1", random 9999999];
+publicVariable "tsk";	//macht, dass sowol der Server als auch der client Zugriff auf die Variable hat
 sleep 90;
-[true, (str watchtowerTaskID),  ["Hack the watchtower to get information about the position of the opposing players!", "Watchtower", ""], laptop, "ASSIGNED", 1, true, "download", true] call BIS_fnc_taskCreate;
-watchtowerTaskID1 = watchtowerTaskID;
-watchtowerTaskID = watchtowerTaskID + 1;
+_task1 = [true, tsk, [_description, _title, _waypoint], laptop, "ASSIGNED", 0, true, "download", true] call BIS_fnc_taskCreate, [tsk, "download"] call BIS_fnc_taskSetType, [tsk, true] call BIS_fnc_taskSetAlwaysVisible;
+
 /*tsk = format ["tsk%1", random 100];
 publicVariable "tsk";	//macht, dass sowol der Server als auch der client Zugriff auf die Variable hat
 [true, tsk,  ["Hack the watchtower to get information about the position of the opposing players!", "Watchtower", ""], laptop, "ASSIGNED", 99, true, "download", true] call BIS_fnc_taskCreate;*/
@@ -34,10 +38,10 @@ publicVariable "tsk";	//macht, dass sowol der Server als auch der client Zugriff
 		_p6 = ((str _caller) isEqualTo "p6");
 		_p7 = ((str _caller) isEqualTo "p7");
 		_p8 = ((str _caller) isEqualTo "p8");
-		if (_p5 or _p6 or _p7 or _p8) then {nul = execVM "watchtower\markingEast.sqf";} else {nul = execVM "watchtower\markingWest.sqf";};
-		[(str watchtowerTaskID1), "SUCCEEDED", true] remoteExec ["BIS_fnc_taskSetState", 0, true];	
-		sleep 0.1;
-		[(str watchtowerTaskID1), true, true] remoteExec ["BIS_fnc_deleteTask", 0, true];
+		if (_p5 or _p6 or _p7 or _p8) then {[[], "watchtower\markingEast.sqf"] remoteExec ["execVM", 0]} else {[[], "watchtower\markingWest.sqf"] remoteExec ["execVM", 0]};
+		[tsk, "SUCCEEDED", true] remoteExec ["BIS_fnc_taskSetState", 0, true];	
+		sleep 1;
+		[tsk, true, true] remoteExec ["BIS_fnc_deleteTask", 0, true];
 		actionID = _actionID;
 		nul = execVM "watchtower\sleep.sqf";
 	}, // Ausgeführt wenn Aktion abgeschlossen

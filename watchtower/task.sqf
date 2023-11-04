@@ -1,7 +1,14 @@
-sleep 90;
-tsk = format ["tsk%1", random 100];
+_title = "Watchtower";
+_description = "Hack the watchtower to get information about the position of the opposing players!";
+_waypoint = "";
+tsk = format ["tsk%1", random 9999999];
 publicVariable "tsk";	//macht, dass sowol der Server als auch der client Zugriff auf die Variable hat
-[true, tsk,  ["Hack the watchtower to get information about the position of the opposing players!", "Watchtower", ""], laptop, "ASSIGNED", 99, true, "download", true] call BIS_fnc_taskCreate;
+sleep 90;
+_task1 = [true, tsk, [_description, _title, _waypoint], laptop, "ASSIGNED", 0, true, "download", true] call BIS_fnc_taskCreate, [tsk, "download"] call BIS_fnc_taskSetType, [tsk, true] call BIS_fnc_taskSetAlwaysVisible;
+
+/*tsk = format ["tsk%1", random 100];
+publicVariable "tsk";	//macht, dass sowol der Server als auch der client Zugriff auf die Variable hat
+[true, tsk,  ["Hack the watchtower to get information about the position of the opposing players!", "Watchtower", ""], laptop, "ASSIGNED", 99, true, "download", true] call BIS_fnc_taskCreate;*/
 
 [
 
@@ -31,15 +38,9 @@ publicVariable "tsk";	//macht, dass sowol der Server als auch der client Zugriff
 		_p6 = ((str _caller) isEqualTo "p6");
 		_p7 = ((str _caller) isEqualTo "p7");
 		_p8 = ((str _caller) isEqualTo "p8");
-		if (_p5 or _p6 or _p7 or _p8) then {
-			"YOU ARE MARKED ON THE MAP" remoteExec ["hint", east];	
-			"ENEMIES ARE NOW MARKED ON THE MAP" remoteExec ["hint", west];
-			} else {
-			"YOU ARE MARKED ON THE MAP" remoteExec ["hint", west];
-			"ENEMIES ARE NOW MARKED ON THE MAP" remoteExec ["hint", east];}; 
-		nul = execVM "watchtower\gegner_markieren_v3.sqf";
+		if (_p5 or _p6 or _p7 or _p8) then {[[], "watchtower\markingEast.sqf"] remoteExec ["execVM", 0]} else {[[], "watchtower\markingWest.sqf"] remoteExec ["execVM", 0]};
 		[tsk, "SUCCEEDED", true] remoteExec ["BIS_fnc_taskSetState", 0, true];	
-		sleep 0.1;
+		sleep 1;
 		[tsk, true, true] remoteExec ["BIS_fnc_deleteTask", 0, true];
 		actionID = _actionID;
 		nul = execVM "watchtower\sleep.sqf";

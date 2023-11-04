@@ -7,16 +7,16 @@ _description = "Position of the enemy";
 _waypoint = "";
 _loop = 0; 
 // "taskID" wird bei Spielstart in der "gameTimer.sqf" auf 10 gesetzt
-if (isAliveP5) then {_task1 = [east, (str taskID), [_description, _title, _waypoint], p5, "CREATED", 0, false, "", true] call BIS_fnc_taskCreate}, [str taskID, "attack"] call BIS_fnc_taskSetType, [str taskID, true] call BIS_fnc_taskSetAlwaysVisible; // Erstellt Task auf Unit, wenn diese nicht bewusstlos ist
+if (isAliveP5) then {_task1 = [east, (str taskID), [_description, _title, _waypoint], p5, "CREATED", 0, false, "attack", true] call BIS_fnc_taskCreate}, [str taskID, "attack"] call BIS_fnc_taskSetType, [str taskID, true] call BIS_fnc_taskSetAlwaysVisible; // Erstellt Task auf Unit, wenn diese nicht bewusstlos ist
 westTaskID1 = taskID; // Überträgt die "taskID" auf Variable "westTaskID1" um diese Task später trotz geanderter "taskID" ansteuern zu können
 taskID = taskID + 1; // erhöht "taskID" um + 1 damit die darauffolgende Task eine neue ID bekommt
-if (isAliveP6) then {_task1 = [east, (str taskID), [_description, _title, _waypoint], p6, "CREATED", 0, false, "", true] call BIS_fnc_taskCreate}, [str taskID, "attack"] call BIS_fnc_taskSetType, [str taskID, true] call BIS_fnc_taskSetAlwaysVisible;
+if (isAliveP6) then {_task1 = [east, (str taskID), [_description, _title, _waypoint], p6, "CREATED", 0, false, "attack", true] call BIS_fnc_taskCreate}, [str taskID, "attack"] call BIS_fnc_taskSetType, [str taskID, true] call BIS_fnc_taskSetAlwaysVisible;
 westTaskID2 = taskID;
 taskID = taskID + 1;
-if (isAliveP7) then {_task1 = [east, (str taskID), [_description, _title, _waypoint], p7, "CREATED", 0, false, "", true] call BIS_fnc_taskCreate}, [str taskID, "attack"] call BIS_fnc_taskSetType, [str taskID, true] call BIS_fnc_taskSetAlwaysVisible;
+if (isAliveP7) then {_task1 = [east, (str taskID), [_description, _title, _waypoint], p7, "CREATED", 0, false, "attack", true] call BIS_fnc_taskCreate}, [str taskID, "attack"] call BIS_fnc_taskSetType, [str taskID, true] call BIS_fnc_taskSetAlwaysVisible;
 westTaskID3 = taskID;
 taskID = taskID + 1;
-if (isAliveP8) then {_task1 = [east, (str taskID), [_description, _title, _waypoint], p8, "CREATED", 0, false, "", true] call BIS_fnc_taskCreate}, [str taskID, "attack"] call BIS_fnc_taskSetType, [str taskID, true] call BIS_fnc_taskSetAlwaysVisible;
+if (isAliveP8) then {_task1 = [east, (str taskID), [_description, _title, _waypoint], p8, "CREATED", 0, false, "attack", true] call BIS_fnc_taskCreate}, [str taskID, "attack"] call BIS_fnc_taskSetType, [str taskID, true] call BIS_fnc_taskSetAlwaysVisible;
 westTaskID4 = taskID;
 taskID = taskID + 1;
 

@@ -284,18 +284,4 @@ class CfgTaskEnhancements
 	propagate    = 1; // 0: do not propagate (default), 1: propagate shared tasks to subordinates
 };
 
-class CfgTaskTypes
-{
-	class Attack
-	{
-		icon	= "\A3\UI_F_MP_Mark\Data\Tasks\Types\Attack_ca.paa";
-		icon3D	= "\A3\UI_F_MP_Mark\Data\Tasks\Types3D\Attack_ca.paa";
-	};
-	class Defend
-	{
-		icon	= "\A3\UI_F_MP_Mark\Data\Tasks\Types\Defend_ca.paa";
-		icon3D	= "\A3\UI_F_MP_Mark\Data\Tasks\Types3D\Defend_ca.paa";
-	};
-};
-
 enableDebugConsole = 1;

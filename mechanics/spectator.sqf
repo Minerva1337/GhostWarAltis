@@ -4,7 +4,7 @@ while {true} do {
 		hint "Bewustlos";
 		_ctr = false;
 		hint "Debugging - Spectator West";
-		["Initialize", [player, [west], true, false, true, true, true, true, true, true]] call BIS_fnc_EGSpectator;
+		["Initialize", [player, [west], true, false, false, true, false, true, true, true]] call BIS_fnc_EGSpectator;
 		sleep 1;
 	};
 
@@ -12,7 +12,7 @@ while {true} do {
 		hint "Bewustlos";
 		_ctr = false;
 		hint "Debugging - Spectator West";
-		["Initialize", [player, [east], true, false, true, true, true, true, true, true]] call BIS_fnc_EGSpectator;
+		["Initialize", [player, [east], true, false, false, true, false, true, true, true]] call BIS_fnc_EGSpectator;
 		sleep 1;
 	};
 

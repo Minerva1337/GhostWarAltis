@@ -31,13 +31,7 @@ publicVariable "tsk";	//macht, dass sowol der Server als auch der client Zugriff
 		_p6 = ((str _caller) isEqualTo "p6");
 		_p7 = ((str _caller) isEqualTo "p7");
 		_p8 = ((str _caller) isEqualTo "p8");
-		if (_p5 or _p6 or _p7 or _p8) then {
-			"YOU ARE MARKED ON THE MAP" remoteExec ["hint", east];	
-			"ENEMIES ARE NOW MARKED ON THE MAP" remoteExec ["hint", west];
-			} else {
-			"YOU ARE MARKED ON THE MAP" remoteExec ["hint", west];
-			"ENEMIES ARE NOW MARKED ON THE MAP" remoteExec ["hint", east];}; 
-		nul = execVM "watchtower\gegner_markieren_v3.sqf";
+		if (_p5 or _p6 or _p7 or _p8) then {nul = execVM "watchtower\markingEast.sqf";} else {nul = execVM "watchtower\markingWest.sqf";};
 		[tsk, "SUCCEEDED", true] remoteExec ["BIS_fnc_taskSetState", 0, true];	
 		sleep 0.1;
 		[tsk, true, true] remoteExec ["BIS_fnc_deleteTask", 0, true];

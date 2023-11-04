@@ -1,0 +1,47 @@
+isAliveP5 = ((lifeState p5) isEqualTo "HEALTHY" or (lifeState p5) isEqualTo "INJURED");
+isAliveP6 = ((lifeState p6) isEqualTo "HEALTHY" or (lifeState p6) isEqualTo "INJURED");
+isAliveP7 = ((lifeState p7) isEqualTo "HEALTHY" or (lifeState p7) isEqualTo "INJURED");
+isAlivep8 = ((lifeState p8) isEqualTo "HEALTHY" or (lifeState p8) isEqualTo "INJURED");
+_title = "Enemy";
+_description = "Position of the enemy";
+_waypoint = "";
+_loop = 0; 
+
+if (isAliveP5) then {_task1 = [east, (str taskID), [_description, _title, _waypoint], p5, "CREATED", 0, false, "", true] call BIS_fnc_taskCreate}, [str taskID, "attack"] call BIS_fnc_taskSetType, [str taskID, true] call BIS_fnc_taskSetAlwaysVisible;
+westTaskID1 = taskID;
+taskID = taskID + 1;
+if (isAliveP6) then {_task1 = [east, (str taskID), [_description, _title, _waypoint], p6, "CREATED", 0, false, "", true] call BIS_fnc_taskCreate}, [str taskID, "attack"] call BIS_fnc_taskSetType, [str taskID, true] call BIS_fnc_taskSetAlwaysVisible;
+westTaskID2 = taskID;
+taskID = taskID + 1;
+if (isAliveP7) then {_task1 = [east, (str taskID), [_description, _title, _waypoint], p7, "CREATED", 0, false, "", true] call BIS_fnc_taskCreate}, [str taskID, "attack"] call BIS_fnc_taskSetType, [str taskID, true] call BIS_fnc_taskSetAlwaysVisible;
+westTaskID3 = taskID;
+taskID = taskID + 1;
+if (isAlivep8) then {_task1 = [east, (str taskID), [_description, _title, _waypoint], p8, "CREATED", 0, false, "", true] call BIS_fnc_taskCreate}, [str taskID, "attack"] call BIS_fnc_taskSetType, [str taskID, true] call BIS_fnc_taskSetAlwaysVisible;
+westTaskID4 = taskID;
+taskID = taskID + 1;
+
+while {_loop != 10} do {
+	isAliveP5 = ((lifeState p5) isEqualTo "HEALTHY" or (lifeState p5) isEqualTo "INJURED");
+	isAliveP6 = ((lifeState p6) isEqualTo "HEALTHY" or (lifeState p6) isEqualTo "INJURED");
+	isAliveP7 = ((lifeState p7) isEqualTo "HEALTHY" or (lifeState p7) isEqualTo "INJURED");
+	isAlivep8 = ((lifeState p8) isEqualTo "HEALTHY" or (lifeState p8) isEqualTo "INJURED");
+	if (isAliveP5 == false) then {[(str westTaskID1), true, true] remoteExec ["BIS_fnc_deleteTask", 0, true]};
+	if (isAliveP6 == false) then {[(str westTaskID2), true, true] remoteExec ["BIS_fnc_deleteTask", 0, true]};
+	if (isAliveP7 == false) then {[(str westTaskID3), true, true] remoteExec ["BIS_fnc_deleteTask", 0, true]};
+	if (isAlivep8 == false) then {[(str westTaskID4), true, true] remoteExec ["BIS_fnc_deleteTask", 0, true]};	
+	if ((isAliveP5 == true) and (([str westTaskID1] call BIS_fnc_taskExists) != true)) then {_task1 = [east, (str taskID), [_description, _title, _waypoint], p5, "CREATED", 0, false, "", true] call BIS_fnc_taskCreate, [str taskID, "attack"] call BIS_fnc_taskSetType, [str taskID, true] call BIS_fnc_taskSetAlwaysVisible, westTaskID1 = taskID, taskID = taskID + 1;};
+	if ((isAliveP6 == true) and (([str westTaskID2] call BIS_fnc_taskExists) != true)) then {_task1 = [east, (str taskID), [_description, _title, _waypoint], p6, "CREATED", 0, false, "", true] call BIS_fnc_taskCreate, [str taskID, "attack"] call BIS_fnc_taskSetType, [str taskID, true] call BIS_fnc_taskSetAlwaysVisible, westTaskID1 = taskID, taskID = taskID + 1;};
+	if ((isAliveP7 == true) and (([str westTaskID3] call BIS_fnc_taskExists) != true)) then {_task1 = [east, (str taskID), [_description, _title, _waypoint], p7, "CREATED", 0, false, "", true] call BIS_fnc_taskCreate, [str taskID, "attack"] call BIS_fnc_taskSetType, [str taskID, true] call BIS_fnc_taskSetAlwaysVisible, westTaskID1 = taskID, taskID = taskID + 1;};
+	if ((isAlivep8 == true) and (([str westTaskID4] call BIS_fnc_taskExists) != true)) then {_task1 = [east, (str taskID), [_description, _title, _waypoint], p8, "CREATED", 0, false, "", true] call BIS_fnc_taskCreate, [str taskID, "attack"] call BIS_fnc_taskSetType, [str taskID, true] call BIS_fnc_taskSetAlwaysVisible, westTaskID1 = taskID, taskID = taskID + 1;};
+	_loop = _loop + 1;
+	hint str taskID;
+	sleep 0.5;
+};
+isAliveP5 = ((lifeState p5) isEqualTo "HEALTHY" or (lifeState p5) isEqualTo "INJURED");
+isAliveP6 = ((lifeState p6) isEqualTo "HEALTHY" or (lifeState p6) isEqualTo "INJURED");
+isAliveP7 = ((lifeState p7) isEqualTo "HEALTHY" or (lifeState p7) isEqualTo "INJURED");
+isAlivep8 = ((lifeState p8) isEqualTo "HEALTHY" or (lifeState p8) isEqualTo "INJURED");
+if (isAliveP5) then {[(str westTaskID1), true, true] remoteExec ["BIS_fnc_deleteTask", 0, true]};
+if (isAliveP6) then {[(str westTaskID2), true, true] remoteExec ["BIS_fnc_deleteTask", 0, true]};
+if (isAliveP7) then {[(str westTaskID3), true, true] remoteExec ["BIS_fnc_deleteTask", 0, true]};
+if (isAlivep8) then {[(str westTaskID4), true, true] remoteExec ["BIS_fnc_deleteTask", 0, true]};

@@ -5,10 +5,7 @@ tsk = format ["tsk%1", random 9999999];
 publicVariable "tsk";	//macht, dass sowol der Server als auch der client Zugriff auf die Variable hat
 sleep 90;
 _task1 = [true, tsk, [_description, _title, _waypoint], laptop, "ASSIGNED", 0, true, "download", true] call BIS_fnc_taskCreate, [tsk, "download"] call BIS_fnc_taskSetType, [tsk, true] call BIS_fnc_taskSetAlwaysVisible;
-
-/*tsk = format ["tsk%1", random 100];
-publicVariable "tsk";	//macht, dass sowol der Server als auch der client Zugriff auf die Variable hat
-[true, tsk,  ["Hack the watchtower to get information about the position of the opposing players!", "Watchtower", ""], laptop, "ASSIGNED", 99, true, "download", true] call BIS_fnc_taskCreate;*/
+a0 = 0;
 
 [
 
@@ -42,14 +39,14 @@ publicVariable "tsk";	//macht, dass sowol der Server als auch der client Zugriff
 		[tsk, "SUCCEEDED", true] remoteExec ["BIS_fnc_taskSetState", 0, true];	
 		sleep 1;
 		[tsk, true, true] remoteExec ["BIS_fnc_deleteTask", 0, true];
-		actionID = _actionID;
+		actionID = _actionId;
 		nul = execVM "watchtower\sleep.sqf";
 	}, // Ausgeführt wenn Aktion abgeschlossen
 
-	{	a0 = 1,
-		["Hacking abgebrochen"] remoteExec ["hintSilent", 0, true],
+	{	a0 = 1;
+		["Hacking abgebrochen"] remoteExec ["hintSilent", 0, true];
 		sleep 1;
-		[""] remoteExec ["hintSilent", 0, true],
+		[""] remoteExec ["hintSilent", 0, true];
 		
 	}, // Ausgeführt wenn Aktion abgebrochen
 

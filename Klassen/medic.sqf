@@ -11,7 +11,9 @@ _actionID01 = player addAction
 		hint str _players;
 		sleep 1;
 		{
+			if (side player == side (group _x)) then {
 			[["#rev", 1, _x] call BIS_fnc_reviveOnState; ]remoteExec ["call", _players];
+			};
 		} forEach _players;
 		sleep 3;
 		hintSilent ""; // script

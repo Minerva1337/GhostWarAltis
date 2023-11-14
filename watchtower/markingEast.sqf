@@ -22,9 +22,13 @@ taskID = taskID + 1;
 
 while {_loop != 60} do {
 	isAliveP1 = ((lifeState p1) isEqualTo "HEALTHY" or (lifeState p1) isEqualTo "INJURED");
+	if ((p1TaskIcon == "run") && (_loop > 10)) then {isAliveP1 = false};
 	isAliveP2 = ((lifeState p2) isEqualTo "HEALTHY" or (lifeState p2) isEqualTo "INJURED");
+	if ((p2TaskIcon == "run") && (_loop > 10)) then {isAliveP2 = false};
 	isAliveP3 = ((lifeState p3) isEqualTo "HEALTHY" or (lifeState p3) isEqualTo "INJURED");
+	if ((p3TaskIcon == "run") && (_loop > 10)) then {isAliveP3 = false};
 	isAliveP4 = ((lifeState p4) isEqualTo "HEALTHY" or (lifeState p4) isEqualTo "INJURED");
+	if ((p4TaskIcon == "run") && (_loop > 10)) then {isAliveP4 = false};
 	if (isAliveP1 == false) then {[(str eastTaskID1), true, true] remoteExec ["BIS_fnc_deleteTask", 0, true]};
 	if (isAliveP2 == false) then {[(str eastTaskID2), true, true] remoteExec ["BIS_fnc_deleteTask", 0, true]};
 	if (isAliveP3 == false) then {[(str eastTaskID3), true, true] remoteExec ["BIS_fnc_deleteTask", 0, true]};
@@ -37,9 +41,13 @@ while {_loop != 60} do {
 	sleep 0.5;
 };
 isAliveP1 = ((lifeState p1) isEqualTo "HEALTHY" or (lifeState p1) isEqualTo "INJURED");
+if ((p1TaskIcon == "run") && (_loop > 10)) then {isAliveP1 = false};
 isAliveP2 = ((lifeState p2) isEqualTo "HEALTHY" or (lifeState p2) isEqualTo "INJURED");
+if ((p2TaskIcon == "run") && (_loop > 10)) then {isAliveP2 = false};
 isAliveP3 = ((lifeState p3) isEqualTo "HEALTHY" or (lifeState p3) isEqualTo "INJURED");
+if ((p3TaskIcon == "run") && (_loop > 10)) then {isAliveP3 = false};
 isAliveP4 = ((lifeState p4) isEqualTo "HEALTHY" or (lifeState p4) isEqualTo "INJURED");
+if ((p4TaskIcon == "run") && (_loop > 10)) then {isAliveP4 = false};
 if (isAliveP1) then {[(str eastTaskID1), true, true] remoteExec ["BIS_fnc_deleteTask", 0, true]};
 if (isAliveP2) then {[(str eastTaskID2), true, true] remoteExec ["BIS_fnc_deleteTask", 0, true]};
 if (isAliveP3) then {[(str eastTaskID3), true, true] remoteExec ["BIS_fnc_deleteTask", 0, true]};

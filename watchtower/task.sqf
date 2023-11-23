@@ -6,6 +6,7 @@ publicVariable "tsk";	//macht, dass sowol der Server als auch der client Zugriff
 sleep 90;
 _task1 = [true, tsk, [_description, _title, _waypoint], laptop, "ASSIGNED", 0, true, "download", true] call BIS_fnc_taskCreate, [tsk, "download"] call BIS_fnc_taskSetType, [tsk, true] call BIS_fnc_taskSetAlwaysVisible;
 a0 = 0;
+towerFree = true;
 
 [
 
@@ -18,12 +19,13 @@ a0 = 0;
 
 	{
 		a0 = 0;
+		towerFree = false;
 		{playSound "hacking" spawn
             {waitUntil
                 {sleep 0.5;
                 a0 == 1};
             deleteVehicle _this}} remoteExec ["call", 0];
-
+		
 	}, //wird ausgeführt wenn Tätigkeit startet
 
 	{}, //Ausgeführt für jeden Tick bei Tätigkeit
@@ -44,6 +46,7 @@ a0 = 0;
 	}, // Ausgeführt wenn Aktion abgeschlossen
 
 	{	a0 = 1;
+		towerFree = true;
 		["Hacking abgebrochen"] remoteExec ["hintSilent", 0, true];
 		sleep 1;
 		[""] remoteExec ["hintSilent", 0, true];

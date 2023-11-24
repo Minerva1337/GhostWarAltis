@@ -2,6 +2,7 @@ _actionID01 = player addAction
 [
 	"Revive near players!",	// title
 	{
+		params ["_target", "_caller", "_actionId", "_arguments"]; // script
 		player switchMove "ainvpknlmstpsnonwnondnon_medic3";
 		player playMoveNow "ainvpknlmstpsnonwnondnon_medic3";
 		sleep 7.5;
@@ -13,7 +14,7 @@ _actionID01 = player addAction
 		{
 			if (side player == side (group _x)) then {
 			//_x setUnconscious false;	//Debugging
-			[["#rev", 1, _x] call BIS_fnc_reviveOnState; ]remoteExec ["call", _players];
+			[["#rev", 1, _x] call BIS_fnc_reviveOnState] remoteExec ["call", _players];
 			};
 		} forEach _players;
 		sleep 3;

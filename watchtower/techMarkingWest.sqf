@@ -20,15 +20,11 @@ if (isAliveP8) then {_task1 = [east, (str taskID), [_description, _title, _waypo
 westTaskID4 = taskID;
 taskID = taskID + 1;
 
-while {_loop != 60} do { // Für 30 Sekunden wird diese while-Funktion 60 Mal ausgewertet, um Tasks zu löschen, falls Units sterben und um Tasks hinzuzufügen, falls Units wiederbelebt werden. 
-	isAliveP5 = ((lifeState p5) isEqualTo "HEALTHY" or (lifeState p5) isEqualTo "INJURED"); // "true" wenn Unit lebt.
-	if ((p5TaskIcon == "run") && (_loop > 10)) then {isAliveP5 = false};
+while {_loop != 6} do { // Für 30 Sekunden wird diese while-Funktion 60 Mal ausgewertet, um Tasks zu löschen, falls Units sterben und um Tasks hinzuzufügen, falls Units wiederbelebt werden. 
+	isAliveP5 = ((lifeState p5) isEqualTo "HEALTHY" or (lifeState p5) isEqualTo "INJURED"); // "true" wenn Unit lebt. 
 	isAliveP6 = ((lifeState p6) isEqualTo "HEALTHY" or (lifeState p6) isEqualTo "INJURED");
-	if ((p6TaskIcon == "run") && (_loop > 10)) then {isAliveP6 = false};
 	isAliveP7 = ((lifeState p7) isEqualTo "HEALTHY" or (lifeState p7) isEqualTo "INJURED");
-	if ((p7TaskIcon == "run") && (_loop > 10)) then {isAliveP7 = false};
 	isAliveP8 = ((lifeState p8) isEqualTo "HEALTHY" or (lifeState p8) isEqualTo "INJURED");
-	if ((p8TaskIcon == "run") && (_loop > 10)) then {isAliveP8 = false};
 	if (isAliveP5 == false) then {[(str westTaskID1), true, true] remoteExec ["BIS_fnc_deleteTask", 0, true]}; // Wenn Unit stirbt, wird ihre Task gelöscht.
 	if (isAliveP6 == false) then {[(str westTaskID2), true, true] remoteExec ["BIS_fnc_deleteTask", 0, true]};
 	if (isAliveP7 == false) then {[(str westTaskID3), true, true] remoteExec ["BIS_fnc_deleteTask", 0, true]};
@@ -41,13 +37,9 @@ while {_loop != 60} do { // Für 30 Sekunden wird diese while-Funktion 60 Mal au
 	sleep 0.5;
 };
 isAliveP5 = ((lifeState p5) isEqualTo "HEALTHY" or (lifeState p5) isEqualTo "INJURED"); // Überprüft abschließend welche Units leben.
-if ((p5TaskIcon == "run") && (_loop > 10)) then {isAliveP5 = false};
 isAliveP6 = ((lifeState p6) isEqualTo "HEALTHY" or (lifeState p6) isEqualTo "INJURED");
-if ((p6TaskIcon == "run") && (_loop > 10)) then {isAliveP6 = false};
 isAliveP7 = ((lifeState p7) isEqualTo "HEALTHY" or (lifeState p7) isEqualTo "INJURED");
-if ((p7TaskIcon == "run") && (_loop > 10)) then {isAliveP7 = false};
 isAliveP8 = ((lifeState p8) isEqualTo "HEALTHY" or (lifeState p8) isEqualTo "INJURED");
-if ((p8TaskIcon == "run") && (_loop > 10)) then {isAliveP8 = false};
 if (isAliveP5) then {[(str westTaskID1), true, true] remoteExec ["BIS_fnc_deleteTask", 0, true]}; // Löscht alle Tasks.
 if (isAliveP6) then {[(str westTaskID2), true, true] remoteExec ["BIS_fnc_deleteTask", 0, true]};
 if (isAliveP7) then {[(str westTaskID3), true, true] remoteExec ["BIS_fnc_deleteTask", 0, true]};

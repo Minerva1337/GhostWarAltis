@@ -1,8 +1,11 @@
 player switchMove "HubSpectator_stand";
 [[], "mechanics\spectator.sqf"] remoteExec ["execVM", 0, true];
 
-if  ("XXXXXX" in (vestItems player + uniformItems player + backpackItems player + assignedItems player)) then {
+if  ("30Rnd_9x21_Red_Mag" in (vestItems player + uniformItems player + backpackItems player + assignedItems player)) then {
 	player setUnitTrait ["Engineer", true];
+	techAvailable = false;
+	publicVariable "techAvailable";
+	[[], "classes\tech.sqf"] remoteExec ["execVM", player, true];
 	hint "Tech";
 	if (player == p1) then {p1TaskIcon = "intel";
 	publicVariable "p1TaskIcon"};
@@ -41,7 +44,7 @@ if  ("Medikit" in (vestItems player + uniformItems player + backpackItems player
 	if (player == p8) then {p8TaskIcon = "heal";
 	publicVariable "p8TaskIcon"};};
 
-if  ("7Rnd_408_Mag" in (vestItems player + uniformItems player + backpackItems player + assignedItems player)) then {
+if  ("ACE_10Rnd_762x51_Mag_Tracer" in (vestItems player + uniformItems player + backpackItems player + assignedItems player)) then {
 	/*player setUnitTrait ["Medic", true];*/
 	hint "Sniper";
 	if (player == p1) then {p1TaskIcon = "kill";
@@ -81,7 +84,7 @@ if  ("ACE_HuntIR_monitor" in (vestItems player + uniformItems player + backpackI
 	if (player == p8) then {p8TaskIcon = "scout";
 	publicVariable "p8TaskIcon"};};
 
-if  ("30Rnd_45ACP_Mag_SMG_01" in (vestItems player + uniformItems player + backpackItems player + assignedItems player)) then {
+if  ("30Rnd_45ACP_Mag_SMG_01_Tracer_Red" in (vestItems player + uniformItems player + backpackItems player + assignedItems player)) then {
 	/*player setUnitTrait ["Medic", true];*/
 	hint "Assassin";
 	if (player == p1) then {p1TaskIcon = "run";
@@ -101,7 +104,7 @@ if  ("30Rnd_45ACP_Mag_SMG_01" in (vestItems player + uniformItems player + backp
 	if (player == p8) then {p8TaskIcon = "run";
 	publicVariable "p8TaskIcon"};};
 
-if  ("APERSMineDispenser_Mag" in (vestItems player + uniformItems player + backpackItems player + assignedItems player)) then {
+if  ("ACE_M26_Clacker" in (vestItems player + uniformItems player + backpackItems player + assignedItems player)) then {
 	player setUnitTrait ["ExplosiveSpecialist", true];
 	hint "Explosive";
 	if (player == p1) then {p1TaskIcon = "destroy";

@@ -14,195 +14,153 @@ class CfgRoles {
 		};
 	};
 
-	class CfgRespawnInventory //config that calls in game respawn load-outs
+class CfgRespawnInventory //config that calls in game respawn load-outs
 	{
-	class MEDIC
-		{
-		displayName = "Medic";
+	class techEast {
+		displayName = "Tech";
 		icon = "\A3\Ui_f\data\GUI\Cfg\Ranks\sergeant_gs.paa";
 		role = "Support";
 		show = "true";
-		uniformClass = "U_B_CombatUniform_mcam_tshirt";
+		uniformClass = "U_O_CombatUniform_ocamo";
 		backpack = "B_AssaultPack_khk";
-		weapons[] = {"arifle_MX_F", "hgun_Pistol_heavy_01_F", "Throw", "Put"};
-		magazines[] = {"30Rnd_65x39_caseless_black_mag", "30Rnd_65x39_caseless_black_mag", "30Rnd_65x39_caseless_black_mag", "30Rnd_65x39_caseless_black_mag", "30Rnd_65x39_caseless_black_mag", "30Rnd_65x39_caseless_black_mag", "30Rnd_65x39_caseless_black_mag", "30Rnd_65x39_caseless_black_mag", "30Rnd_65x39_caseless_black_mag", "30Rnd_65x39_caseless_black_mag", "11Rnd_45ACP_Mag", "11Rnd_45ACP_Mag", "11Rnd_45ACP_Mag", "SmokeShell", "SmokeShell", "SmokeShell", "HandGrenade", "30Rnd_65x39_caseless_mag", "11Rnd_45ACP_Mag"};
-		items[] = {"ACE_EarPlugs", "Medikit", "FirstAidKit", "FirstAidKit", "FirstAidKit", "FirstAidKit"};
-		linkedItems[] = {"V_PlateCarrierSpec_rgr", "H_HelmetB_snakeskin", "G_Balaclava_blk", "ItemMap", "ItemCompass", "ItemWatch", "NVGoggles", "ItemGPS", "acc_flashlight", "optic_Holosight_smg", "acc_flashlight_pistol", "optic_MRD"};
-		};
-	class AUTO
-		{
-		displayName = "Autorifleman";
-		icon = "\A3\Ui_f\data\GUI\Cfg\Ranks\sergeant_gs.paa";
-		role = "Attack";
-		show = "true";
-		uniformClass = "U_B_CombatUniform_mcam_tshirt";
-		backpack = "B_AssaultPack_khk";
-		weapons[] = {"LMG_Mk200_F", "hgun_Pistol_heavy_01_F", "Throw", "Put"};
-		magazines[] = {"200Rnd_65x39_cased_Box_Tracer_Red", "MiniGrenade", "SmokeShell", "11Rnd_45ACP_Mag", "11Rnd_45ACP_Mag", "11Rnd_45ACP_Mag", "200Rnd_65x39_cased_Box_Tracer_Red", "200Rnd_65x39_cased_Box_Tracer_Red", "HandGrenade", "200Rnd_65x39_cased_Box_Tracer_Red", "11Rnd_45ACP_Mag"};
+		weapons[] = {"hgun_PDW2000_F", "hgun_Pistol_heavy_01_F", "Throw", "Put"};
+		magazines[] = {"30Rnd_9x21_Red_Mag", "30Rnd_9x21_Red_Mag", "30Rnd_9x21_Red_Mag", "30Rnd_9x21_Red_Mag", "30Rnd_9x21_Red_Mag", "30Rnd_9x21_Red_Mag", "30Rnd_9x21_Red_Mag", "30Rnd_9x21_Red_Mag", "30Rnd_9x21_Red_Mag", "30Rnd_9x21_Red_Mag", "SmokeShell", "11Rnd_45ACP_Mag", "11Rnd_45ACP_Mag", "11Rnd_45ACP_Mag", "HandGrenade", "30Rnd_9x21_Mag", "11Rnd_45ACP_Mag"};
 		items[] = {"ACE_EarPlugs", "FirstAidKit", "FirstAidKit"};
-		linkedItems[] = {"V_PlateCarrierSpec_rgr", "H_HelmetB_snakeskin", "G_Balaclava_blk", "ItemMap", "ItemCompass", "ItemWatch","NVGoggles", "ItemGPS", "acc_flashlight", "optic_Holosight_lush_F", "acc_flashlight_pistol", "optic_MRD"};
+		linkedItems[] = {"V_PlateCarrierSpec_blk", "H_HelmetB_black", "G_Bandanna_blk", "ItemMap", "ItemCompass", "ItemWatch", "ItemGPS", "NVGoggles_OPFOR", "optic_Holosight", "acc_flashlight_pistol", "optic_MRD"};
 		};
-	class SNIPER
-		{
-		displayName = "Sniper";
-		icon = "\A3\Ui_f\data\GUI\Cfg\Ranks\sergeant_gs.paa";
-		role = "Attack";
-		show = "true";
-		uniformClass = "U_B_FullGhillie_sard";
-		backpack = "B_AssaultPack_khk";
-		weapons[] = {"srifle_LRR_camo_F", "hgun_Pistol_heavy_01_F", "Binocular", "Throw", "Put"};
-		magazines[] = {"7Rnd_408_Mag", "7Rnd_408_Mag", "7Rnd_408_Mag", "7Rnd_408_Mag", "7Rnd_408_Mag", "7Rnd_408_Mag", "SmokeShell", "11Rnd_45ACP_Mag", "11Rnd_45ACP_Mag", "11Rnd_45ACP_Mag", "HandGrenade", "ACE_7Rnd_408_305gr_Mag", "11Rnd_45ACP_Mag"};
-		items[] = {"ACE_EarPlugs", "FirstAidKit", "FirstAidKit"};
-		linkedItems[] = {"V_PlateCarrierSpec_rgr", "H_HelmetB_snakeskin", "G_Balaclava_blk", "ItemMap", "ItemCompass", "ItemWatch","NVGoggles", "ItemGPS", "ACE_optic_MRCO_2D", "acc_flashlight_pistol", "optic_MRD"};
-		};
-	class SCOUT
-		{
-		displayName = "Scout";
+	class techWest {
+		displayName = "Tech";
 		icon = "\A3\Ui_f\data\GUI\Cfg\Ranks\sergeant_gs.paa";
 		role = "Support";
 		show = "true";
-	  	uniformClass = "U_B_CombatUniform_mcam_tshirt";
+		uniformClass = "U_B_CTRG_1";
 		backpack = "B_AssaultPack_khk";
-		weapons[] = {"arifle_MX_GL_Black_F", "hgun_Pistol_heavy_01_F", "Throw", "Put"};
-		magazines[] = {"ACE_HuntIR_M203", "30Rnd_65x39_caseless_black_mag", "30Rnd_65x39_caseless_black_mag", "30Rnd_65x39_caseless_black_mag", "30Rnd_65x39_caseless_black_mag", "30Rnd_65x39_caseless_black_mag", "30Rnd_65x39_caseless_black_mag", "30Rnd_65x39_caseless_black_mag", "30Rnd_65x39_caseless_black_mag", "SmokeShell", "11Rnd_45ACP_Mag", "11Rnd_45ACP_Mag", "11Rnd_45ACP_Mag", "HandGrenade", "30Rnd_65x39_caseless_black_mag", "ACE_HuntIR_M203", "11Rnd_45ACP_Mag"};
-		items[] = {"ACE_EarPlugs", "FirstAidKit", "FirstAidKit", "ACE_HuntIR_monitor"};
-		linkedItems[] = {"V_PlateCarrierSpec_rgr", "H_HelmetB_snakeskin", "G_Balaclava_blk", "ItemMap", "ItemCompass", "ItemWatch","NVGoggles", "ItemGPS", "acc_flashlight", "optic_Holosight_smg", "acc_flashlight_pistol", "optic_MRD"};
-		};
-	class ASSASSIN
-		{
-		displayName = "Assassin";
-		icon = "\A3\Ui_f\data\GUI\Cfg\Ranks\sergeant_gs.paa";
-		role = "Attack";
-		show = "true";
-		uniformClass = "U_B_CombatUniform_mcam";
-		backpack = "";
-		weapons[] = {"SMG_01_F", "Throw", "Put"};
-		magazines[] = {"30Rnd_45ACP_Mag_SMG_01", "30Rnd_45ACP_Mag_SMG_01", "30Rnd_45ACP_Mag_SMG_01", "30Rnd_45ACP_Mag_SMG_01", "30Rnd_45ACP_Mag_SMG_01", "30Rnd_45ACP_Mag_SMG_01", "30Rnd_45ACP_Mag_SMG_01", "30Rnd_45ACP_Mag_SMG_01", "30Rnd_45ACP_Mag_SMG_01", "HandGrenade", "30Rnd_45ACP_Mag_SMG_01"};
-		items[] = {};
-		linkedItems[] = {"V_TacVest_oli", "H_HelmetB_snakeskin", "G_Balaclava_blk", "ItemMap", "ItemCompass", "ItemWatch","NVGoggles", "ItemGPS", "muzzle_snds_acp", "acc_flashlight_smg_01", "optic_Holosight_smg_blk_F"};
-		};
-	class GRENADIER
-		{
-		displayName = "Grenadier";
-		icon = "\A3\Ui_f\data\GUI\Cfg\Ranks\sergeant_gs.paa";
-		role = "Attack";
-		show = "true";
-	 	uniformClass = "U_B_CombatUniform_mcam_tshirt";
-		backpack = "B_AssaultPack_khk";
-		weapons[] = {"arifle_MX_F", "hgun_Pistol_heavy_01_F", "Throw", "Put"};
-		magazines[] = {"30Rnd_65x39_caseless_black_mag", "30Rnd_65x39_caseless_black_mag", "30Rnd_65x39_caseless_black_mag", "30Rnd_65x39_caseless_black_mag", "30Rnd_65x39_caseless_black_mag", "30Rnd_65x39_caseless_black_mag", "30Rnd_65x39_caseless_black_mag", "30Rnd_65x39_caseless_black_mag", "30Rnd_65x39_caseless_black_mag", "30Rnd_65x39_caseless_black_mag", "11Rnd_45ACP_Mag", "11Rnd_45ACP_Mag", "11Rnd_45ACP_Mag", "SmokeShell", "SmokeShell", "SmokeShell", "SmokeShell", "SmokeShell", "SmokeShell", "MiniGrenade", "MiniGrenade", "HandGrenade", "HandGrenade", "HandGrenade", "HandGrenade", "30Rnd_65x39_caseless_mag", "11Rnd_45ACP_Mag"};
+		weapons[] = {"hgun_PDW2000_F", "hgun_Pistol_heavy_01_F", "Throw", "Put"};
+		magazines[] = {"30Rnd_9x21_Red_Mag", "30Rnd_9x21_Red_Mag", "30Rnd_9x21_Red_Mag", "30Rnd_9x21_Red_Mag", "30Rnd_9x21_Red_Mag", "30Rnd_9x21_Red_Mag", "30Rnd_9x21_Red_Mag", "30Rnd_9x21_Red_Mag", "30Rnd_9x21_Red_Mag", "30Rnd_9x21_Red_Mag", "SmokeShell", "11Rnd_45ACP_Mag", "11Rnd_45ACP_Mag", "11Rnd_45ACP_Mag", "HandGrenade", "30Rnd_9x21_Mag", "11Rnd_45ACP_Mag"};
 		items[] = {"ACE_EarPlugs", "FirstAidKit", "FirstAidKit"};
-		linkedItems[] = {"V_PlateCarrierSpec_rgr", "H_HelmetB_snakeskin", "G_Balaclava_blk", "ItemMap", "ItemCompass", "ItemWatch","NVGoggles", "ItemGPS", "acc_flashlight", "optic_Holosight_smg", "acc_flashlight_pistol", "optic_MRD"};
+		linkedItems[] = {"V_PlateCarrierSpec_rgr", "H_HelmetB_snakeskin", "G_Bandanna_blk", "ItemMap", "ItemCompass", "ItemWatch", "ItemGPS", "NVGoggles_OPFOR", "optic_Holosight", "acc_flashlight_pistol", "optic_MRD"};
 		};
-	class MINE
-		{
-		displayName = "Mine Specialist";
-		icon = "\A3\Ui_f\data\GUI\Cfg\Ranks\sergeant_gs.paa";
-		role = "Support";
-		show = "true";
-		uniformClass = "U_B_CombatUniform_mcam_tshirt";
-		backpack = "B_AssaultPack_khk";
-		weapons[] = {"arifle_MX_F", "hgun_Pistol_heavy_01_F", "Throw", "Put"};
-		magazines[] = {"30Rnd_65x39_caseless_black_mag", "30Rnd_65x39_caseless_black_mag", "30Rnd_65x39_caseless_black_mag", "30Rnd_65x39_caseless_black_mag", "30Rnd_65x39_caseless_black_mag", "30Rnd_65x39_caseless_black_mag", "30Rnd_65x39_caseless_black_mag", "30Rnd_65x39_caseless_black_mag", "30Rnd_65x39_caseless_black_mag", "30Rnd_65x39_caseless_black_mag", "SmokeShell", "11Rnd_45ACP_Mag", "11Rnd_45ACP_Mag", "11Rnd_45ACP_Mag", "HandGrenade", "APERSMineDispenser_Mag", "APERSMine_Range_Mag", "APERSMine_Range_Mag", "APERSBoundingMine_Range_Mag", "30Rnd_65x39_caseless_mag", "11Rnd_45ACP_Mag"};
-		items[] = {"ACE_EarPlugs", "FirstAidKit", "FirstAidKit", "ACE_M26_Clacker"};
-		linkedItems[] = {"V_PlateCarrierSpec_rgr", "H_HelmetB_snakeskin", "G_Balaclava_blk", "ItemMap", "ItemCompass", "ItemWatch","NVGoggles", "ItemGPS", "acc_flashlight", "optic_Holosight_smg", "acc_flashlight_pistol", "optic_MRD"};
-		};
-	class MEDIC1
-		{
+	class medicEast {
 		displayName = "Medic";
 		icon = "\A3\Ui_f\data\GUI\Cfg\Ranks\sergeant_gs.paa";
 		role = "Support";
 		show = "true";
 		uniformClass = "U_O_CombatUniform_ocamo";
 		backpack = "B_AssaultPack_khk";
-		weapons[] = {"arifle_MX_F", "hgun_Pistol_heavy_01_F", "Throw", "Put"};
-		magazines[] = {"30Rnd_65x39_caseless_black_mag", "30Rnd_65x39_caseless_black_mag", "30Rnd_65x39_caseless_black_mag", "30Rnd_65x39_caseless_black_mag", "30Rnd_65x39_caseless_black_mag", "30Rnd_65x39_caseless_black_mag", "30Rnd_65x39_caseless_black_mag", "30Rnd_65x39_caseless_black_mag", "30Rnd_65x39_caseless_black_mag", "30Rnd_65x39_caseless_black_mag", "11Rnd_45ACP_Mag", "11Rnd_45ACP_Mag", "11Rnd_45ACP_Mag", "SmokeShell", "SmokeShell", "SmokeShell", "HandGrenade", "30Rnd_65x39_caseless_mag", "11Rnd_45ACP_Mag"};
-		items[] = {"ACE_EarPlugs", "Medikit", "FirstAidKit", "FirstAidKit", "FirstAidKit", "FirstAidKit"};
-		linkedItems[] = {"V_PlateCarrierSpec_blk", "H_HelmetB_black", "G_Balaclava_blk", "ItemMap", "ItemCompass", "ItemWatch","NVGoggles", "ItemGPS", "acc_flashlight", "optic_Holosight_smg", "acc_flashlight_pistol", "optic_MRD"};
+		weapons[] = {"arifle_MXC_F", "hgun_Pistol_heavy_01_F", "Throw", "Put"};
+		magazines[] = {"30Rnd_65x39_caseless_mag_Tracer", "30Rnd_65x39_caseless_mag_Tracer", "30Rnd_65x39_caseless_mag_Tracer", "30Rnd_65x39_caseless_mag_Tracer", "30Rnd_65x39_caseless_mag_Tracer", "30Rnd_65x39_caseless_mag_Tracer", "30Rnd_65x39_caseless_mag_Tracer", "30Rnd_65x39_caseless_mag_Tracer", "30Rnd_65x39_caseless_mag_Tracer", "30Rnd_65x39_caseless_mag_Tracer", "SmokeShell", "11Rnd_45ACP_Mag", "11Rnd_45ACP_Mag", "11Rnd_45ACP_Mag", "HandGrenade", "ACE_30Rnd_65x39_caseless_mag_Tracer_Dim", "11Rnd_45ACP_Mag"};
+		items[] = {"ACE_EarPlugs", "Medikit"};
+		linkedItems[] = {"V_PlateCarrierSpec_blk", "H_HelmetB_black", "G_Bandanna_blk", "ItemMap", "ItemCompass", "ItemWatch", "ItemGPS", "NVGoggles_OPFOR", "ACE_SPIR", "optic_Holosight", "acc_flashlight_pistol", "optic_MRD"};
 		};
-	class AUTO1
-		{
-		displayName = "Autorifleman";
+	class medicWest	{
+		displayName = "Medic";
 		icon = "\A3\Ui_f\data\GUI\Cfg\Ranks\sergeant_gs.paa";
-		role = "Attack";
+		role = "Support";
 		show = "true";
-		uniformClass = "U_O_CombatUniform_ocamo";
+		uniformClass = "U_B_CTRG_1";
 		backpack = "B_AssaultPack_khk";
-		weapons[] = {"LMG_Mk200_F", "hgun_Pistol_heavy_01_F", "Throw", "Put"};
-		magazines[] = {"200Rnd_65x39_cased_Box_Tracer_Red", "MiniGrenade", "SmokeShell", "11Rnd_45ACP_Mag", "11Rnd_45ACP_Mag", "11Rnd_45ACP_Mag", "200Rnd_65x39_cased_Box_Tracer_Red", "200Rnd_65x39_cased_Box_Tracer_Red", "HandGrenade", "200Rnd_65x39_cased_Box_Tracer_Red", "11Rnd_45ACP_Mag"};
-		items[] = {"ACE_EarPlugs", "FirstAidKit", "FirstAidKit"};
-		linkedItems[] = {"V_PlateCarrierSpec_blk", "H_HelmetB_black", "G_Balaclava_blk", "ItemMap", "ItemCompass", "ItemWatch","NVGoggles", "ItemGPS", "acc_flashlight", "optic_Holosight_lush_F", "acc_flashlight_pistol", "optic_MRD"};
+		weapons[] = {"arifle_MXC_F", "hgun_Pistol_heavy_01_F", "Throw", "Put"};
+		magazines[] = {"30Rnd_65x39_caseless_mag_Tracer", "30Rnd_65x39_caseless_mag_Tracer", "30Rnd_65x39_caseless_mag_Tracer", "30Rnd_65x39_caseless_mag_Tracer", "30Rnd_65x39_caseless_mag_Tracer", "30Rnd_65x39_caseless_mag_Tracer", "30Rnd_65x39_caseless_mag_Tracer", "30Rnd_65x39_caseless_mag_Tracer", "30Rnd_65x39_caseless_mag_Tracer", "30Rnd_65x39_caseless_mag_Tracer", "SmokeShell", "11Rnd_45ACP_Mag", "11Rnd_45ACP_Mag", "11Rnd_45ACP_Mag", "HandGrenade", "ACE_30Rnd_65x39_caseless_mag_Tracer_Dim", "11Rnd_45ACP_Mag"};
+		items[] = {"ACE_EarPlugs", "Medikit"};
+		linkedItems[] = {"V_PlateCarrierSpec_rgr", "H_HelmetB_snakeskin", "G_Bandanna_blk", "ItemMap", "ItemCompass", "ItemWatch", "ItemGPS", "NVGoggles_OPFOR", "ACE_SPIR", "optic_Holosight", "acc_flashlight_pistol", "optic_MRD"};
 		};
-	class SNIPER1
-		{
+	class sniperEast {
 		displayName = "Sniper";
 		icon = "\A3\Ui_f\data\GUI\Cfg\Ranks\sergeant_gs.paa";
 		role = "Attack";
 		show = "true";
-		uniformClass = "U_B_FullGhillie_sard";
-		backpack = "B_AssaultPack_khk";
-		weapons[] = {"srifle_LRR_camo_F", "hgun_Pistol_heavy_01_F", "Binocular", "Throw", "Put"};
-		magazines[] = {"7Rnd_408_Mag", "7Rnd_408_Mag", "7Rnd_408_Mag", "7Rnd_408_Mag", "7Rnd_408_Mag", "7Rnd_408_Mag", "SmokeShell", "11Rnd_45ACP_Mag", "11Rnd_45ACP_Mag", "11Rnd_45ACP_Mag", "HandGrenade", "ACE_7Rnd_408_305gr_Mag", "11Rnd_45ACP_Mag"};
+		uniformClass = "U_O_CombatUniform_ocamo";
+		backpack = "";
+		weapons[] = {"srifle_EBR_F", "hgun_Pistol_heavy_01_F", "Throw", "Put"};
+		magazines[] = {"ACE_10Rnd_762x51_Mag_Tracer", "ACE_10Rnd_762x51_Mag_Tracer", "11Rnd_45ACP_Mag", "11Rnd_45ACP_Mag", "11Rnd_45ACP_Mag", "HandGrenade", "SmokeShell", "ACE_10Rnd_762x51_Mag_Tracer", "11Rnd_45ACP_Mag"};
 		items[] = {"ACE_EarPlugs", "FirstAidKit", "FirstAidKit"};
-		linkedItems[] = {"V_PlateCarrierSpec_rgr", "H_HelmetB_snakeskin", "G_Balaclava_blk", "ItemMap", "ItemCompass", "ItemWatch","NVGoggles", "ItemGPS", "ACE_optic_MRCO_2D", "acc_flashlight_pistol", "optic_MRD"};
+		linkedItems[] = {"V_PlateCarrierSpec_blk", "H_HelmetB_black", "G_Bandanna_blk", "ItemMap", "ItemCompass", "ItemWatch", "ItemGPS", "NVGoggles_OPFOR", "acc_flashlight", "optic_SOS", "acc_flashlight_pistol", "optic_MRD"};
 		};
-	class SCOUT1
-		{
+	class sniperWest {
+		displayName = "Sniper";
+		icon = "\A3\Ui_f\data\GUI\Cfg\Ranks\sergeant_gs.paa";
+		role = "Attack";
+		show = "true";
+		uniformClass = "U_B_CTRG_1";
+		backpack = "";
+		weapons[] = {"srifle_EBR_F", "hgun_Pistol_heavy_01_F", "Throw", "Put"};
+		magazines[] = {"ACE_10Rnd_762x51_Mag_Tracer", "ACE_10Rnd_762x51_Mag_Tracer", "11Rnd_45ACP_Mag", "11Rnd_45ACP_Mag", "11Rnd_45ACP_Mag", "HandGrenade", "SmokeShell", "ACE_10Rnd_762x51_Mag_Tracer", "11Rnd_45ACP_Mag"};
+		items[] = {"ACE_EarPlugs", "FirstAidKit", "FirstAidKit"};
+		linkedItems[] = {"V_PlateCarrierSpec_rgr", "H_HelmetB_snakeskin", "G_Bandanna_blk", "ItemMap", "ItemCompass", "ItemWatch", "ItemGPS", "NVGoggles_OPFOR", "acc_flashlight", "optic_SOS", "acc_flashlight_pistol", "optic_MRD"};
+		};
+	class scoutEast {
 		displayName = "Scout";
 		icon = "\A3\Ui_f\data\GUI\Cfg\Ranks\sergeant_gs.paa";
 		role = "Support";
 		show = "true";
 		uniformClass = "U_O_CombatUniform_ocamo";
 		backpack = "B_AssaultPack_khk";
-		weapons[] = {"arifle_MX_GL_Black_F", "hgun_Pistol_heavy_01_F", "Throw", "Put"};
-		magazines[] = {"ACE_HuntIR_M203", "30Rnd_65x39_caseless_black_mag", "30Rnd_65x39_caseless_black_mag", "30Rnd_65x39_caseless_black_mag", "30Rnd_65x39_caseless_black_mag", "30Rnd_65x39_caseless_black_mag", "30Rnd_65x39_caseless_black_mag", "30Rnd_65x39_caseless_black_mag", "30Rnd_65x39_caseless_black_mag", "SmokeShell", "11Rnd_45ACP_Mag", "11Rnd_45ACP_Mag", "11Rnd_45ACP_Mag", "HandGrenade", "30Rnd_65x39_caseless_black_mag", "ACE_HuntIR_M203", "11Rnd_45ACP_Mag"};
+		weapons[] = {"arifle_MX_GL_F", "hgun_Pistol_heavy_01_F", "ACE_Vector", "Throw", "Put"};
+		magazines[] = {"30Rnd_65x39_caseless_mag_Tracer", "30Rnd_65x39_caseless_mag_Tracer", "30Rnd_65x39_caseless_mag_Tracer", "30Rnd_65x39_caseless_mag_Tracer", "30Rnd_65x39_caseless_mag_Tracer", "30Rnd_65x39_caseless_mag_Tracer", "30Rnd_65x39_caseless_mag_Tracer", "30Rnd_65x39_caseless_mag_Tracer", "30Rnd_65x39_caseless_mag_Tracer", "30Rnd_65x39_caseless_mag_Tracer", "SmokeShell", "11Rnd_45ACP_Mag", "11Rnd_45ACP_Mag", "11Rnd_45ACP_Mag", "HandGrenade", "ACE_HuntIR_M203", "30Rnd_65x39_caseless_mag_Tracer", "ACE_HuntIR_M203", "11Rnd_45ACP_Mag"};
 		items[] = {"ACE_EarPlugs", "FirstAidKit", "FirstAidKit", "ACE_HuntIR_monitor"};
-		linkedItems[] = {"V_PlateCarrierSpec_blk", "H_HelmetB_black", "G_Balaclava_blk", "ItemMap", "ItemCompass", "ItemWatch","NVGoggles", "ItemGPS", "acc_flashlight", "optic_Holosight_smg", "acc_flashlight_pistol", "optic_MRD"};
+		linkedItems[] = {"V_PlateCarrierSpec_blk", "H_HelmetB_black", "G_Bandanna_blk", "ItemMap", "ItemCompass", "ItemWatch", "ItemGPS", "NVGoggles_OPFOR", "ACE_SPIR", "optic_Holosight", "acc_flashlight_pistol", "optic_MRD"};
 		};
-	class ASSASSIN1
-		{
+	class scoutWest {
+		displayName = "Scout";
+		icon = "\A3\Ui_f\data\GUI\Cfg\Ranks\sergeant_gs.paa";
+		role = "Support";
+		show = "true";
+		uniformClass = "U_B_CTRG_1";
+		backpack = "B_AssaultPack_khk";
+		weapons[] = {"arifle_MX_GL_F", "hgun_Pistol_heavy_01_F", "ACE_Vector", "Throw", "Put"};
+		magazines[] = {"30Rnd_65x39_caseless_mag_Tracer", "30Rnd_65x39_caseless_mag_Tracer", "30Rnd_65x39_caseless_mag_Tracer", "30Rnd_65x39_caseless_mag_Tracer", "30Rnd_65x39_caseless_mag_Tracer", "30Rnd_65x39_caseless_mag_Tracer", "30Rnd_65x39_caseless_mag_Tracer", "30Rnd_65x39_caseless_mag_Tracer", "30Rnd_65x39_caseless_mag_Tracer", "30Rnd_65x39_caseless_mag_Tracer", "SmokeShell", "11Rnd_45ACP_Mag", "11Rnd_45ACP_Mag", "11Rnd_45ACP_Mag", "HandGrenade", "ACE_HuntIR_M203", "30Rnd_65x39_caseless_mag_Tracer", "ACE_HuntIR_M203", "11Rnd_45ACP_Mag"};
+		items[] = {"ACE_EarPlugs", "FirstAidKit", "FirstAidKit", "ACE_HuntIR_monitor"};
+		linkedItems[] = {"V_PlateCarrierSpec_rgr", "H_HelmetB_snakeskin", "G_Bandanna_blk", "ItemMap", "ItemCompass", "ItemWatch", "ItemGPS", "NVGoggles_OPFOR", "ACE_SPIR", "optic_Holosight", "acc_flashlight_pistol", "optic_MRD"};
+		};
+	class assassinEast {
 		displayName = "Assassin";
 		icon = "\A3\Ui_f\data\GUI\Cfg\Ranks\sergeant_gs.paa";
 		role = "Attack";
 		show = "true";
 		uniformClass = "U_O_CombatUniform_ocamo";
 		backpack = "";
-		weapons[] = {"SMG_01_F", "Throw", "Put"};
-		magazines[] = {"30Rnd_45ACP_Mag_SMG_01", "30Rnd_45ACP_Mag_SMG_01", "30Rnd_45ACP_Mag_SMG_01", "30Rnd_45ACP_Mag_SMG_01", "30Rnd_45ACP_Mag_SMG_01", "30Rnd_45ACP_Mag_SMG_01", "30Rnd_45ACP_Mag_SMG_01", "30Rnd_45ACP_Mag_SMG_01", "30Rnd_45ACP_Mag_SMG_01", "HandGrenade", "30Rnd_45ACP_Mag_SMG_01"};
-		items[] = {};
-		linkedItems[] = {"V_TacVest_khk", "H_HelmetB_black", "G_Balaclava_blk", "ItemMap", "ItemCompass", "ItemWatch","NVGoggles", "ItemGPS", "muzzle_snds_acp", "acc_flashlight_smg_01", "optic_Holosight_smg_blk_F"};
+		weapons[] = {"SMG_01_F", "hgun_Pistol_heavy_01_F", "Throw", "Put"};
+		magazines[] = {"30Rnd_45ACP_Mag_SMG_01_Tracer_Red", "30Rnd_45ACP_Mag_SMG_01_Tracer_Red", "30Rnd_45ACP_Mag_SMG_01_Tracer_Red", "30Rnd_45ACP_Mag_SMG_01_Tracer_Red", "30Rnd_45ACP_Mag_SMG_01_Tracer_Red", "HandGrenade", "SmokeShell", "11Rnd_45ACP_Mag", "30Rnd_45ACP_Mag_SMG_01_Tracer_Red", "11Rnd_45ACP_Mag"};
+		items[] = {"ACE_EarPlugs", "FirstAidKit", "FirstAidKit"};
+		linkedItems[] = {"V_PlateCarrierSpec_blk", "H_HelmetB_black", "G_Bandanna_blk", "ItemMap", "ItemCompass", "ItemWatch", "ItemGPS", "NVGoggles_OPFOR", "muzzle_snds_acp", "acc_flashlight_smg_01", "optic_Holosight", "acc_flashlight_pistol", "optic_MRD"};
 		};
-	class GRENADIER1
-		{
-		displayName = "Grenadier";
+	class assassinWest {
+		displayName = "Assassin";
+		icon = "\A3\Ui_f\data\GUI\Cfg\Ranks\sergeant_gs.paa";
+		role = "Attack";
+		show = "true";
+		uniformClass = "U_B_CTRG_1";
+		backpack = "";
+		weapons[] = {"SMG_01_F", "hgun_Pistol_heavy_01_F", "Throw", "Put"};
+		magazines[] = {"30Rnd_45ACP_Mag_SMG_01_Tracer_Red", "30Rnd_45ACP_Mag_SMG_01_Tracer_Red", "30Rnd_45ACP_Mag_SMG_01_Tracer_Red", "30Rnd_45ACP_Mag_SMG_01_Tracer_Red", "30Rnd_45ACP_Mag_SMG_01_Tracer_Red", "HandGrenade", "SmokeShell", "11Rnd_45ACP_Mag", "30Rnd_45ACP_Mag_SMG_01_Tracer_Red", "11Rnd_45ACP_Mag"};
+		items[] = {"ACE_EarPlugs", "FirstAidKit", "FirstAidKit"};
+		linkedItems[] = {"V_PlateCarrierSpec_rgr", "H_HelmetB_snakeskin", "G_Bandanna_blk", "ItemMap", "ItemCompass", "ItemWatch", "ItemGPS", "NVGoggles_OPFOR", "muzzle_snds_acp", "acc_flashlight_smg_01", "optic_Holosight", "acc_flashlight_pistol", "optic_MRD"};
+		};
+	class explosiveEast {
+		displayName = "Explosive";
 		icon = "\A3\Ui_f\data\GUI\Cfg\Ranks\sergeant_gs.paa";
 		role = "Attack";
 		show = "true";
 		uniformClass = "U_O_CombatUniform_ocamo";
 		backpack = "B_AssaultPack_khk";
-		weapons[] = {"arifle_MX_F", "hgun_Pistol_heavy_01_F", "Throw", "Put"};
-		magazines[] = {"30Rnd_65x39_caseless_black_mag", "30Rnd_65x39_caseless_black_mag", "30Rnd_65x39_caseless_black_mag", "30Rnd_65x39_caseless_black_mag", "30Rnd_65x39_caseless_black_mag", "30Rnd_65x39_caseless_black_mag", "30Rnd_65x39_caseless_black_mag", "30Rnd_65x39_caseless_black_mag", "30Rnd_65x39_caseless_black_mag", "30Rnd_65x39_caseless_black_mag", "11Rnd_45ACP_Mag", "11Rnd_45ACP_Mag", "11Rnd_45ACP_Mag", "SmokeShell", "SmokeShell", "SmokeShell", "SmokeShell", "SmokeShell", "SmokeShell", "MiniGrenade", "MiniGrenade", "HandGrenade", "HandGrenade", "HandGrenade", "HandGrenade", "30Rnd_65x39_caseless_mag", "11Rnd_45ACP_Mag"};
-		items[] = {"ACE_EarPlugs", "FirstAidKit", "FirstAidKit"};
-		linkedItems[] = {"V_PlateCarrierSpec_blk", "H_HelmetB_black", "G_Balaclava_blk", "ItemMap", "ItemCompass", "ItemWatch","NVGoggles", "ItemGPS", "acc_flashlight", "optic_Holosight_smg", "acc_flashlight_pistol", "optic_MRD"};
-		};
-	class MINE1
-		{
-		displayName = "Mine Specialist";
-		icon = "\A3\Ui_f\data\GUI\Cfg\Ranks\sergeant_gs.paa";
-		role = "Support";
-		show = "true";
-	  	uniformClass = "U_O_CombatUniform_ocamo";
-		backpack = "B_AssaultPack_khk";
-		weapons[] = {"arifle_MX_F", "hgun_Pistol_heavy_01_F", "Throw", "Put"};
-		magazines[] = {"30Rnd_65x39_caseless_black_mag", "30Rnd_65x39_caseless_black_mag", "30Rnd_65x39_caseless_black_mag", "30Rnd_65x39_caseless_black_mag", "30Rnd_65x39_caseless_black_mag", "30Rnd_65x39_caseless_black_mag", "30Rnd_65x39_caseless_black_mag", "30Rnd_65x39_caseless_black_mag", "30Rnd_65x39_caseless_black_mag", "30Rnd_65x39_caseless_black_mag", "SmokeShell", "11Rnd_45ACP_Mag", "11Rnd_45ACP_Mag", "11Rnd_45ACP_Mag", "HandGrenade", "APERSMineDispenser_Mag", "APERSMine_Range_Mag", "APERSMine_Range_Mag", "APERSBoundingMine_Range_Mag", "30Rnd_65x39_caseless_mag", "11Rnd_45ACP_Mag"};
+		weapons[] = {"arifle_MXC_F", "hgun_Pistol_heavy_01_F", "Throw", "Put"};
+		magazines[] = {"30Rnd_65x39_caseless_mag_Tracer", "30Rnd_65x39_caseless_mag_Tracer", "30Rnd_65x39_caseless_mag_Tracer", "30Rnd_65x39_caseless_mag_Tracer", "30Rnd_65x39_caseless_mag_Tracer", "30Rnd_65x39_caseless_mag_Tracer", "30Rnd_65x39_caseless_mag_Tracer", "30Rnd_65x39_caseless_mag_Tracer", "30Rnd_65x39_caseless_mag_Tracer", "30Rnd_65x39_caseless_mag_Tracer", "SmokeShell", "11Rnd_45ACP_Mag", "11Rnd_45ACP_Mag", "11Rnd_45ACP_Mag", "HandGrenade", "APERSMineDispenser_Mag", "DemoCharge_Remote_Mag", "ACE_30Rnd_65x39_caseless_mag_Tracer_Dim", "11Rnd_45ACP_Mag"};
 		items[] = {"ACE_EarPlugs", "FirstAidKit", "FirstAidKit", "ACE_M26_Clacker"};
-		linkedItems[] = {"V_PlateCarrierSpec_blk", "H_HelmetB_black", "G_Balaclava_blk", "ItemMap", "ItemCompass", "ItemWatch","NVGoggles", "ItemGPS", "acc_flashlight", "optic_Holosight_smg", "acc_flashlight_pistol", "optic_MRD"};
+		linkedItems[] = {"V_PlateCarrierSpec_blk", "H_HelmetB_black", "G_Bandanna_blk", "ItemMap", "ItemCompass", "ItemWatch", "ItemGPS", "NVGoggles_OPFOR", "ACE_SPIR", "optic_Holosight", "acc_flashlight_pistol", "optic_MRD"};
 		};
+	class explosiveWest {
+		displayName = "Explosive";
+		icon = "\A3\Ui_f\data\GUI\Cfg\Ranks\sergeant_gs.paa";
+		role = "Attack";
+		show = "true";
+		uniformClass = "U_B_CTRG_1";
+		backpack = "B_AssaultPack_khk";
+		weapons[] = {"arifle_MXC_F", "hgun_Pistol_heavy_01_F", "Throw", "Put"};
+		magazines[] = {"30Rnd_65x39_caseless_mag_Tracer", "30Rnd_65x39_caseless_mag_Tracer", "30Rnd_65x39_caseless_mag_Tracer", "30Rnd_65x39_caseless_mag_Tracer", "30Rnd_65x39_caseless_mag_Tracer", "30Rnd_65x39_caseless_mag_Tracer", "30Rnd_65x39_caseless_mag_Tracer", "30Rnd_65x39_caseless_mag_Tracer", "30Rnd_65x39_caseless_mag_Tracer", "30Rnd_65x39_caseless_mag_Tracer", "SmokeShell", "11Rnd_45ACP_Mag", "11Rnd_45ACP_Mag", "11Rnd_45ACP_Mag", "HandGrenade", "APERSMineDispenser_Mag", "DemoCharge_Remote_Mag", "ACE_30Rnd_65x39_caseless_mag_Tracer_Dim", "11Rnd_45ACP_Mag"};
+		items[] = {"ACE_EarPlugs", "FirstAidKit", "FirstAidKit", "ACE_M26_Clacker"};
+		linkedItems[] = {"V_PlateCarrierSpec_rgr", "H_HelmetB_snakeskin", "G_Bandanna_blk", "ItemMap", "ItemCompass", "ItemWatch", "ItemGPS", "NVGoggles_OPFOR", "ACE_SPIR", "optic_Holosight", "acc_flashlight_pistol", "optic_MRD"};
+		};		
 	};
-
-
-
-
 
 class CfgSounds {
 	sounds[] = {}; 

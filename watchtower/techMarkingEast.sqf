@@ -20,7 +20,7 @@ if (isAliveP4) then {_task1 = [west, (str taskID), [_description, _title, _waypo
 eastTaskID4 = taskID;
 taskID = taskID + 1;
 
-while {_loop != 60} do {
+while {_loop != 6} do {
 	isAliveP1 = ((lifeState p1) isEqualTo "HEALTHY" or (lifeState p1) isEqualTo "INJURED");
 	isAliveP2 = ((lifeState p2) isEqualTo "HEALTHY" or (lifeState p2) isEqualTo "INJURED");
 	isAliveP3 = ((lifeState p3) isEqualTo "HEALTHY" or (lifeState p3) isEqualTo "INJURED");

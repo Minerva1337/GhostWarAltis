@@ -194,6 +194,12 @@ class CfgSounds {
 		sound[]={"sounds\draw.ogg",4,1};
 		titles[] = {};
 	};
+
+	class notification {
+		name="notification";
+		sound[]={"sounds\notification.ogg",10,1};
+		titles[] = {};
+	};
 	
 };
 

@@ -27,6 +27,7 @@ if  ("30Rnd_9x21_Red_Mag" in (vestItems player + uniformItems player + backpackI
 if  ("Medikit" in (vestItems player + uniformItems player + backpackItems player + assignedItems player)) then {
 	player setUnitTrait ["Medic", true];
 	hint "Medic";
+	nul = execVM "roles\medic\medic.sqf";
 	if (player == p1) then {p1TaskIcon = "heal";
 	publicVariable "p1TaskIcon"};
 	if (player == p2) then {p2TaskIcon = "heal";

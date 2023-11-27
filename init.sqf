@@ -11,6 +11,7 @@
 	[East, "explosiveEast"] call BIS_fnc_addRespawnInventory;
 	[West, "explosiveWest"] call BIS_fnc_addRespawnInventory;
 
+	nul = execVM "gameConfig.sqf";
 	//[] spawn compileFinal preprocessFileLineNumbers "setRandomWeather-lukas.sqf";
 	//nul = execVM "watchtower\watchtower.sqf";
 	//nul = execVM "mechanics\setRandomWeather-lukas.sqf";

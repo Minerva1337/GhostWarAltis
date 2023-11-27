@@ -11,14 +11,14 @@ _actionID01 = player addAction
 			};
 			//hint "Bewustlos";	//Debugging
 		} else {
-			hint "lebendig";	//Debugging
+			//hint "lebendig";	//Debugging
 			params ["_target", "_caller", "_actionId", "_arguments"]; // script
 			player switchMove "ainvpknlmstpsnonwnondnon_medic3";
 			player playMoveNow "ainvpknlmstpsnonwnondnon_medic3";
 			sleep 7.5;
 			player switchMove "";
 
-			private _players = allUnits inAreaArray [getPos player, 10, 10];
+			private _players = allUnits inAreaArray [getPos player, medicHealingAreaX, medicHealingAreaY];
 			hint str _players;
 			sleep 1;
 			{
@@ -28,9 +28,9 @@ _actionID01 = player addAction
 				};
 			} forEach _players;
 			sleep 3;
-			hintSilent ""; // script
+			hintSilent ""; 
 			removeAllActions player;
-			sleep 200;
+			sleep healingMedicSleep;
 			nul = execVM "roles\medic\medic.sqf";
 			playSound "notification";
 		};

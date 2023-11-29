@@ -1,4 +1,5 @@
-[laptop, actionID] remoteExec ["BIS_fnc_holdActionRemove", 0, true];
+watchtowerActionID = missionNamespace getVariable "watchtowerAvailable";
+[laptop, watchtowerActionID] remoteExec ["BIS_fnc_holdActionRemove", 0, true];
 sleep 1;
 terminate taskInit;
 sleep 29;

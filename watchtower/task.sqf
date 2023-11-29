@@ -6,7 +6,8 @@ publicVariable "tsk";	//macht, dass sowol der Server als auch der client Zugriff
 sleep 90;
 _task1 = [true, tsk, [_description, _title, _waypoint], laptop, "ASSIGNED", 0, true, "download", true] call BIS_fnc_taskCreate, [tsk, "download"] call BIS_fnc_taskSetType, [tsk, true] call BIS_fnc_taskSetAlwaysVisible;
 a0 = 0;
-towerFree = true;
+watchtowerAvailable = true;
+publicVariable "watchtowerAvailable";
 
 [
 
@@ -19,7 +20,8 @@ towerFree = true;
 
 	{
 		a0 = 0;
-		towerFree = false;
+		watchtowerAvailable = false;
+		publicVariable "watchtowerAvailable";
 		{playSound "hacking" spawn
             {waitUntil
                 {sleep 0.5;
@@ -32,6 +34,8 @@ towerFree = true;
 
 	{	params ["_target", "_caller", "_actionId", "_arguments"];
 		a0 = 1;
+		watchtowerAvailable = false;
+		publicVariable "watchtowerAvailable";
 		["finish"] remoteExec ["playSound", 0, true];
 		_p5 = ((str _caller) isEqualTo "p5");
 		_p6 = ((str _caller) isEqualTo "p6");
@@ -41,12 +45,14 @@ towerFree = true;
 		[tsk, "SUCCEEDED", true] remoteExec ["BIS_fnc_taskSetState", 0, true];	
 		sleep 1;
 		[tsk, true, true] remoteExec ["BIS_fnc_deleteTask", 0, true];
-		actionID = _actionId;
+		watchtowerActionID = _actionId;
+		publicVariable "watchtowerActionID";
 		nul = execVM "watchtower\sleep.sqf";
 	}, // Ausgeführt wenn Aktion abgeschlossen
 
 	{	a0 = 1;
-		towerFree = true;
+		watchtowerAvailable = true;
+		publicVariable "watchtowerAvailable";
 		["Hacking abgebrochen"] remoteExec ["hintSilent", 0, true];
 		sleep 1;
 		[""] remoteExec ["hintSilent", 0, true];

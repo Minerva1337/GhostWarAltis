@@ -47,23 +47,10 @@ sleep 1;
 "Go!" remoteExec ["hint", 0, true];
 {player switchMove "";} remoteExec ["call", 0, true];
 taskID = 10;
-taskInit = execVM "watchtower\task.sqf";
+taskInit = execVM "watchtower\watchtower.sqf";
 sleep 3;
 "" remoteExec ["hintSilent", 0, true];
 sleep 1;
-
-//Chekcen ob Spieler Medikit in Inventar hat, wenn ja -> Spieler bekommt Medic Trait:
-
-{ if (("Medikit" in (vestItems player + uniformItems player + backpackItems player + assignedItems player))) then {
-	hint "Medic has been assigend!";
-	
-	player setUnitTrait ["Medic", true];
-	};
-} remoteExec ["call", 0, true];
-sleep 1;
-hintSilent "";
-
-
 
 _GameTime = 600; //Runden Zeit
 _true = true;

@@ -48,11 +48,6 @@ if (isAliveP4) then {[(str eastTaskID4), true, true] remoteExec ["BIS_fnc_delete
 westTechIdle = true;
 publicVariable "westTechIdle";
 sleep 120; // gameConfig.sqf (Tech Cooldown)
-switch (player) do {
-	case "p5": {[[], "roles\tech\tech.sqf"] remoteExec ["execVM", p5, true]};
-	case "p6": {[[], "roles\tech\tech.sqf"] remoteExec ["execVM", p6, true]};
-	case "p7": {[[], "roles\tech\tech.sqf"] remoteExec ["execVM", p7, true]};
-	case "p8": {[[], "roles\tech\tech.sqf"] remoteExec ["execVM", p8, true]};
-	default {};
-};
 
+if ((player getUnitTrait "Engineer" != true) or (side player == east)) exitWith {};
+{[] execVM "roles\tech\tech.sqf"} remoteExec ["bis_fnc_call",0]; 

@@ -1,29 +1,30 @@
 watchtowerAvailable = missionNamespace getVariable "watchtowerAvailable";
+westTechIdle = true;
+eastTechIdle = true;	
+publicVariable "westTechIdle";
+publicVariable "eastTechIdle";
+
 if (side player == west) then {
 
-		_condition = "watchtowerAvailable && eastTechIdle";
-		westTechIdle = true;
-		publicVariable "westTechIdle";
+		techCondition = "watchtowerAvailable && eastTechIdle";
 		
 } else {
 		
-		_condition = "watchtowerAvailable && westTechIdle";
-		eastTechIdle = true;
-		publicVariable "eastTechIdle";
+		techCondition = "watchtowerAvailable && westTechIdle";
 
 };
 
 [
 player,
 "Mark enemies",
-"\a3\ui_f\data\igui\cfg\holdactions\holdaction_connect_ca.paa",
-"\a3\ui_f\data\igui\cfg\holdactions\holdaction_connect_ca.paa",
-_condition,
+"\a3\ui_f\data\IGUI\Cfg\holdactions\holdAction_hack_ca.paa",
+"\a3\ui_f\data\IGUI\Cfg\holdactions\holdAction_hack_ca.paa",
+techCondition,
 "true",
 
 {
 
-	systemChat "Started";
+	// systemChat "Started";
 
 	if (side player == west) then {
 					
@@ -36,12 +37,6 @@ _condition,
 		publicVariable "eastTechIdle";
 
 	};
-
-	if (isServer) then {
-		
-		[player, "KNEEL_TREAT"] remoteExecCall ["BIS_fnc_ambientAnim"]; 
-		
-	};
 			
 },
 
@@ -52,7 +47,7 @@ _condition,
 	watchtowerAvailable = missionNamespace getVariable "watchtowerAvailable";
 	if (watchtowerAvailable == false) then {
 
-		systemChat "Aborted";
+		// systemChat "Aborted";
 		if (side player == west) then {
 
 			westTechIdle = true;
@@ -72,7 +67,7 @@ _condition,
 
 { 
 
-	systemChat "Succesful";
+	// systemChat "Succesful";
 	if (side player == west) then {
 
 		techMarkingEast = execVM "watchtower\marking\techMarkingEast.sqf";
@@ -83,18 +78,12 @@ _condition,
 
 	};
 
-	if (isServer) then {
-		
-		[player] remoteExecCall ["BIS_fnc_ambientAnim__terminate"]; 
-		
-	};
-
 },
 
 
 {
 
-	systemChat "Canceled";
+	// systemChat "Canceled";
 	if (side player == west) then {
 
 		westTechIdle = true;
@@ -105,12 +94,6 @@ _condition,
 		eastTechIdle = true;
 		publicVariable "eastTechIdle";
 
-	};
-
-	if (isServer) then {
-		
-		[player] remoteExecCall ["BIS_fnc_ambientAnim__terminate"]; 
-		
 	};
 
 },

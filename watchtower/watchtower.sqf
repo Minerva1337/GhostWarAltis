@@ -46,7 +46,7 @@ publicVariable "watchtowerAvailable";
 		_p6 = ((str _caller) isEqualTo "p6");
 		_p7 = ((str _caller) isEqualTo "p7");
 		_p8 = ((str _caller) isEqualTo "p8");
-		if (_p5 or _p6 or _p7 or _p8) then {[[], "watchtower\markingEast.sqf"] remoteExec ["execVM", 0]} else {[[], "watchtower\markingWest.sqf"] remoteExec ["execVM", 0]};
+		if (_p5 or _p6 or _p7 or _p8) then {[[], "watchtower\marking\markingEast.sqf"] remoteExec ["execVM", 0]} else {[[], "watchtower\marking\markingWest.sqf"] remoteExec ["execVM", 0]};
 		[tsk, "SUCCEEDED", true] remoteExec ["BIS_fnc_taskSetState", 0, true];	
 		sleep 1;
 		[tsk, true, true] remoteExec ["BIS_fnc_deleteTask", 0, true];

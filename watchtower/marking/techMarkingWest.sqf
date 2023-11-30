@@ -45,12 +45,13 @@ if (isAliveP6) then {[(str westTaskID2), true, true] remoteExec ["BIS_fnc_delete
 if (isAliveP7) then {[(str westTaskID3), true, true] remoteExec ["BIS_fnc_deleteTask", 0, true]};
 if (isAliveP8) then {[(str westTaskID4), true, true] remoteExec ["BIS_fnc_deleteTask", 0, true]};
 
-eastTechActionActive = false;
-eastTechCooldown = true;
-eastTechActionAssigned = false;
-publicVariable "eastTechActionActive";
-publicVariable "eastTechCooldown";
-publicVariable "eastTechActionAssigned";
-sleep 120; // gameConfig.sqf
-eastTechCooldown = false;
-publicVariable "eastTechCooldown";
+eastTechIdle = true;
+publicVariable "eastTechIdle";
+sleep 120; // gameConfig.sqf (Tech Cooldown)
+switch (player) do {
+	case "p1": {[[], "roles\tech\tech.sqf"] remoteExec ["execVM", p1, true]};
+	case "p2": {[[], "roles\tech\tech.sqf"] remoteExec ["execVM", p2, true]};
+	case "p3": {[[], "roles\tech\tech.sqf"] remoteExec ["execVM", p3, true]};
+	case "p4": {[[], "roles\tech\tech.sqf"] remoteExec ["execVM", p4, true]};
+	default {};
+};

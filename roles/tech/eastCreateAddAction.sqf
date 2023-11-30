@@ -6,6 +6,7 @@ player addAction [
 		removeAllActions player;
 		eastTechActionActive = true;
 		publicVariable "eastTechActionActive";
+		cancel = false;
 
 		while {_countdown > 0} do {
 			
@@ -15,9 +16,9 @@ player addAction [
 
 			if ((watchtowerAvailable == false) or (westTechActionActive == true)) exitWith {
 				
-				systemChat "Tech-Action cancelled"
-				eastTechCooldown = true;
-				publicVariable "eastTechCooldown";
+				wastTechActionActive = false;
+				publicVariable "eastTechActionActive";
+				cancel = true;
 				
 			};
 
@@ -26,10 +27,16 @@ player addAction [
 		
 		};
 		
-		if (true) exitWith {
+		if (cancel) exitWith {
+
+			systemChat "Tech-Action cancelled";
+
+		};
+
+		if (cancel == false) exitWith {
 			
 			techMarkingWest = execVM "watchtower\marking\techMarkingWest.sqf";
-			systemChat "Tech-Action succesful"
+			systemChat "Tech-Action succesful";
 
 		};
 

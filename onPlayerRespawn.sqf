@@ -3,11 +3,18 @@ player switchMove "HubSpectator_stand";
 
 if  ("30Rnd_9x21_Red_Mag" in (vestItems player + uniformItems player + backpackItems player + assignedItems player)) then {
 	player setUnitTrait ["Engineer", true];
+		westTechActionActive = false;
+		eastTechActionActive = false;
+		publicVariable "westTechActionActive";
+		publicVariable "eastTechActionActive";
+
 	if (side player == west) then {
 		
+
 		[[], "roles\tech\westTech.sqf"] remoteExec ["execVM", player, true];
 
 	} else {
+
 
 		[[], "roles\tech\eastTech.sqf"] remoteExec ["execVM", player, true];
 		

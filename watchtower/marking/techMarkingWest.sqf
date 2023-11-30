@@ -46,4 +46,11 @@ if (isAliveP7) then {[(str westTaskID3), true, true] remoteExec ["BIS_fnc_delete
 if (isAliveP8) then {[(str westTaskID4), true, true] remoteExec ["BIS_fnc_deleteTask", 0, true]};
 
 eastTechActionActive = false;
+eastTechCooldown = true;
+eastTechActionAssigned = false;
 publicVariable "eastTechActionActive";
+publicVariable "eastTechCooldown";
+publicVariable "eastTechActionAssigned";
+sleep 120; // gameConfig.sqf
+eastTechCooldown = false;
+publicVariable "eastTechCooldown";

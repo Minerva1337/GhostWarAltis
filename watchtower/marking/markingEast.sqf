@@ -20,7 +20,7 @@ if (isAliveP4) then {_task1 = [west, (str taskID), [_description, _title, _waypo
 eastTaskID4 = taskID;
 taskID = taskID + 1;
 
-while {_loop != 60} do { // gameConfig.sqf
+while {_loop != watchtowerMarkingTime} do {
 	isAliveP1 = ((lifeState p1) isEqualTo "HEALTHY" or (lifeState p1) isEqualTo "INJURED");
 	if ((p1TaskIcon == "run") && (_loop > 10)) then {isAliveP1 = false};
 	isAliveP2 = ((lifeState p2) isEqualTo "HEALTHY" or (lifeState p2) isEqualTo "INJURED");

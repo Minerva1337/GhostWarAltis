@@ -20,7 +20,7 @@ if (isAliveP8) then {_task1 = [east, (str taskID), [_description, _title, _waypo
 westTaskID4 = taskID;
 taskID = taskID + 1;
 
-while {_loop != 6} do { // gameConfig.sqf // Für 30 Sekunden wird diese while-Funktion 60 Mal ausgewertet, um Tasks zu löschen, falls Units sterben und um Tasks hinzuzufügen, falls Units wiederbelebt werden.
+while {_loop != techMarkingTime} do { // Für 30 Sekunden wird diese while-Funktion 60 Mal ausgewertet, um Tasks zu löschen, falls Units sterben und um Tasks hinzuzufügen, falls Units wiederbelebt werden.
 	isAliveP5 = ((lifeState p5) isEqualTo "HEALTHY" or (lifeState p5) isEqualTo "INJURED"); // "true" wenn Unit lebt. 
 	isAliveP6 = ((lifeState p6) isEqualTo "HEALTHY" or (lifeState p6) isEqualTo "INJURED");
 	isAliveP7 = ((lifeState p7) isEqualTo "HEALTHY" or (lifeState p7) isEqualTo "INJURED");
@@ -47,7 +47,7 @@ if (isAliveP8) then {[(str westTaskID4), true, true] remoteExec ["BIS_fnc_delete
 
 eastTechIdle = true;
 publicVariable "eastTechIdle";
-sleep 120; // gameConfig.sqf (Tech Cooldown)
+sleep techCooldown;
 
 if ((player getUnitTrait "Engineer" != true) or (side player == west)) exitWith {};
 {[] execVM "roles\tech\tech.sqf"} remoteExec ["bis_fnc_call",0]; 

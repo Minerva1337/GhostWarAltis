@@ -20,7 +20,7 @@ if (isAliveP8) then {_task1 = [east, (str taskID), [_description, _title, _waypo
 westTaskID4 = taskID;
 taskID = taskID + 1;
 
-while {_loop != 60} do { // gameConfig.sqf // Für 30 Sekunden wird diese while-Funktion 60 Mal ausgewertet, um Tasks zu löschen, falls Units sterben und um Tasks hinzuzufügen, falls Units wiederbelebt werden. 
+while {_loop != watchtowerMarkingTime} do {// Für 30 Sekunden wird diese while-Funktion 60 Mal ausgewertet, um Tasks zu löschen, falls Units sterben und um Tasks hinzuzufügen, falls Units wiederbelebt werden. 
 	isAliveP5 = ((lifeState p5) isEqualTo "HEALTHY" or (lifeState p5) isEqualTo "INJURED"); // "true" wenn Unit lebt.
 	if ((p5TaskIcon == "run") && (_loop > 10)) then {isAliveP5 = false};
 	isAliveP6 = ((lifeState p6) isEqualTo "HEALTHY" or (lifeState p6) isEqualTo "INJURED");

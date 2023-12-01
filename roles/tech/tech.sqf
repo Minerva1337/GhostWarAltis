@@ -99,7 +99,7 @@ techCondition,
 },
 
 [],
-5,
+techActionTime,
 nil,
 true,
 false

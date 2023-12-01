@@ -6,7 +6,7 @@ _waypoint = "";
 tsk = format ["tsk%1", random 9999999];
 publicVariable "tsk";	//macht, dass sowol der Server als auch der client Zugriff auf die Variable hat
 
-sleep 90; // gameConfig.sqf
+sleep watchtowerInitiate;
 
 _task1 = [true, tsk, [_description, _title, _waypoint], laptop, "ASSIGNED", 0, true, "download", true] call BIS_fnc_taskCreate, [tsk, "download"] call BIS_fnc_taskSetType, [tsk, true] call BIS_fnc_taskSetAlwaysVisible;
 a0 = 0;
@@ -65,7 +65,7 @@ publicVariable "watchtowerAvailable";
 	}, // Ausgeführt wenn Aktion abgebrochen
 
 	[],
-	10,
+	watchtowerHackTime,
 	0,
 	false,
 	false

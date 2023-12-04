@@ -24,23 +24,38 @@ publicVariable "watchtowerAvailable";
 	"player distance laptop < 3",									//damit die Aktion Ausgeführt werden kann
 
 	{
-		a0 = 0;
+		hackingInProgress = true;
 		watchtowerAvailable = false;
+		publicVariable "hackingInProgress";
 		publicVariable "watchtowerAvailable";
-		{playSound "hacking" spawn
-            {waitUntil
-                {sleep 0.5;
-                a0 == 1};
-            deleteVehicle _this}} remoteExec ["call", 0];
+		sound = playSound3D [getMissionPath "sounds\watchtower\laptopHacking.ogg", laptop];		
+		{
+
+			playSound "watchtower" spawn { 
+			
+				waitUntil {
+
+						sleep 0.5;
+						hackingInProgress = missionNamespace getVariable "hackingInProgress";
+						hackingInProgress == false;
+
+				};
+				deleteVehicle _this;
+			
+			};
+			
+		} remoteExec ["call", 0];
 		
 	}, //wird ausgeführt wenn Tätigkeit startet
 
 	{}, //Ausgeführt für jeden Tick bei Tätigkeit
 
 	{	params ["_target", "_caller", "_actionId", "_arguments"];
-		a0 = 1;
+		hackingInProgress = false;
 		watchtowerAvailable = false;
+		publicVariable "hackingInProgress";
 		publicVariable "watchtowerAvailable";
+		stopSound sound;
 		["finish"] remoteExec ["playSound", 0, true];
 		_p5 = ((str _caller) isEqualTo "p5");
 		_p6 = ((str _caller) isEqualTo "p6");
@@ -55,9 +70,11 @@ publicVariable "watchtowerAvailable";
 		nul = execVM "watchtower\sleep.sqf";
 	}, // Ausgeführt wenn Aktion abgeschlossen
 
-	{	a0 = 1;
+	{	hackingInProgress = false;
 		watchtowerAvailable = true;
+		publicVariable "hackingInProgress";
 		publicVariable "watchtowerAvailable";
+		stopSound sound;
 		["Hacking abgebrochen"] remoteExec ["hintSilent", 0, true];
 		sleep 1;
 		[""] remoteExec ["hintSilent", 0, true];
@@ -65,7 +82,7 @@ publicVariable "watchtowerAvailable";
 	}, // Ausgeführt wenn Aktion abgebrochen
 
 	[],
-	watchtowerHackTime,
+	watchtowerHackingTime,
 	0,
 	false,
 	false

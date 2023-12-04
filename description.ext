@@ -177,9 +177,9 @@ class CfgSounds {
 		titles[] = {};
 	};
 	
-	class hacking {
-		name="hacking";
-		sound[]={"sounds\hacking.ogg",10,1};
+	class watchtower {
+		name="watchtower";
+		sound[]={"sounds\watchtower\watchtower.ogg",10,1};
 		titles[] = {};
 	};		
 

@@ -5,7 +5,8 @@ isAliveP4 = ((lifeState p4) isEqualTo "HEALTHY" or (lifeState p4) isEqualTo "INJ
 _title = "Enemy";
 _description = "Position of the enemy";
 _waypoint = "";
-_loop = 0; 
+_loop = 0;
+{playsound "marked"} remoteExec ["call", east];
 
 if (isAliveP1) then {_task1 = [west, (str taskID), [_description, _title, _waypoint], p1, "CREATED", 0, false, "", true] call BIS_fnc_taskCreate}, [str taskID, "p1TaskIcon"] call BIS_fnc_taskSetType, [str taskID, true] call BIS_fnc_taskSetAlwaysVisible;
 eastTaskID1 = taskID;

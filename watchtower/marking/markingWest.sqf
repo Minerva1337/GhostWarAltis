@@ -2,12 +2,16 @@ isAliveP5 = ((lifeState p5) isEqualTo "HEALTHY" or (lifeState p5) isEqualTo "INJ
 isAliveP6 = ((lifeState p6) isEqualTo "HEALTHY" or (lifeState p6) isEqualTo "INJURED");
 isAliveP7 = ((lifeState p7) isEqualTo "HEALTHY" or (lifeState p7) isEqualTo "INJURED");
 isAliveP8 = ((lifeState p8) isEqualTo "HEALTHY" or (lifeState p8) isEqualTo "INJURED");
+p5TaskIcon = missionNamespace getVariable "p5TaskIcon";
+p6TaskIcon = missionNamespace getVariable "p6TaskIcon";
+p7TaskIcon = missionNamespace getVariable "p7TaskIcon";
+p8TaskIcon = missionNamespace getVariable "p8TaskIcon";
 _title = "Enemy";
 _description = "Position of the enemy";
 _waypoint = "";
 _loop = 0;
-{remoteExec "ui\watchtowerMarking.sqf"} remoteExec ["call", east];
-{remoteExec "ui\watchtowerMarked.sqf"} remoteExec ["call", west];
+{execVM "ui\watchtowerMarking.sqf"} remoteExec ["call", east];
+{execVM "ui\watchtowerMarked.sqf"} remoteExec ["call", west];
 // "taskID" wird bei Spielstart in der "gameTimer.sqf" auf 10 gesetzt
 if (isAliveP5) then {_task1 = [east, (str taskID), [_description, _title, _waypoint], p5, "CREATED", 0, false, "", true] call BIS_fnc_taskCreate}, [str taskID, "p5TaskIcon"] call BIS_fnc_taskSetType, [str taskID, true] call BIS_fnc_taskSetAlwaysVisible; // Erstellt Task auf Unit, wenn diese nicht bewusstlos ist
 westTaskID1 = taskID; // Überträgt die "taskID" auf Variable "westTaskID1" um diese Task später trotz geanderter "taskID" ansteuern zu können

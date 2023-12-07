@@ -54,7 +54,7 @@ sleep 0.02;
 sleep 0.02;
 ["<t font ='EtelkaMonospaceProBold' align = 'center' size='0.9' color='#b73535'>" + "[   ARE MARKED ON THE   ]"+"</t>",0,-0.35,40,0,0,789] spawn BIS_fnc_dynamicText;
 sleep 0.02;
-["<t font ='EtelkaMonospaceProBold' align = 'center' size='0.9' color='#b73535'>" + "[  ARE MARKED ON THE  ]"+"</t>",0,n -0.35,40,0,0,789] spawn BIS_fnc_dynamicText;
+["<t font ='EtelkaMonospaceProBold' align = 'center' size='0.9' color='#b73535'>" + "[  ARE MARKED ON THE  ]"+"</t>",0,-0.35,40,0,0,789] spawn BIS_fnc_dynamicText;
 sleep 0.02;
 ["<t font ='EtelkaMonospaceProBold' align = 'center' size='0.9' color='#b73535'>" + "[  RE MARKED ON TH  ]"+"</t>",0,-0.35,40,0,0,789] spawn BIS_fnc_dynamicText;
 sleep 0.02;

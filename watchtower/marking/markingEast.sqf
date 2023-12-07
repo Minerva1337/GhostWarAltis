@@ -2,12 +2,16 @@ isAliveP1 = ((lifeState p1) isEqualTo "HEALTHY" or (lifeState p1) isEqualTo "INJ
 isAliveP2 = ((lifeState p2) isEqualTo "HEALTHY" or (lifeState p2) isEqualTo "INJURED");
 isAliveP3 = ((lifeState p3) isEqualTo "HEALTHY" or (lifeState p3) isEqualTo "INJURED");
 isAliveP4 = ((lifeState p4) isEqualTo "HEALTHY" or (lifeState p4) isEqualTo "INJURED");
+p1TaskIcon = missionNamespace getVariable "p1TaskIcon";
+p2TaskIcon = missionNamespace getVariable "p2TaskIcon";
+p3TaskIcon = missionNamespace getVariable "p3TaskIcon";
+p4TaskIcon = missionNamespace getVariable "p4TaskIcon";
 _title = "Enemy";
 _description = "Position of the enemy";
 _waypoint = "";
 _loop = 0;
-{remoteExec "ui\watchtowerMarking.sqf"} remoteExec ["call", west];
-{remoteExec "ui\watchtowerMarked.sqf"} remoteExec ["call", east];
+{execVM "ui\watchtowerMarking.sqf"} remoteExec ["call", west];
+{execVM "ui\watchtowerMarked.sqf"} remoteExec ["call", east];
 
 if (isAliveP1) then {_task1 = [west, (str taskID), [_description, _title, _waypoint], p1, "CREATED", 0, false, "", true] call BIS_fnc_taskCreate}, [str taskID, "p1TaskIcon"] call BIS_fnc_taskSetType, [str taskID, true] call BIS_fnc_taskSetAlwaysVisible;
 eastTaskID1 = taskID;

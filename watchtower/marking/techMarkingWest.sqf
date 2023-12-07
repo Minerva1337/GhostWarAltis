@@ -6,8 +6,8 @@ _title = "Enemy";
 _description = "Position of the enemy";
 _waypoint = "";
 _loop = 0;
-{remoteExec "ui\techMarking.sqf"} remoteExec ["call", east];
-{remoteExec "ui\techMarked.sqf"} remoteExec ["call", west];
+{execVM "ui\techMarking.sqf"} remoteExec ["call", east];
+{execVM "ui\techMarked.sqf"} remoteExec ["call", west];
 // "taskID" wird bei Spielstart in der "gameTimer.sqf" auf 10 gesetzt
 if (isAliveP5) then {_task1 = [east, (str taskID), [_description, _title, _waypoint], p5, "CREATED", 0, false, "", true] call BIS_fnc_taskCreate}, [str taskID, "p5TaskIcon"] call BIS_fnc_taskSetType, [str taskID, true] call BIS_fnc_taskSetAlwaysVisible; // Erstellt Task auf Unit, wenn diese nicht bewusstlos ist
 westTaskID1 = taskID; // Überträgt die "taskID" auf Variable "westTaskID1" um diese Task später trotz geanderter "taskID" ansteuern zu können

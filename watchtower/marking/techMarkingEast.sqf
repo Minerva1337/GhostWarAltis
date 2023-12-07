@@ -6,8 +6,8 @@ _title = "Enemy";
 _description = "Position of the enemy";
 _waypoint = "";
 _loop = 0;
-{remoteExec "ui\techMarking.sqf"} remoteExec ["call", west];
-{remoteExec "ui\techMarked.sqf"} remoteExec ["call", east];
+{execVM "ui\techMarking.sqf"} remoteExec ["call", west];
+{execVM "ui\techMarked.sqf"} remoteExec ["call", east];
 
 if (isAliveP1) then {_task1 = [west, (str taskID), [_description, _title, _waypoint], p1, "CREATED", 0, false, "", true] call BIS_fnc_taskCreate}, [str taskID, "p1TaskIcon"] call BIS_fnc_taskSetType, [str taskID, true] call BIS_fnc_taskSetAlwaysVisible;
 eastTaskID1 = taskID;

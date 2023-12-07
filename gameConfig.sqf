@@ -38,3 +38,20 @@
 
 		doubleWatchtowerMarkingTime = watchtowerMarkingTime + watchtowerMarkingTime;
 		doubleTechMarkingTime = techMarkingTime + techMarkingTime;
+
+		p1TaskIcon = "x";
+		p2TaskIcon = "x";
+		p3TaskIcon = "x";
+		p4TaskIcon = "x";
+		p5TaskIcon = "x";
+		p6TaskIcon = "x";
+		p7TaskIcon = "x";
+		p8TaskIcon = "x";
+		publicVariable "p1TaskIcon";
+		publicVariable "p2TaskIcon";
+		publicVariable "p3TaskIcon";
+		publicVariable "p4TaskIcon";
+		publicVariable "p5TaskIcon";
+		publicVariable "p6TaskIcon";
+		publicVariable "p7TaskIcon";
+		publicVariable "p8TaskIcon";

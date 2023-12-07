@@ -36,5 +36,5 @@
 
 
 
-		watchtowerMarkingTime = watchtowerMarkingTime + watchtowerMarkingTime;
-		techMarkingTime = techMarkingTime + techMarkingTime;
+		doubleWatchtowerMarkingTime = watchtowerMarkingTime + watchtowerMarkingTime;
+		doubleTechMarkingTime = techMarkingTime + techMarkingTime;

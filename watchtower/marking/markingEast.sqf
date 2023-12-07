@@ -6,7 +6,8 @@ _title = "Enemy";
 _description = "Position of the enemy";
 _waypoint = "";
 _loop = 0;
-{playsound "marked"} remoteExec ["call", east];
+{remoteExec "ui\watchtowerMarking.sqf"} remoteExec ["call", west];
+{remoteExec "ui\watchtowerMarked.sqf"} remoteExec ["call", east];
 
 if (isAliveP1) then {_task1 = [west, (str taskID), [_description, _title, _waypoint], p1, "CREATED", 0, false, "", true] call BIS_fnc_taskCreate}, [str taskID, "p1TaskIcon"] call BIS_fnc_taskSetType, [str taskID, true] call BIS_fnc_taskSetAlwaysVisible;
 eastTaskID1 = taskID;
@@ -21,7 +22,7 @@ if (isAliveP4) then {_task1 = [west, (str taskID), [_description, _title, _waypo
 eastTaskID4 = taskID;
 taskID = taskID + 1;
 
-while {_loop != watchtowerMarkingTime} do {
+while {_loop != doubleWatchtowerMarkingTime} do {
 	isAliveP1 = ((lifeState p1) isEqualTo "HEALTHY" or (lifeState p1) isEqualTo "INJURED");
 	if ((p1TaskIcon == "run") && (_loop > 10)) then {isAliveP1 = false};
 	isAliveP2 = ((lifeState p2) isEqualTo "HEALTHY" or (lifeState p2) isEqualTo "INJURED");

@@ -6,8 +6,8 @@ _title = "Enemy";
 _description = "Position of the enemy";
 _waypoint = "";
 _loop = 0;
-{playsound "marked"} remoteExec ["call", west];
- 
+{remoteExec "ui\techMarking.sqf"} remoteExec ["call", east];
+{remoteExec "ui\techMarked.sqf"} remoteExec ["call", west];
 // "taskID" wird bei Spielstart in der "gameTimer.sqf" auf 10 gesetzt
 if (isAliveP5) then {_task1 = [east, (str taskID), [_description, _title, _waypoint], p5, "CREATED", 0, false, "", true] call BIS_fnc_taskCreate}, [str taskID, "p5TaskIcon"] call BIS_fnc_taskSetType, [str taskID, true] call BIS_fnc_taskSetAlwaysVisible; // Erstellt Task auf Unit, wenn diese nicht bewusstlos ist
 westTaskID1 = taskID; // Überträgt die "taskID" auf Variable "westTaskID1" um diese Task später trotz geanderter "taskID" ansteuern zu können
@@ -22,7 +22,7 @@ if (isAliveP8) then {_task1 = [east, (str taskID), [_description, _title, _waypo
 westTaskID4 = taskID;
 taskID = taskID + 1;
 
-while {_loop != techMarkingTime} do { // Für 30 Sekunden wird diese while-Funktion 60 Mal ausgewertet, um Tasks zu löschen, falls Units sterben und um Tasks hinzuzufügen, falls Units wiederbelebt werden.
+while {_loop != doubleTechMarkingTime} do { // Für 30 Sekunden wird diese while-Funktion 60 Mal ausgewertet, um Tasks zu löschen, falls Units sterben und um Tasks hinzuzufügen, falls Units wiederbelebt werden.
 	isAliveP5 = ((lifeState p5) isEqualTo "HEALTHY" or (lifeState p5) isEqualTo "INJURED"); // "true" wenn Unit lebt. 
 	isAliveP6 = ((lifeState p6) isEqualTo "HEALTHY" or (lifeState p6) isEqualTo "INJURED");
 	isAliveP7 = ((lifeState p7) isEqualTo "HEALTHY" or (lifeState p7) isEqualTo "INJURED");

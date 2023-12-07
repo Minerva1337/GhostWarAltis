@@ -55,7 +55,7 @@ publicVariable "watchtowerAvailable";
 		watchtowerAvailable = false;
 		publicVariable "hackingInProgress";
 		publicVariable "watchtowerAvailable";
-		stopSound sound;
+		{stopSound sound} remoteExec ["call", 0];
 		["finish"] remoteExec ["playSound", 0, true];
 		_p5 = ((str _caller) isEqualTo "p5");
 		_p6 = ((str _caller) isEqualTo "p6");
@@ -84,7 +84,7 @@ publicVariable "watchtowerAvailable";
 	[],
 	watchtowerHackingTime,
 	0,
-	false,
+	true,
 	false
 
 ] remoteExec ["bis_fnc_holdactionadd", 0, true];

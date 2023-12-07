@@ -124,3 +124,24 @@ if  ("ACE_M26_Clacker" in (vestItems player + uniformItems player + backpackItem
 	publicVariable "p7TaskIcon"};
 	if (player == p8) then {p8TaskIcon = "destroy";
 	publicVariable "p8TaskIcon"};};
+
+if  ("ACE_Cellphone" in (vestItems player + uniformItems player + backpackItems player + assignedItems player)) then {
+	hint "Distractor";
+	nul = execVM "roles\distractor\hackingDistractor.sqf";
+	nul = execVM "roles\distractor\shotsDistractor.sqf";
+	if (player == p1) then {p1TaskIcon = "listen";
+	publicVariable "p1TaskIcon"};
+	if (player == p2) then {p2TaskIcon = "listen";
+	publicVariable "p2TaskIcon"};
+	if (player == p3) then {p3TaskIcon = "listen";
+	publicVariable "p3TaskIcon"};
+	if (player == p4) then {p4TaskIcon = "listen";
+	publicVariable "p4TaskIcon"};
+	if (player == p5) then {p5TaskIcon = "listen";
+	publicVariable "p5TaskIcon"};
+	if (player == p6) then {p6TaskIcon = "listen";
+	publicVariable "p6TaskIcon"};
+	if (player == p7) then {p7TaskIcon = "listen";
+	publicVariable "p7TaskIcon"};
+	if (player == p8) then {p8TaskIcon = "listen";
+	publicVariable "p8TaskIcon"};};

@@ -64,7 +64,7 @@ sleep 1;
 
 {player switchMove "";} remoteExec ["call", 0, true];
 taskID = 10;
-taskInit = execVM "watchtower\watchtower.sqf";
+taskInit = [[], "watchtower\watchtower.sqf"] remoteExec ["execVM", 2];
 
 _GameTime = 600; //Runden Zeit
 _true = true;

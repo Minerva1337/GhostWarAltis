@@ -3,13 +3,9 @@ _description = "Hack the watchtower to get information about the position of the
 _waypoint = "";
 
 
-tsk = format ["tsk%1", random 9999999];
-publicVariable "tsk";	//macht, dass sowol der Server als auch der client Zugriff auf die Variable hat
-
+_tsk = format ["tsk%1", random 9999999];
 sleep watchtowerInitiate;
-
-_task1 = [true, tsk, [_description, _title, _waypoint], laptop, "ASSIGNED", 0, true, "download", true] call BIS_fnc_taskCreate, [tsk, "download"] call BIS_fnc_taskSetType, [tsk, true] call BIS_fnc_taskSetAlwaysVisible;
-a0 = 0;
+_task1 = [true, _tsk, [_description, _title, _waypoint], laptop, "ASSIGNED", 0, true, "download", true] call BIS_fnc_taskCreate, [_tsk, true] call BIS_fnc_taskSetAlwaysVisible;
 
 watchtowerAvailable = true;
 publicVariable "watchtowerAvailable";
@@ -46,7 +42,7 @@ publicVariable "watchtowerAvailable";
 			
 			};
 			
-		} remoteExec ["call", 0];
+		} remoteExec ["call", -2];
 		
 	}, //wird ausgeführt wenn Tätigkeit startet
 
@@ -57,30 +53,26 @@ publicVariable "watchtowerAvailable";
 		params ["_target", "_caller", "_actionId", "_arguments"];
 		hackingInProgress = false;
 		watchtowerAvailable = false;
-		watchtowerActionID = _actionId;
 		publicVariable "hackingInProgress";
 		publicVariable "watchtowerAvailable";
-		publicVariable "watchtowerActionID";
-		{stopSound keyboardSound} remoteExec ["call", 0];
-		["finish"] remoteExec ["playSound", 0, true];
-		[laptop, _actionId] remoteExec ["BIS_fnc_holdActionRemove", 0, true];
-		[tsk, true, true] remoteExec ["BIS_fnc_deleteTask", 0, true];
+		{keyboardSound} remoteExec ["stopSound", -2];
+		["finish"] remoteExec ["playSound", -2];
+		[laptop, _actionId] remoteExec ["BIS_fnc_holdActionRemove", -2];
+		[_tsk, true, true] remoteExec ["BIS_fnc_deleteTask", -2];
 		if (_caller in [p5, p6, p7, p8]) then {
 
-			//[[], "watchtower\marking\markingEast.sqf"] remoteExec ["execVM", 0];
-			["watchtower\marking\markingEast.sqf"] remoteExec ["execVM", 0];
+			[[], "watchtower\marking\markingEast.sqf"] remoteExec ["execVM", 2];
 			[[], "ui\watchtowerMarking.sqf"] remoteExec ["execVM", west];
 			[[], "ui\watchtowerMarked.sqf"] remoteExec ["execVM", east];
 
 		} else {
 
-			[[], "watchtower\marking\markingWest.sqf"] remoteExec ["execVM", 0];
+			[[], "watchtower\marking\markingWest.sqf"] remoteExec ["execVM", 2];
 			[[], "ui\watchtowerMarking.sqf"] remoteExec ["execVM", east];
 			[[], "ui\watchtowerMarked.sqf"] remoteExec ["execVM", west];
 
 		};
-		
-		[[], "watchtower\sleep.sqf"] remoteExec ["execVM", 0]
+		[[], "watchtower\sleep.sqf"] remoteExec ["execVM", -2];
 	
 	}, // Ausgeführt wenn Aktion abgeschlossen
 
@@ -90,7 +82,6 @@ publicVariable "watchtowerAvailable";
 		watchtowerAvailable = true;
 		publicVariable "hackingInProgress";
 		publicVariable "watchtowerAvailable";
-		{stopSound sound} remoteExec ["call", 0];
 		
 	}, // Ausgeführt wenn Aktion abgebrochen
 
@@ -100,10 +91,10 @@ publicVariable "watchtowerAvailable";
 	true,
 	false
 
-] remoteExec ["bis_fnc_holdactionadd", 0, true];
+] remoteExec ["bis_fnc_holdactionadd", -2, true];
 
-["Watchtower is now available"] remoteExec ["hint", 0, true];
+["Watchtower is now available"] remoteExec ["hint", -2];
 sleep 2;
-[""] remoteExec ["hintSilent", 0, true];
+[""] remoteExec ["hintSilent", -2];
 
 

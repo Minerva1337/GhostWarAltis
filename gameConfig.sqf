@@ -6,10 +6,10 @@
 // Watchtower
 
 //		watchtowerAvailable = true;								// If watchtower is available
-		watchtowerInitiate = 90;								// Seconds until watchtower is available after gamestart
+		watchtowerInitiate = 15;								// Seconds until watchtower is available after gamestart
 		watchtowerHackingTime = 10;								// Seconds to hack watchtower
 		watchtowerMarkingTime = 30;								// Seconds the enemies are marked (x2 wegen script) 
-		watchtowerCooldown = 120;								// Seconds until watchtower is available again
+		watchtowerCooldown = 15;								// Seconds until watchtower is available again
 
 // Roles
 

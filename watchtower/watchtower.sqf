@@ -79,7 +79,7 @@ publicVariable "watchtowerAvailable";
 			[[], "ui\watchtowerMarked.sqf"] remoteExec ["execVM", west];
 
 		};
-
+		*/
 		[[], "watchtower\sleep.sqf"] remoteExec ["execVM", 0]
 	
 	}, // Ausgeführt wenn Aktion abgeschlossen

@@ -24,6 +24,7 @@ publicVariable "watchtowerAvailable";
 	"player distance laptop < 3",									//damit die Aktion Ausgeführt werden kann
 
 	{
+		
 		hackingInProgress = true;
 		watchtowerAvailable = false;
 		publicVariable "hackingInProgress";
@@ -50,34 +51,44 @@ publicVariable "watchtowerAvailable";
 
 	{}, //Ausgeführt für jeden Tick bei Tätigkeit
 
-	{	params ["_target", "_caller", "_actionId", "_arguments"];
+	{	
+
+		params ["_target", "_caller", "_actionId", "_arguments"];
 		hackingInProgress = false;
 		watchtowerAvailable = false;
+		watchtowerActionID = _actionId;
 		publicVariable "hackingInProgress";
 		publicVariable "watchtowerAvailable";
+		publicVariable "watchtowerActionID";
 		{stopSound sound} remoteExec ["call", 0];
 		["finish"] remoteExec ["playSound", 0, true];
-		_p5 = ((str _caller) isEqualTo "p5");
-		_p6 = ((str _caller) isEqualTo "p6");
-		_p7 = ((str _caller) isEqualTo "p7");
-		_p8 = ((str _caller) isEqualTo "p8");
-		if (_p5 or _p6 or _p7 or _p8) then {[[], "watchtower\marking\markingEast.sqf"] remoteExec ["execVM", 0]} else {[[], "watchtower\marking\markingWest.sqf"] remoteExec ["execVM", 0]};
-		[tsk, "SUCCEEDED", true] remoteExec ["BIS_fnc_taskSetState", 0, true];	
-		sleep 1;
+		[laptop, _actionId] remoteExec ["BIS_fnc_holdActionRemove", 0, true];
 		[tsk, true, true] remoteExec ["BIS_fnc_deleteTask", 0, true];
-		watchtowerActionID = _actionId;
-		publicVariable "watchtowerActionID";
-		nul = execVM "watchtower\sleep.sqf";
+		if (_caller == (p5 or p6 or p7 or p8)) then {
+
+			[[], "watchtower\marking\markingEast.sqf"] remoteExec ["execVM", 0];
+			[[], "ui\watchtowerMarking.sqf"] remoteExec ["execVM", west];
+			[[], "ui\watchtowerMarked.sqf"] remoteExec ["execVM", east];
+
+		} else {
+
+			[[], "watchtower\marking\markingWest.sqf"] remoteExec ["execVM", 0];
+			[[], "ui\watchtowerMarking.sqf"] remoteExec ["execVM", east];
+			[[], "ui\watchtowerMarked.sqf"] remoteExec ["execVM", west];
+
+		};
+
+		[[], "watchtower\sleep.sqf"] remoteExec ["execVM", 0]
+	
 	}, // Ausgeführt wenn Aktion abgeschlossen
 
-	{	hackingInProgress = false;
+	{	
+
+		hackingInProgress = false;
 		watchtowerAvailable = true;
 		publicVariable "hackingInProgress";
 		publicVariable "watchtowerAvailable";
-		stopSound sound;
-		["Hacking abgebrochen"] remoteExec ["hintSilent", 0, true];
-		sleep 1;
-		[""] remoteExec ["hintSilent", 0, true];
+		{stopSound sound} remoteExec ["call", 0];
 		
 	}, // Ausgeführt wenn Aktion abgebrochen
 

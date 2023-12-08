@@ -1,2 +1,2 @@
 sleep watchtowerCooldown;
-[[], "watchtower\watchtower.sqf"] remoteExec ["execVM", 0];
+[[], "watchtower\watchtower.sqf"] remoteExec ["execVM", 2];

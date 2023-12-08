@@ -24,12 +24,13 @@ publicVariable "watchtowerAvailable";
 	"player distance laptop < 3",									//damit die Aktion Ausgeführt werden kann
 
 	{
-		
+
 		hackingInProgress = true;
 		watchtowerAvailable = false;
 		publicVariable "hackingInProgress";
 		publicVariable "watchtowerAvailable";
-		sound = playSound3D [getMissionPath "sounds\watchtower\laptopHacking.ogg", laptop];		
+		keyboardSound = playSound3D [getMissionPath "sounds\watchtower\laptopHacking.ogg", laptop];
+		publicVariable "keyboardSound";
 		{
 
 			playSound "watchtower" spawn { 
@@ -60,7 +61,7 @@ publicVariable "watchtowerAvailable";
 		publicVariable "hackingInProgress";
 		publicVariable "watchtowerAvailable";
 		publicVariable "watchtowerActionID";
-		{stopSound sound} remoteExec ["call", 0];
+		{stopSound keyboardSound} remoteExec ["call", 0];
 		["finish"] remoteExec ["playSound", 0, true];
 		[laptop, _actionId] remoteExec ["BIS_fnc_holdActionRemove", 0, true];
 		[tsk, true, true] remoteExec ["BIS_fnc_deleteTask", 0, true];

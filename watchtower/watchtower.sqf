@@ -65,7 +65,7 @@ publicVariable "watchtowerAvailable";
 		["finish"] remoteExec ["playSound", 0, true];
 		[laptop, _actionId] remoteExec ["BIS_fnc_holdActionRemove", 0, true];
 		[tsk, true, true] remoteExec ["BIS_fnc_deleteTask", 0, true];
-		if (_caller == (p5 or p6 or p7 or p8)) then {
+		if ((_caller == p5) or (_caller == p6) or (_caller == p7) or (_caller == p8)) then {
 
 			//[[], "watchtower\marking\markingEast.sqf"] remoteExec ["execVM", 0];
 			["watchtower\marking\markingEast.sqf"] remoteExec ["execVM", 0];

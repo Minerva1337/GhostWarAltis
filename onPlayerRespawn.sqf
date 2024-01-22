@@ -151,3 +151,28 @@ if  ("ACE_M26_Clacker" in (vestItems player + uniformItems player + backpackItem
 	};
 
 };
+
+if  ("ACE_M26_Clacker" in (vestItems player + uniformItems player + backpackItems player + assignedItems player)) then {
+
+	/*player setUnitTrait ["ExplosiveSpecialist", true];*/
+	hint "Distractor";
+	switch (side player) do {
+
+		case east: {eastRoles = missionNamespace getVariable "eastRoles", eastRoles pushBack "distractor", publicVariable "eastRoles"};
+		case west: {westRoles = missionNamespace getVariable "westRoles", westRoles pushBack "distractor", publicVariable "westRoles"};
+
+	};
+	switch (player) do {
+
+		case p1: {p1TaskIcon = "listen", publicVariable "p1TaskIcon"};
+		case p2: {p2TaskIcon = "listen", publicVariable "p2TaskIcon"};
+		case p3: {p3TaskIcon = "listen", publicVariable "p3TaskIcon"};
+		case p4: {p4TaskIcon = "listen", publicVariable "p4TaskIcon"};
+		case p5: {p5TaskIcon = "listen", publicVariable "p5TaskIcon"};
+		case p6: {p6TaskIcon = "listen", publicVariable "p6TaskIcon"};
+		case p7: {p7TaskIcon = "listen", publicVariable "p7TaskIcon"};
+		case p8: {p8TaskIcon = "listen", publicVariable "p8TaskIcon"};
+
+	};
+
+};

@@ -15,7 +15,7 @@ class CfgRoles {
 	};
 
 class CfgRespawnInventory //config that calls in game respawn load-outs
-	{
+{
 	class techEast {
 		displayName = "Tech";
 		icon = "\A3\Ui_f\data\GUI\Cfg\Ranks\sergeant_gs.paa";
@@ -159,8 +159,32 @@ class CfgRespawnInventory //config that calls in game respawn load-outs
 		magazines[] = {"30Rnd_65x39_caseless_mag_Tracer", "30Rnd_65x39_caseless_mag_Tracer", "30Rnd_65x39_caseless_mag_Tracer", "30Rnd_65x39_caseless_mag_Tracer", "30Rnd_65x39_caseless_mag_Tracer", "30Rnd_65x39_caseless_mag_Tracer", "30Rnd_65x39_caseless_mag_Tracer", "30Rnd_65x39_caseless_mag_Tracer", "30Rnd_65x39_caseless_mag_Tracer", "30Rnd_65x39_caseless_mag_Tracer", "SmokeShell", "11Rnd_45ACP_Mag", "11Rnd_45ACP_Mag", "11Rnd_45ACP_Mag", "HandGrenade", "APERSMineDispenser_Mag", "DemoCharge_Remote_Mag", "ACE_30Rnd_65x39_caseless_mag_Tracer_Dim", "11Rnd_45ACP_Mag"};
 		items[] = {"ACE_EarPlugs", "FirstAidKit", "FirstAidKit", "ACE_M26_Clacker"};
 		linkedItems[] = {"V_PlateCarrierSpec_rgr", "H_HelmetB_snakeskin", "G_Bandanna_blk", "ItemMap", "ItemCompass", "ItemWatch", "ItemGPS", "NVGoggles_OPFOR", "ACE_SPIR", "optic_Holosight", "acc_flashlight_pistol", "optic_MRD"};
-		};		
-	};
+		};
+	class distractorEast {
+		displayName = "Distractor";
+		icon = "\A3\Ui_f\data\GUI\Cfg\Ranks\sergeant_gs.paa";
+		role = "Support";
+		show = "true";
+		uniformClass = "U_O_CombatUniform_ocamo";
+		backpack = "B_AssaultPack_khk";
+		weapons[] = {"hgun_PDW2000_F", "hgun_Pistol_heavy_01_F", "Throw", "Put"};
+		magazines[] = {"30Rnd_9x21_Red_Mag", "30Rnd_9x21_Red_Mag", "30Rnd_9x21_Red_Mag", "30Rnd_9x21_Red_Mag", "30Rnd_9x21_Red_Mag", "30Rnd_9x21_Red_Mag", "30Rnd_9x21_Red_Mag", "30Rnd_9x21_Red_Mag", "30Rnd_9x21_Red_Mag", "30Rnd_9x21_Red_Mag", "SmokeShell", "11Rnd_45ACP_Mag", "11Rnd_45ACP_Mag", "11Rnd_45ACP_Mag", "HandGrenade", "30Rnd_9x21_Mag", "11Rnd_45ACP_Mag"};
+		items[] = {"ACE_EarPlugs", "FirstAidKit", "FirstAidKit"};
+		linkedItems[] = {"V_PlateCarrierSpec_blk", "H_HelmetB_black", "G_Bandanna_blk", "ItemMap", "ItemCompass", "ItemWatch", "ItemGPS", "NVGoggles_OPFOR", "optic_Holosight", "acc_flashlight_pistol", "optic_MRD"};
+		};
+	class distractorWest {
+		displayName = "Distractor";
+		icon = "\A3\Ui_f\data\GUI\Cfg\Ranks\sergeant_gs.paa";
+		role = "Support";
+		show = "true";
+		uniformClass = "U_B_CTRG_1";
+		backpack = "B_AssaultPack_khk";
+		weapons[] = {"hgun_PDW2000_F", "hgun_Pistol_heavy_01_F", "Throw", "Put"};
+		magazines[] = {"30Rnd_9x21_Red_Mag", "30Rnd_9x21_Red_Mag", "30Rnd_9x21_Red_Mag", "30Rnd_9x21_Red_Mag", "30Rnd_9x21_Red_Mag", "30Rnd_9x21_Red_Mag", "30Rnd_9x21_Red_Mag", "30Rnd_9x21_Red_Mag", "30Rnd_9x21_Red_Mag", "30Rnd_9x21_Red_Mag", "SmokeShell", "11Rnd_45ACP_Mag", "11Rnd_45ACP_Mag", "11Rnd_45ACP_Mag", "HandGrenade", "30Rnd_9x21_Mag", "11Rnd_45ACP_Mag"};
+		items[] = {"ACE_EarPlugs", "FirstAidKit", "FirstAidKit"};
+		linkedItems[] = {"V_PlateCarrierSpec_rgr", "H_HelmetB_snakeskin", "G_Bandanna_blk", "ItemMap", "ItemCompass", "ItemWatch", "ItemGPS", "NVGoggles_OPFOR", "optic_Holosight", "acc_flashlight_pistol", "optic_MRD"};
+		};
+};
 
 class CfgSounds {
 	sounds[] = {}; 

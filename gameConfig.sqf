@@ -15,24 +15,48 @@
 
 	// Tech
 
-//		techAvailable = true;									// If tech is available
+		techAvailable = true;									// If tech is available
 		techActionTime = 10;									// Seconds to initiate the ability
 		techMarkingTime = 3;									// Seconds the enemies are marked (x2 wegen script)
 		techCooldown = 120;										// Seconds until ability is available again
 
 	// Medic
 
-//		medicAvailable = true;									// If medic is available
+		medicAvailable = true;									// If medic is available
 		healingMedicSleep = 200;								//How long it takes until Medic ability is ready again
 		medicHealingAreaX = 10;									//X Axis of the healing area
 		medicHealingAreaY = 10;									//Y Axis of the healing area
 
+	// Sniper
+
+		sniperAvailable = false;									// If sniper is available
+
+	// Scout
+
+		scoutAvailable = true;									// If scout is available
+
+	// Assassin
+
+		assassinAvailable = false;								// If assassin is available
+
+	// Explosive
+
+		explosiveAvailable = true;								// If explosive is available
+
 	// Distractor	
 
-//		distractorAvailable = true;								// If distractor is available
+		distractorAvailable = true;								// If distractor is available
 		hackingDistracorSleep = 200;							//How long it takes until hacking Sound ability is ready again
 		shotsDistracorSleep = 200;								//How long it takes until shooting Sound ability is ready again
 		shotsDistractorNumber = [6, 7, 8, 9, 10, 8, 9, 7];		//How many shots the AI shoots
+
+
+
+
+
+
+
+
 
 
 
@@ -42,6 +66,48 @@
 		taskID = 100;
 		eastRoles = [];
 		westRoles = [];
+		if (techAvailable = false) then {
+
+			eastRoles pushBack "tech";
+			westRoles pushBack "tech";
+			
+		};
+		if (medicAvailable = false) then {
+
+			eastRoles pushBack "medic";
+			westRoles pushBack "medic";
+			
+		};
+		if (sniperAvailable = false) then {
+
+			eastRoles pushBack "sniper";
+			westRoles pushBack "sniper";
+			
+		};
+		if (scoutAvailable = false) then {
+
+			eastRoles pushBack "scout";
+			westRoles pushBack "scout";
+			
+		};
+		if (assassinAvailable = false) then {
+
+			eastRoles pushBack "assassin";
+			westRoles pushBack "assassin";
+			
+		};
+		if (explosiveAvailable = false) then {
+
+			eastRoles pushBack "explosive";
+			westRoles pushBack "explosive";
+			
+		};
+		if (distractorAvailable = false) then {
+
+			eastRoles pushBack "distractor";
+			westRoles pushBack "distractor";
+			
+		};
 		publicVariable "eastRoles";
 		publicVariable "westRoles";
 		p1TaskIcon = "x";

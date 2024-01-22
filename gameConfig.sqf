@@ -40,7 +40,10 @@
 		doubleTechMarkingTime = techMarkingTime + techMarkingTime;
 		watchtowerTaskID = 0;
 		taskID = 100;
-
+		eastRoles = [];
+		westRoles = [];
+		publicVariable "eastRoles";
+		publicVariable "westRoles";
 		p1TaskIcon = "x";
 		p2TaskIcon = "x";
 		p3TaskIcon = "x";

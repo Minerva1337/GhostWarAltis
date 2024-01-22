@@ -1,4 +1,3 @@
-terminate execVM "mechanics\gameInit.sqf";		//soll Start script beenden (sicherheit)
 //Array wird erstellt mit exestierenden Elementen:
 Players = ["p1", "p2", "p3", "p4", "p5", "p6", "p7", "p8"] select {!isNil _x} apply {missionNamespace getVariable _x}; //Dannach sind nurnoch die Elemnte drinnen, welche exestieren (!isNil)
 _num = 0;

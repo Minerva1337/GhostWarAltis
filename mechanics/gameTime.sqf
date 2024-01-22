@@ -35,21 +35,24 @@ sleep 1;
 */
 
 nul = execVM "mechanics\gameWinning.sqf";
-if (hasInterface) then {
-
-	_intro = execVM "ui\intro.sqf";
-
-};
-_intro = [[], "ui\intro.sqf"] remoteExec ["execVM", -2];
-waitUntil {scriptDone _intro};
+{["<t font ='EtelkaMonospaceProBold' align = 'center' size='0.9' color='#546b34'>" + "[  GhostWar  ]"+"</t>",0,0.28,10,0,0,700] spawn BIS_fnc_dynamicText;} remoteExec ["call", 0];
+{["<t font ='EtelkaMonospaceProBold' align = 'center' size='0.4' color='#8d8d8d'>" + "- Negades -"+"</t>",0,0.35,3,0,0,788] spawn BIS_fnc_dynamicText;} remoteExec ["call", 0];
+sleep 2;
+{["<t font ='EtelkaMonospaceProBold' align = 'center' size='0.4' color='#8d8d8d'>" + "- created by MinervaArts -"+"</t>",0,0.35,2,0,0,788] spawn BIS_fnc_dynamicText;} remoteExec ["call", 0];
+sleep 2;
+{["<t font ='EtelkaMonospaceProBold' align = 'center' size='0.9' color='#546b34'>" + "[ 3 ]"+"</t>",0,0.28,10,0,0,700] spawn BIS_fnc_dynamicText;} remoteExec ["call", 0];
+sleep 1;
+{["<t font ='EtelkaMonospaceProBold' align = 'center' size='0.9' color='#546b34'>" + "[ 2 ]"+"</t>",0,0.28,10,0,0,700] spawn BIS_fnc_dynamicText;} remoteExec ["call", 0];
+sleep 1;
+{["<t font ='EtelkaMonospaceProBold' align = 'center' size='0.9' color='#546b34'>" + "[ 1 ]"+"</t>",0,0.28,10,0,0,700] spawn BIS_fnc_dynamicText;} remoteExec ["call", 0];
+sleep 1;
+{["<t font ='EtelkaMonospaceProBold' align = 'center' size='0.9' color='#546b34'>" + "[ GO ]"+"</t>",0,0.28,1,0,0,700] spawn BIS_fnc_dynamicText;} remoteExec ["call", 0];
 if (hasInterface) then {
 
 	player switchMove "";
 
 };
 {player switchMove ""} remoteExec ["call", -2];
-
-
 taskID = 10;
 taskInit = execVM "watchtower\watchtower.sqf";
 

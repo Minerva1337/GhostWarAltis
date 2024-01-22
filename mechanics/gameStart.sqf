@@ -1,5 +1,4 @@
 waitUntil {(count (call BIS_fnc_listPlayers)) > 0};
-"Mehr als 0 Spieler" remoteExec ["hint", 0];
 _ctr = true;
 while {_ctr} do {
 
@@ -11,7 +10,7 @@ while {_ctr} do {
 	if (_count1 == _count2) then {
 
 		execVM "mechanics\showGamePoints.sqf";
-		execVM "mechanics\gameTimer.sqf";
+		execVM "mechanics\gameTime.sqf";
 		sleep 3;
 		_ctr = false;
 

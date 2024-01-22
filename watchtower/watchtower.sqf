@@ -1,9 +1,7 @@
 _title = "Watchtower";
 _description = "Hack the watchtower to get information about the position of the opposing players!";
 _waypoint = "";
-
-
-_tsk = format ["tsk%1", random 9999999];
+_tsk = format ["tsk%1", taskID];
 sleep watchtowerInitiate;
 _task1 = [true, _tsk, [_description, _title, _waypoint], laptop, "ASSIGNED", 0, true, "download", true] call BIS_fnc_taskCreate, [_tsk, true] call BIS_fnc_taskSetAlwaysVisible;
 

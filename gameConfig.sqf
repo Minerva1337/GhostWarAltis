@@ -1,6 +1,6 @@
 //Game:
 
-		GameTime = 600; 										// Round time in seconds
+		gameTime = 70; 										// Round time in seconds
 		outOfMapKillTime = 10;									// Seconds when players out of map are killed
 
 // Watchtower
@@ -38,6 +38,7 @@
 
 		doubleWatchtowerMarkingTime = watchtowerMarkingTime + watchtowerMarkingTime;
 		doubleTechMarkingTime = techMarkingTime + techMarkingTime;
+		taskID = 1;
 
 		p1TaskIcon = "x";
 		p2TaskIcon = "x";

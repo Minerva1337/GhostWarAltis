@@ -36,10 +36,11 @@ sleep 1;
 
 nul = execVM "mechanics\gameWinning.sqf";
 {["<t font ='EtelkaMonospaceProBold' align = 'center' size='0.9' color='#546b34'>" + "[  GhostWar  ]"+"</t>",0,0.28,10,0,0,700] spawn BIS_fnc_dynamicText;} remoteExec ["call", 0];
-{["<t font ='EtelkaMonospaceProBold' align = 'center' size='0.4' color='#8d8d8d'>" + "- Negades -"+"</t>",0,0.35,3,0,0,788] spawn BIS_fnc_dynamicText;} remoteExec ["call", 0];
+{["<t font ='EtelkaMonospaceProBold' align = 'center' size='0.4' color='#8d8d8d'>" + "- Negades -"+"</t>",0,0.35,3,0,0,701] spawn BIS_fnc_dynamicText;} remoteExec ["call", 0];
 sleep 2;
-{["<t font ='EtelkaMonospaceProBold' align = 'center' size='0.4' color='#8d8d8d'>" + "- created by MinervaArts -"+"</t>",0,0.35,2,0,0,788] spawn BIS_fnc_dynamicText;} remoteExec ["call", 0];
+{["<t font ='EtelkaMonospaceProBold' align = 'center' size='0.4' color='#8d8d8d'>" + "- created by MinervaArts -"+"</t>",0,0.35,2,0,0,701] spawn BIS_fnc_dynamicText;} remoteExec ["call", 0];
 sleep 2;
+{["<t font ='EtelkaMonospaceProBold' align = 'center' size='0.4' color='#8d8d8d'>" + ""+"</t>",0,0.35,2,0,0,701] spawn BIS_fnc_dynamicText;} remoteExec ["call", 0];
 {["<t font ='EtelkaMonospaceProBold' align = 'center' size='0.9' color='#546b34'>" + "[ 3 ]"+"</t>",0,0.28,10,0,0,700] spawn BIS_fnc_dynamicText;} remoteExec ["call", 0];
 sleep 1;
 {["<t font ='EtelkaMonospaceProBold' align = 'center' size='0.9' color='#546b34'>" + "[ 2 ]"+"</t>",0,0.28,10,0,0,700] spawn BIS_fnc_dynamicText;} remoteExec ["call", 0];
@@ -53,17 +54,30 @@ if (hasInterface) then {
 
 };
 {player switchMove ""} remoteExec ["call", -2];
-taskID = 10;
-taskInit = execVM "watchtower\watchtower.sqf";
+watchtowerInit = execVM "watchtower\watchtower.sqf";
+while {gameTime > 0} do {
 
-//[[], "watchtower\watchtower.sqf"] remoteExec ["execVM", 2];
+	switch (gameTime) do {
 
+		case 300: {{["<t font ='EtelkaMonospaceProBold' align = 'center' size='0.9' color='#546b34'>" + "[ 5 minutes left ]"+"</t>",0,0.28,10,0,0,700] spawn BIS_fnc_dynamicText;} remoteExec ["call", 0]};
+		case 60: {{["<t font ='EtelkaMonospaceProBold' align = 'center' size='0.9' color='#546b34'>" + "[ 1 minute left ]"+"</t>",0,0.28,10,0,0,700] spawn BIS_fnc_dynamicText;} remoteExec ["call", 0]};
+		case 30: {{["<t font ='EtelkaMonospaceProBold' align = 'center' size='0.9' color='#546b34'>" + "[ 30 seconds left ]"+"</t>",0,0.28,10,0,0,700] spawn BIS_fnc_dynamicText;} remoteExec ["call", 0]};
+		case 10: {{["<t font ='EtelkaMonospaceProBold' align = 'center' size='0.9' color='#546b34'>" + "[ 10 seconds left ]"+"</t>",0,0.28,10,0,0,700] spawn BIS_fnc_dynamicText;} remoteExec ["call", 0]};
+		case 5: {{["<t font ='EtelkaMonospaceProBold' align = 'center' size='0.9' color='#546b34'>" + "[ 5 seconds left ]"+"</t>",0,0.28,10,0,0,700] spawn BIS_fnc_dynamicText;} remoteExec ["call", 0]};
+		case 4: {{["<t font ='EtelkaMonospaceProBold' align = 'center' size='0.9' color='#546b34'>" + "[ 4 seconds left ]"+"</t>",0,0.28,10,0,0,700] spawn BIS_fnc_dynamicText;} remoteExec ["call", 0]};
+		case 3: {{["<t font ='EtelkaMonospaceProBold' align = 'center' size='0.9' color='#546b34'>" + "[ 3 seconds left ]"+"</t>",0,0.28,10,0,0,700] spawn BIS_fnc_dynamicText;} remoteExec ["call", 0]};
+		case 2: {{["<t font ='EtelkaMonospaceProBold' align = 'center' size='0.9' color='#546b34'>" + "[ 2 seconds left ]"+"</t>",0,0.28,10,0,0,700] spawn BIS_fnc_dynamicText;} remoteExec ["call", 0]};
+		case 1: {{["<t font ='EtelkaMonospaceProBold' align = 'center' size='0.9' color='#546b34'>" + "[ 1 second left ]"+"</t>",0,0.28,10,0,0,700] spawn BIS_fnc_dynamicText;} remoteExec ["call", 0]};
+		default: {};
 
-_GameTime = 600; //Runden Zeit
-_true = true;
-while {_GameTime > 0} do {
+	};
+	gameTime = gameTime - 1;
+	sleep 1;
 
-	//Zeitanzeige:
+};
+
+/*
+
 	if (_GameTime == 300) then {
 
 		[["<t font ='EtelkaMonospaceProBold' align = 'center' size='0.9' color='#546b34'>" + "[  5 MINUTES REMAINING  ]"+"</t>",0,0.28,5,0,0,700] spawn BIS_fnc_dynamicText] remoteExec ["call", 0, true];
@@ -108,14 +122,12 @@ while {_GameTime > 0} do {
 		[["<t font ='EtelkaMonospaceProBold' align = 'center' size='0.9' color='#546b34'>" + "[  1 SECONDS REMAINING  ]"+"</t>",0,0.28,5,0,0,700] spawn BIS_fnc_dynamicText] remoteExec ["call", 0, true];;
 		sleep 1;
 	};
+*/
 
 
-_GameTime = _GameTime - 1;
-sleep 1;
-};
 
 //Unentschieden:
-waitUntil { _GameTime == 0; };
+waitUntil { gameTime == 0; };
 {titleText ["<t color='#00000a' shadow='0' size='4' font='EtelkaNarrowMediumPro' valign='middle'>Time is up! <br/>Nobody has won the round! <br/><br/>Rematch will be played!</t><br/>", "WHITE OUT", nil, true, true];} remoteExec ["call", 0]; 
 sleep 10;
 {titleText ["<t color='#00000a' size='5'></t><br/>", "PLAIN", 0, true, true];} remoteExec ["call", 2];

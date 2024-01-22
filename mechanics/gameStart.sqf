@@ -6,7 +6,7 @@ while {_ctr} do {
 	_inArea = allPlayers inAreaArray "gameStart";	
 	_count1 = count _allPlayers;
 	_count2 = count _inArea;
-	[str _count2] remoteExec ["hint", 0];
+	[str _count2] remoteExec ["hint", 0]; // debug
 	if (_count1 == _count2) then {
 
 		execVM "mechanics\showGamePoints.sqf";

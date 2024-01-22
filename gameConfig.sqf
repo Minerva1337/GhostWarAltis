@@ -66,43 +66,43 @@
 		taskID = 100;
 		eastRoles = [];
 		westRoles = [];
-		if (techAvailable = false) then {
+		if (techAvailable == false) then {
 
 			eastRoles pushBack "tech";
 			westRoles pushBack "tech";
 			
 		};
-		if (medicAvailable = false) then {
+		if (medicAvailable == false) then {
 
 			eastRoles pushBack "medic";
 			westRoles pushBack "medic";
 			
 		};
-		if (sniperAvailable = false) then {
+		if (sniperAvailable == false) then {
 
 			eastRoles pushBack "sniper";
 			westRoles pushBack "sniper";
 			
 		};
-		if (scoutAvailable = false) then {
+		if (scoutAvailable == false) then {
 
 			eastRoles pushBack "scout";
 			westRoles pushBack "scout";
 			
 		};
-		if (assassinAvailable = false) then {
+		if (assassinAvailable == false) then {
 
 			eastRoles pushBack "assassin";
 			westRoles pushBack "assassin";
 			
 		};
-		if (explosiveAvailable = false) then {
+		if (explosiveAvailable == false) then {
 
 			eastRoles pushBack "explosive";
 			westRoles pushBack "explosive";
 			
 		};
-		if (distractorAvailable = false) then {
+		if (distractorAvailable == false) then {
 
 			eastRoles pushBack "distractor";
 			westRoles pushBack "distractor";

@@ -4,10 +4,8 @@ _waypoint = "";
 _tsk = format ["tsk%1", taskID];
 sleep watchtowerInitiate;
 _task1 = [true, _tsk, [_description, _title, _waypoint], laptop, "ASSIGNED", 0, true, "download", true] call BIS_fnc_taskCreate, [_tsk, true] call BIS_fnc_taskSetAlwaysVisible;
-
 watchtowerAvailable = true;
 publicVariable "watchtowerAvailable";
-
 [
 
 	laptop, 														//Objekt
@@ -23,8 +21,6 @@ publicVariable "watchtowerAvailable";
 		watchtowerAvailable = false;
 		publicVariable "hackingInProgress";
 		publicVariable "watchtowerAvailable";
-		keyboardSound = playSound3D [getMissionPath "sounds\watchtower\laptopHacking.ogg", laptop];
-		publicVariable "keyboardSound";
 		{
 
 			playSound "watchtower" spawn { 
@@ -32,15 +28,15 @@ publicVariable "watchtowerAvailable";
 				waitUntil {
 
 						sleep 0.5;
-						hackingInProgress = missionNamespace getVariable "hackingInProgress";
-						hackingInProgress == false;
+						_hackingInProgress = missionNamespace getVariable "hackingInProgress";
+						_hackingInProgress == false;
 
 				};
 				deleteVehicle _this;
 			
 			};
 			
-		} remoteExec ["call", -2];
+		} remoteExec ["call", 0];
 		
 	}, //wird ausgeführt wenn Tätigkeit startet
 
@@ -53,10 +49,9 @@ publicVariable "watchtowerAvailable";
 		watchtowerAvailable = false;
 		publicVariable "hackingInProgress";
 		publicVariable "watchtowerAvailable";
-		{keyboardSound} remoteExec ["stopSound", -2];
-		["finish"] remoteExec ["playSound", -2];
-		[laptop, _actionId] remoteExec ["BIS_fnc_holdActionRemove", -2];
-		[_tsk, true, true] remoteExec ["BIS_fnc_deleteTask", -2];
+		["finish"] remoteExec ["playSound", 0];
+		[laptop, _actionId] remoteExec ["BIS_fnc_holdActionRemove", 0];
+		[_tsk, true, true] remoteExec ["BIS_fnc_deleteTask", 0];
 		if (_caller in [p5, p6, p7, p8]) then {
 
 			[[], "watchtower\marking\markingEast.sqf"] remoteExec ["execVM", 2];
@@ -89,10 +84,10 @@ publicVariable "watchtowerAvailable";
 	true,
 	false
 
-] remoteExec ["bis_fnc_holdactionadd", -2, true];
+] remoteExec ["bis_fnc_holdactionadd", 0];
 
-["Watchtower is now available"] remoteExec ["hint", -2];
+["Watchtower is now available"] remoteExec ["hint", 0];
 sleep 2;
-[""] remoteExec ["hintSilent", -2];
+[""] remoteExec ["hintSilent", 0];
 
 

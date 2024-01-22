@@ -1,5 +1,5 @@
 //Array wird erstellt mit exestierenden Elementen:
-Players = ["p1", "p2", "p3", "p4", "p5", "p6", "p7", "p8"] select {!isNil _x} apply {missionNamespace getVariable _x}; //Dannach sind nurnoch die Elemnte drinnen, welche exestieren (!isNil)
+players = ["p1", "p2", "p3", "p4", "p5", "p6", "p7", "p8"] select {!isNil _x} apply {missionNamespace getVariable _x}; //Dannach sind nurnoch die Elemnte drinnen, welche exestieren (!isNil)
 _num = 0;
 {
 	_select = Players select _num;
@@ -13,7 +13,7 @@ teamWest = [];		//neues Array mit allen exestierenden Blufor spielern
 teamEast = [];		//neues Array mit allen exestierenden Opfor spielern
 _num2 = 0;
 {
-	select2 = Players select _num2;
+	select2 = players select _num2;
 	//hint str select2;		//Debugging
 
 	if (side select2 == west) then {
@@ -22,7 +22,7 @@ _num2 = 0;
 		teamEast pushBack select2;
 	};
 	_num2 = _num2 + 1;
-} forEach Players;
+} forEach players;
 
 /*
 sleep 1;
@@ -68,66 +68,13 @@ while {gameTime > 0} do {
 		case 3: {{["<t font ='EtelkaMonospaceProBold' align = 'center' size='0.9' color='#546b34'>" + "[ 3 seconds left ]"+"</t>",0,0.28,10,0,0,700] spawn BIS_fnc_dynamicText;} remoteExec ["call", 0]};
 		case 2: {{["<t font ='EtelkaMonospaceProBold' align = 'center' size='0.9' color='#546b34'>" + "[ 2 seconds left ]"+"</t>",0,0.28,10,0,0,700] spawn BIS_fnc_dynamicText;} remoteExec ["call", 0]};
 		case 1: {{["<t font ='EtelkaMonospaceProBold' align = 'center' size='0.9' color='#546b34'>" + "[ 1 second left ]"+"</t>",0,0.28,10,0,0,700] spawn BIS_fnc_dynamicText;} remoteExec ["call", 0]};
-		default: {};
+		default {};
 
 	};
 	gameTime = gameTime - 1;
 	sleep 1;
 
 };
-
-/*
-
-	if (_GameTime == 300) then {
-
-		[["<t font ='EtelkaMonospaceProBold' align = 'center' size='0.9' color='#546b34'>" + "[  5 MINUTES REMAINING  ]"+"</t>",0,0.28,5,0,0,700] spawn BIS_fnc_dynamicText] remoteExec ["call", 0, true];
-		
-	};
-
-	if (_GameTime == 120) then {
-		
-		[["<t font ='EtelkaMonospaceProBold' align = 'center' size='0.9' color='#546b34'>" + "[  2 MINUTES REMAINING  ]"+"</t>",0,0.28,5,0,0,700] spawn BIS_fnc_dynamicText] remoteExec ["call", 0, true];
-
-	};
-
-	if (_GameTime == 84) then {
-
-		["draw"] remoteExec ["playSound", 0, true];
-
-	};
-
-	if (_GameTime == 60) then {
-
-		[["<t font ='EtelkaMonospaceProBold' align = 'center' size='0.9' color='#546b34'>" + "[  1 MINUTE REMAINING  ]"+"</t>",0,0.28,5,0,0,700] spawn BIS_fnc_dynamicText] remoteExec ["call", 0, true];
-
-	};
-
-	if (_GameTime == 30) then {
-		
-		[["<t font ='EtelkaMonospaceProBold' align = 'center' size='0.9' color='#546b34'>" + "[  30 SECONDS REMAINING  ]"+"</t>",0,0.28,5,0,0,700] spawn BIS_fnc_dynamicText] remoteExec ["call", 0, true];
-
-	};
-
-	if (_GameTime == 10) then {
-		
-		[["<t font ='EtelkaMonospaceProBold' align = 'center' size='0.9' color='#546b34'>" + "[  10 SECONDS REMAINING  ]"+"</t>",0,0.28,5,0,0,700] spawn BIS_fnc_dynamicText] remoteExec ["call", 0, true];
-
-	};
-
-	if (_GameTime == 3) then {
-		[["<t font ='EtelkaMonospaceProBold' align = 'center' size='0.9' color='#546b34'>" + "[  3 SECONDS REMAINING  ]"+"</t>",0,0.28,5,0,0,700] spawn BIS_fnc_dynamicText] remoteExec ["call", 0, true];
-		sleep 1;
-		[["<t font ='EtelkaMonospaceProBold' align = 'center' size='0.9' color='#546b34'>" + "[  2 SECONDS REMAINING  ]"+"</t>",0,0.28,5,0,0,700] spawn BIS_fnc_dynamicText] remoteExec ["call", 0, true];
-		sleep 1;
-		[["<t font ='EtelkaMonospaceProBold' align = 'center' size='0.9' color='#546b34'>" + "[  1 SECONDS REMAINING  ]"+"</t>",0,0.28,5,0,0,700] spawn BIS_fnc_dynamicText] remoteExec ["call", 0, true];;
-		sleep 1;
-	};
-*/
-
-
-
-//Unentschieden:
-waitUntil { gameTime == 0; };
 {titleText ["<t color='#00000a' shadow='0' size='4' font='EtelkaNarrowMediumPro' valign='middle'>Time is up! <br/>Nobody has won the round! <br/><br/>Rematch will be played!</t><br/>", "WHITE OUT", nil, true, true];} remoteExec ["call", 0]; 
 sleep 10;
 {titleText ["<t color='#00000a' size='5'></t><br/>", "PLAIN", 0, true, true];} remoteExec ["call", 2];

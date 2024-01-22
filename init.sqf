@@ -10,4 +10,8 @@
 [West, "assassinWest"] call BIS_fnc_addRespawnInventory;
 [East, "explosiveEast"] call BIS_fnc_addRespawnInventory;
 [West, "explosiveWest"] call BIS_fnc_addRespawnInventory;
-nul = [[], "mechanics\gameStart.sqf"] remoteExec ["execVM", 2];
+if (isServer) then {
+
+	[] execVM "mechanics\gameStart.sqf";
+
+	};

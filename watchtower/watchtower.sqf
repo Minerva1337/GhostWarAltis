@@ -1,9 +1,11 @@
 _title = "Watchtower";
 _description = "Hack the watchtower to get information about the position of the opposing players!";
 _waypoint = "";
-_tsk = format ["tsk%1", taskID];
+watchtowerTaskID = watchtowerTaskID + 1;
+publicVariable "watchtowerTaskID";
 sleep watchtowerInitiate;
-_task1 = [true, _tsk, [_description, _title, _waypoint], laptop, "ASSIGNED", 0, true, "download", true] call BIS_fnc_taskCreate, [_tsk, true] call BIS_fnc_taskSetAlwaysVisible;
+[true, str watchtowerTaskID, [_description, _title, _waypoint], laptop, "ASSIGNED", 0, true, "download", true] call BIS_fnc_taskCreate;
+[str watchtowerTaskID, true] call BIS_fnc_taskSetAlwaysVisible;
 watchtowerAvailable = true;
 publicVariable "watchtowerAvailable";
 [
@@ -51,7 +53,8 @@ publicVariable "watchtowerAvailable";
 		publicVariable "watchtowerAvailable";
 		["finish"] remoteExec ["playSound", 0];
 		[laptop, _actionId] remoteExec ["BIS_fnc_holdActionRemove", 0];
-		[_tsk, true, true] remoteExec ["BIS_fnc_deleteTask", 0];
+		watchtowerTaskID = missionNamespace getVariable "watchtowerTaskID";
+		[str watchtowerTaskID, true, true] call BIS_fnc_deleteTask;
 		if (_caller in [p5, p6, p7, p8]) then {
 
 			[[], "watchtower\marking\markingEast.sqf"] remoteExec ["execVM", 2];

@@ -1,15 +1,15 @@
 //Game:
 
-		gameTime = 70; 										// Round time in seconds
+		gameTime = 300; 										// Round time in seconds
 		outOfMapKillTime = 10;									// Seconds when players out of map are killed
 
 // Watchtower
 
 //		watchtowerAvailable = true;								// If watchtower is available
 		watchtowerInitiate = 15;								// Seconds until watchtower is available after gamestart
-		watchtowerHackingTime = 10;								// Seconds to hack watchtower
-		watchtowerMarkingTime = 30;								// Seconds the enemies are marked (x2 wegen script) 
-		watchtowerCooldown = 15;								// Seconds until watchtower is available again
+		watchtowerHackingTime = 5;								// Seconds to hack watchtower
+		watchtowerMarkingTime = 15;								// Seconds the enemies are marked
+		watchtowerCooldown = 20;								// Seconds until watchtower is available again
 
 // Roles
 
@@ -38,7 +38,8 @@
 
 		doubleWatchtowerMarkingTime = watchtowerMarkingTime + watchtowerMarkingTime;
 		doubleTechMarkingTime = techMarkingTime + techMarkingTime;
-		taskID = 1;
+		watchtowerTaskID = 0;
+		taskID = 100;
 
 		p1TaskIcon = "x";
 		p2TaskIcon = "x";

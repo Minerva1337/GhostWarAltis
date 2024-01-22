@@ -37,23 +37,19 @@ sleep 1;
 nul = execVM "mechanics\gameWinning.sqf";
 if (hasInterface) then {
 
-	execVM "ui\intro.sqf";
-
-} else {
-	
-	[[], "ui\intro.sqf"] remoteExec ["execVM", -2];
+	_intro = execVM "ui\intro.sqf";
 
 };
-sleep 9.14;
+_intro = [[], "ui\intro.sqf"] remoteExec ["execVM", -2];
+waitUntil {scriptDone _intro};
 if (hasInterface) then {
 
 	player switchMove "";
 
-} else {
-	
-	{player switchMove "";} remoteExec ["call", 0];
-
 };
+{player switchMove ""} remoteExec ["call", -2];
+
+
 taskID = 10;
 taskInit = execVM "watchtower\watchtower.sqf";
 

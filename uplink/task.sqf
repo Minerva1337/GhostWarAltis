@@ -1,3 +1,6 @@
+_title = "Upling";
+_description = "Hack the uplink!";
+_waypoint = "";
 uplinkATaskID = 0;
 uplinkBTaskID = 99;
 uplinkATaskID = uplinkATaskID + 1;
@@ -23,7 +26,7 @@ while {true} do {
 					};
 					case ([str uplinkBTaskID] call BIS_fnc_taskExists): { 
 
-						uplinkATaskID = uplinkATaskID + 1;
+						uplinkBTaskID = uplinkBTaskID + 1;
 						[true, str uplinkBTaskID, [_description, _title, _waypoint], uplinkB, "CREATED", 0, true, "b", true] call BIS_fnc_taskCreate;
 
 					};};

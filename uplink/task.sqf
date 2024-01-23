@@ -1,4 +1,4 @@
-_title = "Upling";
+_title = "Uplink";
 _description = "Hack the uplink!";
 _waypoint = "";
 uplinkATaskID = 0;

@@ -56,7 +56,7 @@ if (hasInterface) then {
 {player switchMove ""} remoteExec ["call", -2];
 if (watchtowerAvailable) then {
 	
-	watchtowerInit = execVM "watchtower\watchtower.sqf";
+	uplinkInit = execVM "uplink\uplink.sqf";
 
 };
 while {gameTime > 0} do {

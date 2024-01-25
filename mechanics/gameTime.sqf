@@ -34,7 +34,8 @@ sleep 0.5;
 sleep 1;
 */
 
-nul = execVM "mechanics\gameWinning.sqf";
+execVM "mechanics\gameWinning.sqf";
+execVM "roles\tech\tech.sqf";
 {["<t font ='EtelkaMonospaceProBold' align = 'center' size='0.9' color='#546b34'>" + "[  GhostWar  ]"+"</t>",0,0.28,10,0,0,700] spawn BIS_fnc_dynamicText;} remoteExec ["call", 0];
 {["<t font ='EtelkaMonospaceProBold' align = 'center' size='0.4' color='#8d8d8d'>" + "- Negades -"+"</t>",0,0.35,3,0,0,701] spawn BIS_fnc_dynamicText;} remoteExec ["call", 0];
 sleep 2;

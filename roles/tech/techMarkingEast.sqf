@@ -1,3 +1,7 @@
+westTechCooldown = true;
+soloTechCooldown = true;
+publicVariable "westTechHacking";
+publicVariable "soloTechCooldown";
 isAliveP1 = ((lifeState p1) isEqualTo "HEALTHY" or (lifeState p1) isEqualTo "INJURED");
 isAliveP2 = ((lifeState p2) isEqualTo "HEALTHY" or (lifeState p2) isEqualTo "INJURED");
 isAliveP3 = ((lifeState p3) isEqualTo "HEALTHY" or (lifeState p3) isEqualTo "INJURED");
@@ -51,5 +55,7 @@ if (isAliveP2) then {[(str eastTaskID2), true, true] remoteExec ["BIS_fnc_delete
 if (isAliveP3) then {[(str eastTaskID3), true, true] remoteExec ["BIS_fnc_deleteTask", 0, true]};
 if (isAliveP4) then {[(str eastTaskID4), true, true] remoteExec ["BIS_fnc_deleteTask", 0, true]};
 sleep techCooldown;
-westTechHacking = false;
+westTechCooldown = false;
+soloTechCooldown = false;
 publicVariable "westTechHacking";
+publicVariable "soloTechCooldown";

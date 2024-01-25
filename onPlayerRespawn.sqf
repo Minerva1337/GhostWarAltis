@@ -4,7 +4,6 @@ player switchMove "HubSpectator_stand";
 if  ("30Rnd_9x21_Red_Mag" in (vestItems player + uniformItems player + backpackItems player + assignedItems player)) then {
 
 	player setUnitTrait ["Engineer", true];
-	execVM "roles\tech\tech.sqf";
 	hint "Tech";
 	switch (side player) do {
 

@@ -1,3 +1,7 @@
+eastTechCooldown = true;
+soloTechCooldown = true;
+publicVariable "eastTechHacking";
+publicVariable "soloTechCooldown";
 isAliveP5 = ((lifeState p5) isEqualTo "HEALTHY" or (lifeState p5) isEqualTo "INJURED"); // "true" wenn Unit lebt.
 isAliveP6 = ((lifeState p6) isEqualTo "HEALTHY" or (lifeState p6) isEqualTo "INJURED");
 isAliveP7 = ((lifeState p7) isEqualTo "HEALTHY" or (lifeState p7) isEqualTo "INJURED");
@@ -51,5 +55,7 @@ if (isAliveP6) then {[(str westTaskID2), true, true] remoteExec ["BIS_fnc_delete
 if (isAliveP7) then {[(str westTaskID3), true, true] remoteExec ["BIS_fnc_deleteTask", 0, true]};
 if (isAliveP8) then {[(str westTaskID4), true, true] remoteExec ["BIS_fnc_deleteTask", 0, true]};
 sleep techCooldown;
-eastTechHacking = false;
+eastTechCooldown = false;
+soloTechCooldown = false;
 publicVariable "eastTechHacking";
+publicVariable "soloTechCooldown";

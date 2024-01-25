@@ -5,7 +5,7 @@
 
 // Watchtower
 
-		!!! ACHTUNG VARIABLENDOPPLUNG !!! watchtowerAvailable = true;								// If watchtower is available
+		watchtowerAvailable = true;								// If watchtower is available
 		watchtowerInitiate = 15;								// Seconds until watchtower is available after gamestart
 		watchtowerHackingTime = 5;								// Seconds to hack watchtower
 		watchtowerMarkingTime = 15;								// Seconds the enemies are marked

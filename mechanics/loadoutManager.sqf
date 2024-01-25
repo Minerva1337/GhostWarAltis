@@ -1,3 +1,7 @@
+eastRoles = [];
+westRoles = [];
+publicVariable "eastRoles";
+publicVariable "westRoles";
 techEast = [East, "techEast"] call BIS_fnc_addRespawnInventory;
 techWest = [West, "techWest"] call BIS_fnc_addRespawnInventory;
 medicEast = [East, "medicEast"] call BIS_fnc_addRespawnInventory;

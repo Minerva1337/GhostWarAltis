@@ -1,16 +1,10 @@
 _arr = [];
-p1TaskIcon = missionNamespace getVariable "p1TaskIcon";
-p2TaskIcon = missionNamespace getVariable "p2TaskIcon";
-p3TaskIcon = missionNamespace getVariable "p3TaskIcon";
-p4TaskIcon = missionNamespace getVariable "p4TaskIcon";
-p5TaskIcon = missionNamespace getVariable "p5TaskIcon";
-p6TaskIcon = missionNamespace getVariable "p6TaskIcon";
-p7TaskIcon = missionNamespace getVariable "p7TaskIcon";
-p8TaskIcon = missionNamespace getVariable "p8TaskIcon";
-switch ("intel") do {
+techeast = missionNamespace getVariable "techeast";
+techwest = missionNamespace getVariable "techwest";
+switch (techwest) do {
 
-	case p1TaskIcon: {_arr pushBack = p1};
-	case p2TaskIcon: {_arr pushBack = p2};
+	case p1: {_arr pushBack = p1};
+	case p2: {_arr pushBack = p2};
 	case p3TaskIcon: {_arr pushBack = p3};
 	case p4TaskIcon: {_arr pushBack = p4};
 	default {_arr pushBack = nil};

@@ -1,3 +1,20 @@
+/* _techeast = missionNamespace getVariable "techeast";
+_techwest = missionNamespace getVariable "techwest";
+_mediceast = missionNamespace getVariable "mediceast";
+_medicwest = missionNamespace getVariable "medicwest";
+_snipereast = missionNamespace getVariable "snipereast";
+_sniperwest = missionNamespace getVariable "sniperwest";
+_scouteast = missionNamespace getVariable "scouteast";
+_scoutwest = missionNamespace getVariable "scoutwest";
+_assassineast = missionNamespace getVariable "assassineast";
+_assassinwest = missionNamespace getVariable "assassinwest";
+_explosiveeast = missionNamespace getVariable "explosiveeast";
+_explosivewest = missionNamespace getVariable "explosivewest";
+_distractoreast = missionNamespace getVariable "distractoreast";
+_distractorwest = missionNamespace getVariable "distractorwest"; */
+
+
+
 //Array wird erstellt mit exestierenden Elementen:
 players = ["p1", "p2", "p3", "p4", "p5", "p6", "p7", "p8"] select {!isNil _x} apply {missionNamespace getVariable _x}; //Dannach sind nurnoch die Elemnte drinnen, welche exestieren (!isNil)
 _num = 0;

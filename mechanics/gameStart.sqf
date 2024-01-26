@@ -1,3 +1,15 @@
+/* missionNamespace setVariable ["techeast", p0];
+missionNamespace setVariable ["techwest", p0];
+missionNamespace setVariable ["mediceast", p0];
+missionNamespace setVariable ["medicwest", p0];
+missionNamespace setVariable ["snipereast", p0];
+missionNamespace setVariable ["sniperwest", p0];
+missionNamespace setVariable ["scouteast", p0];
+missionNamespace setVariable ["scoutwest", p0];
+missionNamespace setVariable ["assassineast", p0];
+missionNamespace setVariable ["assassinwest", p0];
+missionNamespace setVariable ["distractoreast", p0];
+missionNamespace setVariable ["distractorwest", p0]; */
 waitUntil {(count (call BIS_fnc_listPlayers)) > 0};
 _ctr = true;
 while {_ctr} do {

@@ -1,3 +1,4 @@
+if (randomWeather) then {[] execVM "mechanics\randomWeather.sqf"};
 waitUntil {(count (call BIS_fnc_listPlayers)) > 0};
 _ctr = true;
 while {_ctr} do {

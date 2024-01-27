@@ -23,7 +23,7 @@ while {_ctr} do {
 			case outOfMapKillTime: {
 				
 				{["<t font ='EtelkaMonospaceProBold' align = 'center' size='0.7' color='#b07609'>" + "[ Get back in the map! ]"+"</t>",0,0.3,outOfMapKillTime,0,0,101] spawn BIS_fnc_dynamicText};
-				{["<t font ='EtelkaMonospaceProBold' align = 'center' size='0.5' color='#b04a09'>" + "[ " + str outOfMapKillTime + " seconds until you will be killed. ]"+"</t>",0,0.36,5,0,0,102] spawn BIS_fnc_dynamicText};
+				{["<t font ='EtelkaMonospaceProBold' align = 'center' size='0.5' color='#b04a09'>" + "[ " + str outOfMapKillTime + " seconds until you will be killed. ]"+"</t>",0,0.36,5,0,0,102] spawn BIS_fnc_dynamicText}};
 				
 			case 10: {["<t font ='EtelkaMonospaceProBold' align = 'center' size='0.5' color='#b04a09'>" + "[ 10 seconds until you will be killed. ]"+"</t>",0,0.36,5,0,0,102] spawn BIS_fnc_dynamicText};
 			case 5: {["<t font ='EtelkaMonospaceProBold' align = 'center' size='0.5' color='#b04a09'>" + "[ 5 seconds until you will be killed. ]"+"</t>",0,0.36,5,0,0,102] spawn BIS_fnc_dynamicText};
@@ -36,8 +36,6 @@ while {_ctr} do {
 			};
 			_time = _time -1;
 			sleep 1;
-
-		};
 
 	};
 

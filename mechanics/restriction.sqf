@@ -4,8 +4,8 @@ while {_ctr} do {
 
 	if ((player inArea trigger1) or (loadedIn == false)) then {
 			
-			{["<t font ='EtelkaMonospaceProBold' align = 'center' size='0.7' color='#b07609'>" + ""+"</t>",0,0.3,1,0,0,101] spawn BIS_fnc_dynamicText};
-			{["<t font ='EtelkaMonospaceProBold' align = 'center' size='0.5' color='#b04a09'>" + ""+"</t>",0,0.36,1,0,0,102] spawn BIS_fnc_dynamicText};
+			["<t font ='EtelkaMonospaceProBold' align = 'center' size='0.7' color='#b07609'>" + ""+"</t>",0,0.3,1,0,0,101] spawn BIS_fnc_dynamicText;
+			["<t font ='EtelkaMonospaceProBold' align = 'center' size='0.5' color='#b04a09'>" + ""+"</t>",0,0.36,1,0,0,102] spawn BIS_fnc_dynamicText;
 			_ctr = false;
 		
 	} else {

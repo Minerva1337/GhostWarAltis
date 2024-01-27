@@ -33,9 +33,11 @@ while {_ctr} do {
 			case 1: {["<t font ='EtelkaMonospaceProBold' align = 'center' size='0.5' color='#b04a09'>" + "[ 1 seconds until you will be killed. ]"+"</t>",0,0.36,5,0,0,102] spawn BIS_fnc_dynamicText};
 			case 0: {player setDamage 1};
 
+			};
+			_time = _time -1;
+			sleep 1;
+
 		};
-		_time = _time -1;
-		sleep 1;
 
 	};
 

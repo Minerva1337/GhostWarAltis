@@ -3,15 +3,23 @@ _time = outOfMapKillTime;
 while {_ctr} do {
 
 	if ((player inArea trigger1) or (loadedIn == false)) then {
+
+		if (loadedIn == true) then {
+			
+			systemChat "Lucky one!";
+			_ctr = false;
+
+		} else {
+
+			_ctr = false;
+
+		};
 		
-		systemChat "Lucky one!";
-		_ctr = false;
-	
 	} else {
 		
 		switch (_time) do {
 
-			case outOfMapKillTime: {SystemChat "Get back into the area!"; SystemChat str outOfMapKillTime + " Seconds until you will be killed."};
+			case outOfMapKillTime: {SystemChat "Get back into the area!"; SystemChat (str outOfMapKillTime + " Seconds until you will be killed.")};
 			case 10: {SystemChat "10 Seconds until you will be killed."};
 			case 5: {SystemChat "5 Seconds until you will be killed."};
 			case 4: {SystemChat "4 Seconds until you will be killed."};

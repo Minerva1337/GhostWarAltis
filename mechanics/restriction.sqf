@@ -25,7 +25,7 @@ while {_ctr} do {
 			case 4: {SystemChat "4 Seconds until you will be killed."};
 			case 3: {SystemChat "3 Seconds until you will be killed."};
 			case 2: {SystemChat "2 Seconds until you will be killed."};
-			case 1: {SystemChat "1 Seconds until you will be killed."};
+			case 1: {SystemChat "1 Second until you will be killed."};
 			case 0: {player setDamage 1};
 
 		};

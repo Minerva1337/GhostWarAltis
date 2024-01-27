@@ -6,3 +6,4 @@ if (isServer) then {
 	[] execVM "mechanics\randomWeather.sqf";
 
 };
+loadedIn = false;

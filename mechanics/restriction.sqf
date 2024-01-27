@@ -2,7 +2,7 @@ _ctr = true;
 _time = outOfMapKillTime;
 while {_ctr} do {
 
-	if ((player inArea trigger1) or (player inArea trigger2) or (player inArea trigger3)) then {
+	if ((player inArea trigger1) or (loadedIn == false)) then {
 		
 		systemChat "Lucky one!";
 		_ctr = false;

@@ -1,4 +1,5 @@
 player switchMove "HubSpectator_stand";
+loadedIn = true;
 execVM "mechanics\spectator.sqf";
 switch (true) do {
 

@@ -1,14 +1,29 @@
+_ctr = true;
 _time = outOfMapKillTime;
-while {_time > 0} do {
+while {_ctr} do {
 
-	if ((player inArea trigger1) or (player inArea trigger2) or (player inArea trigger3)) exitWith {};
-	hint str _time;
-	_time = _time -1;
-	sleep 1;
-
-};
-if (_time == 0) then {
-
-	player setDamage 1;
+	if ((player inArea trigger1) or (player inArea trigger2) or (player inArea trigger3)) then {
+		
+		systemChat "Lucky one!";
+		_ctr = false;
 	
+	} else {
+		
+		switch (_time) do {
+
+			case outOfMapKillTime: {SystemChat "Get back into the area!"; SystemChat str outOfMapKillTime + " Seconds until you will be killed."};
+			case 10: {SystemChat "10 Seconds until you will be killed."};
+			case 5: {SystemChat "5 Seconds until you will be killed."};
+			case 4: {SystemChat "4 Seconds until you will be killed."};
+			case 3: {SystemChat "3 Seconds until you will be killed."};
+			case 2: {SystemChat "2 Seconds until you will be killed."};
+			case 1: {SystemChat "1 Seconds until you will be killed."};
+			case 0: {player setDamage 1};
+
+		};
+		_time = _time -1;
+		sleep 1;
+
+	};
+
 };

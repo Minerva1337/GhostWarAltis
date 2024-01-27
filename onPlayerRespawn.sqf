@@ -1,177 +1,25 @@
 player switchMove "HubSpectator_stand";
-[[], "mechanics\spectator.sqf"] remoteExec ["execVM", 0, true];
+execVM "mechanics\spectator.sqf";
+switch (true) do {
 
-if  ("30Rnd_9x21_Red_Mag" in (vestItems player + uniformItems player + backpackItems player + assignedItems player)) then {
+	case ("30Rnd_9x21_Red_Mag" in (vestItems player + uniformItems player + backpackItems player + assignedItems player)): {_pickedRole = "tech", missionNamespace setVariable ["tech" + str side player, player]};
+	case ("Medikit" in (vestItems player + uniformItems player + backpackItems player + assignedItems player)): {_pickedRole = "medic", missionNamespace setVariable ["medic" + str side player, player]};
+	case ("ACE_10Rnd_762x51_Mag_Tracer" in (vestItems player + uniformItems player + backpackItems player + assignedItems player)): {_pickedRole = "sniper", missionNamespace setVariable ["sniper" + str side player, player]};
+	case ("ACE_HuntIR_monitor" in (vestItems player + uniformItems player + backpackItems player + assignedItems player)): {_pickedRole = "scout", missionNamespace setVariable ["scout" + str side player, player]};
+	case ("30Rnd_45ACP_Mag_SMG_01_Tracer_Red" in (vestItems player + uniformItems player + backpackItems player + assignedItems player)): {_pickedRole = "assassin", missionNamespace setVariable ["assassin" + str side player, player]};
+	case ("ACE_M26_Clacker" in (vestItems player + uniformItems player + backpackItems player + assignedItems player)): {_pickedRole = "explosive", missionNamespace setVariable ["explosive" + str side player, player]};
+	case ("XXX" in (vestItems player + uniformItems player + backpackItems player + assignedItems player)): {_pickedRole = "distractor", missionNamespace setVariable ["distractor" + str side player, player]};
 
-	player setUnitTrait ["Engineer", true];
-	hint "Tech";
-	switch (side player) do {
+};
+switch (side player) do {
 
-		case east: {eastRoles = missionNamespace getVariable "eastRoles", eastRoles pushBack "tech", publicVariable "eastRoles"};
-		case west: {westRoles = missionNamespace getVariable "westRoles", westRoles pushBack "tech", publicVariable "westRoles"};
-
-	};
-	switch (player) do {
-
-		case p1: {p1TaskIcon = "intel", publicVariable "p1TaskIcon"};
-		case p2: {p2TaskIcon = "intel", publicVariable "p2TaskIcon"};
-		case p3: {p3TaskIcon = "intel", publicVariable "p3TaskIcon"};
-		case p4: {p4TaskIcon = "intel", publicVariable "p4TaskIcon"};
-		case p5: {p5TaskIcon = "intel", publicVariable "p5TaskIcon"};
-		case p6: {p6TaskIcon = "intel", publicVariable "p6TaskIcon"};
-		case p7: {p7TaskIcon = "intel", publicVariable "p7TaskIcon"};
-		case p8: {p8TaskIcon = "intel", publicVariable "p8TaskIcon"};
-
-	};
+	case east: {eastRoles = missionNamespace getVariable "eastRoles", eastRoles pushBack _pickedRole, publicVariable "eastRoles"};
+	case west: {westRoles = missionNamespace getVariable "westRoles", westRoles pushBack _pickedRole, publicVariable "westRoles"};
 
 };
 
-if  ("Medikit" in (vestItems player + uniformItems player + backpackItems player + assignedItems player)) then {
+/*
 
-	player setUnitTrait ["Medic", true];
-	hint "Medic";
-	switch (side player) do {
-
-		case east: {eastRoles = missionNamespace getVariable "eastRoles", eastRoles pushBack "medic", publicVariable "eastRoles"};
-		case west: {westRoles = missionNamespace getVariable "westRoles", westRoles pushBack "medic", publicVariable "westRoles"};
-
-	};
-	switch (player) do {
-
-		case p1: {p1TaskIcon = "heal", publicVariable "p1TaskIcon"};
-		case p2: {p2TaskIcon = "heal", publicVariable "p2TaskIcon"};
-		case p3: {p3TaskIcon = "heal", publicVariable "p3TaskIcon"};
-		case p4: {p4TaskIcon = "heal", publicVariable "p4TaskIcon"};
-		case p5: {p5TaskIcon = "heal", publicVariable "p5TaskIcon"};
-		case p6: {p6TaskIcon = "heal", publicVariable "p6TaskIcon"};
-		case p7: {p7TaskIcon = "heal", publicVariable "p7TaskIcon"};
-		case p8: {p8TaskIcon = "heal", publicVariable "p8TaskIcon"};
-
-	};
-
-};
-
-if  ("ACE_10Rnd_762x51_Mag_Tracer" in (vestItems player + uniformItems player + backpackItems player + assignedItems player)) then {
-
-	/*player setUnitTrait ["Medic", true];*/
-	hint "Sniper";
-	switch (side player) do {
-
-		case east: {eastRoles = missionNamespace getVariable "eastRoles", eastRoles pushBack "sniper", publicVariable "eastRoles"};
-		case west: {westRoles = missionNamespace getVariable "westRoles", westRoles pushBack "sniper", publicVariable "westRoles"};
-
-	};
-	switch (player) do {
-
-		case p1: {p1TaskIcon = "heal", publicVariable "p1TaskIcon"};
-		case p2: {p2TaskIcon = "heal", publicVariable "p2TaskIcon"};
-		case p3: {p3TaskIcon = "heal", publicVariable "p3TaskIcon"};
-		case p4: {p4TaskIcon = "heal", publicVariable "p4TaskIcon"};
-		case p5: {p5TaskIcon = "heal", publicVariable "p5TaskIcon"};
-		case p6: {p6TaskIcon = "heal", publicVariable "p6TaskIcon"};
-		case p7: {p7TaskIcon = "heal", publicVariable "p7TaskIcon"};
-		case p8: {p8TaskIcon = "heal", publicVariable "p8TaskIcon"};
-
-	};
-
-};
-
-if  ("ACE_HuntIR_monitor" in (vestItems player + uniformItems player + backpackItems player + assignedItems player)) then {
-
-	/*player setUnitTrait ["Medic", true];*/
-	hint "Scout";
-	switch (side player) do {
-
-		case east: {eastRoles = missionNamespace getVariable "eastRoles", eastRoles pushBack "scout", publicVariable "eastRoles"};
-		case west: {westRoles = missionNamespace getVariable "westRoles", westRoles pushBack "scout", publicVariable "westRoles"};
-
-	};
-	switch (player) do {
-
-		case p1: {p1TaskIcon = "scout", publicVariable "p1TaskIcon"};
-		case p2: {p2TaskIcon = "scout", publicVariable "p2TaskIcon"};
-		case p3: {p3TaskIcon = "scout", publicVariable "p3TaskIcon"};
-		case p4: {p4TaskIcon = "scout", publicVariable "p4TaskIcon"};
-		case p5: {p5TaskIcon = "scout", publicVariable "p5TaskIcon"};
-		case p6: {p6TaskIcon = "scout", publicVariable "p6TaskIcon"};
-		case p7: {p7TaskIcon = "scout", publicVariable "p7TaskIcon"};
-		case p8: {p8TaskIcon = "scout", publicVariable "p8TaskIcon"};
-
-	};
-
-};
-
-if  ("30Rnd_45ACP_Mag_SMG_01_Tracer_Red" in (vestItems player + uniformItems player + backpackItems player + assignedItems player)) then {
-
-	/*player setUnitTrait ["Medic", true];*/
-	hint "Assassin";
-	switch (side player) do {
-
-		case east: {eastRoles = missionNamespace getVariable "eastRoles", eastRoles pushBack "assassin", publicVariable "eastRoles"};
-		case west: {westRoles = missionNamespace getVariable "westRoles", westRoles pushBack "assassin", publicVariable "westRoles"};
-
-	};
-	switch (player) do {
-
-		case p1: {p1TaskIcon = "run", publicVariable "p1TaskIcon"};
-		case p2: {p2TaskIcon = "run", publicVariable "p2TaskIcon"};
-		case p3: {p3TaskIcon = "run", publicVariable "p3TaskIcon"};
-		case p4: {p4TaskIcon = "run", publicVariable "p4TaskIcon"};
-		case p5: {p5TaskIcon = "run", publicVariable "p5TaskIcon"};
-		case p6: {p6TaskIcon = "run", publicVariable "p6TaskIcon"};
-		case p7: {p7TaskIcon = "run", publicVariable "p7TaskIcon"};
-		case p8: {p8TaskIcon = "run", publicVariable "p8TaskIcon"};
-
-	};
-
-};
-
-if  ("ACE_M26_Clacker" in (vestItems player + uniformItems player + backpackItems player + assignedItems player)) then {
-
-	player setUnitTrait ["ExplosiveSpecialist", true];
-	hint "Explosive";
-	switch (side player) do {
-
-		case east: {eastRoles = missionNamespace getVariable "eastRoles", eastRoles pushBack "explosive", publicVariable "eastRoles"};
-		case west: {westRoles = missionNamespace getVariable "westRoles", westRoles pushBack "explosive", publicVariable "westRoles"};
-
-	};
-	switch (player) do {
-
-		case p1: {p1TaskIcon = "destroy", publicVariable "p1TaskIcon"};
-		case p2: {p2TaskIcon = "destroy", publicVariable "p2TaskIcon"};
-		case p3: {p3TaskIcon = "destroy", publicVariable "p3TaskIcon"};
-		case p4: {p4TaskIcon = "destroy", publicVariable "p4TaskIcon"};
-		case p5: {p5TaskIcon = "destroy", publicVariable "p5TaskIcon"};
-		case p6: {p6TaskIcon = "destroy", publicVariable "p6TaskIcon"};
-		case p7: {p7TaskIcon = "destroy", publicVariable "p7TaskIcon"};
-		case p8: {p8TaskIcon = "destroy", publicVariable "p8TaskIcon"};
-
-	};
-
-};
-
-if  ("ACE_M26_Clacker" in (vestItems player + uniformItems player + backpackItems player + assignedItems player)) then {
-
-	/*player setUnitTrait ["ExplosiveSpecialist", true];*/
-	hint "Distractor";
-	switch (side player) do {
-
-		case east: {eastRoles = missionNamespace getVariable "eastRoles", eastRoles pushBack "distractor", publicVariable "eastRoles"};
-		case west: {westRoles = missionNamespace getVariable "westRoles", westRoles pushBack "distractor", publicVariable "westRoles"};
-
-	};
-	switch (player) do {
-
-		case p1: {p1TaskIcon = "listen", publicVariable "p1TaskIcon"};
-		case p2: {p2TaskIcon = "listen", publicVariable "p2TaskIcon"};
-		case p3: {p3TaskIcon = "listen", publicVariable "p3TaskIcon"};
-		case p4: {p4TaskIcon = "listen", publicVariable "p4TaskIcon"};
-		case p5: {p5TaskIcon = "listen", publicVariable "p5TaskIcon"};
-		case p6: {p6TaskIcon = "listen", publicVariable "p6TaskIcon"};
-		case p7: {p7TaskIcon = "listen", publicVariable "p7TaskIcon"};
-		case p8: {p8TaskIcon = "listen", publicVariable "p8TaskIcon"};
-
-	};
-
-};
+techeast = p2
+techwest = p7
+...

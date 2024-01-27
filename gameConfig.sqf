@@ -3,6 +3,7 @@
 		versionNumber = 0.1;									// Game-Version of the files for future reference
 		gameTime = 300; 										// Round time in seconds
 		outOfMapKillTime = 10;									// Seconds when players out of map are killed
+		randomWeather = true;									// Different weather and Times every game. If false: Sunny, 12pm
 
 // Watchtower
 

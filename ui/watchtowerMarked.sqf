@@ -7,7 +7,7 @@ sleep 0.02;
 sleep 0.02;
 ["<t font ='EtelkaMonospaceProBold' align = 'center' size='0.9' color='#b73535'>" + "[    ]"+"</t>",0,-0.35,40,0,0,789] spawn BIS_fnc_dynamicText;
 ["<t font ='EtelkaMonospaceProBold' align = 'center' size='0.5' color='#8d8d8d'>" + str watchtowerMarkingTime + " SECONDS LEFT" +"</t>",0,-0.28,1,0,0,788] spawn BIS_fnc_dynamicText;
-playsound "marked";
+playsound "watchtowerMarked";
 sleep 0.02;
 ["<t font ='EtelkaMonospaceProBold' align = 'center' size='0.9' color='#b73535'>" + "[  E  ]"+"</t>",0,-0.35,40,0,0,789] spawn BIS_fnc_dynamicText;
 sleep 0.02;

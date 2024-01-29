@@ -189,9 +189,9 @@ class CfgRespawnInventory //config that calls in game respawn load-outs
 class CfgSounds {
 	sounds[] = {}; 
 
-	class finish {
-		name="finish";
-		sound[]={"sounds\soft.ogg",2,1};
+	class watchtowerSuccess {
+		name="watchtowerSuccess";
+		sound[]={"sounds\watchtower\watchtowerSuccess.ogg",2,1};
 		titles[] = {};
 	};
 	
@@ -207,9 +207,9 @@ class CfgSounds {
 		titles[] = {};
 	};
 
-	class marked {
-		name="marked";
-		sound[]={"sounds\marked.ogg",4,1};
+	class watchtowerMarked {
+		name="watchtowerMarked";
+		sound[]={"sounds\watchtower\watchtowerMarked.ogg",4,1};
 		titles[] = {};
 	};
 

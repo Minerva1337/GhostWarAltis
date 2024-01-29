@@ -169,7 +169,7 @@ class CfgRespawnInventory //config that calls in game respawn load-outs
 		backpack = "B_AssaultPack_khk";
 		weapons[] = {"hgun_PDW2000_F", "hgun_Pistol_heavy_01_F", "Throw", "Put"};
 		magazines[] = {"30Rnd_9x21_Red_Mag", "30Rnd_9x21_Red_Mag", "30Rnd_9x21_Red_Mag", "30Rnd_9x21_Red_Mag", "30Rnd_9x21_Red_Mag", "30Rnd_9x21_Red_Mag", "30Rnd_9x21_Red_Mag", "30Rnd_9x21_Red_Mag", "30Rnd_9x21_Red_Mag", "30Rnd_9x21_Red_Mag", "SmokeShell", "11Rnd_45ACP_Mag", "11Rnd_45ACP_Mag", "11Rnd_45ACP_Mag", "HandGrenade", "30Rnd_9x21_Mag", "11Rnd_45ACP_Mag"};
-		items[] = {"ACE_EarPlugs", "FirstAidKit", "FirstAidKit"};
+		items[] = {"ACE_EarPlugs", "FirstAidKit", "FirstAidKit", "ACE_Cellphone"};
 		linkedItems[] = {"V_PlateCarrierSpec_blk", "H_HelmetB_black", "G_Bandanna_blk", "ItemMap", "ItemCompass", "ItemWatch", "ItemGPS", "NVGoggles_OPFOR", "optic_Holosight", "acc_flashlight_pistol", "optic_MRD"};
 		};
 	class distractorWest {
@@ -181,7 +181,7 @@ class CfgRespawnInventory //config that calls in game respawn load-outs
 		backpack = "B_AssaultPack_khk";
 		weapons[] = {"hgun_PDW2000_F", "hgun_Pistol_heavy_01_F", "Throw", "Put"};
 		magazines[] = {"30Rnd_9x21_Red_Mag", "30Rnd_9x21_Red_Mag", "30Rnd_9x21_Red_Mag", "30Rnd_9x21_Red_Mag", "30Rnd_9x21_Red_Mag", "30Rnd_9x21_Red_Mag", "30Rnd_9x21_Red_Mag", "30Rnd_9x21_Red_Mag", "30Rnd_9x21_Red_Mag", "30Rnd_9x21_Red_Mag", "SmokeShell", "11Rnd_45ACP_Mag", "11Rnd_45ACP_Mag", "11Rnd_45ACP_Mag", "HandGrenade", "30Rnd_9x21_Mag", "11Rnd_45ACP_Mag"};
-		items[] = {"ACE_EarPlugs", "FirstAidKit", "FirstAidKit"};
+		items[] = {"ACE_EarPlugs", "FirstAidKit", "FirstAidKit", "ACE_Cellphone"};
 		linkedItems[] = {"V_PlateCarrierSpec_rgr", "H_HelmetB_snakeskin", "G_Bandanna_blk", "ItemMap", "ItemCompass", "ItemWatch", "ItemGPS", "NVGoggles_OPFOR", "optic_Holosight", "acc_flashlight_pistol", "optic_MRD"};
 		};
 };

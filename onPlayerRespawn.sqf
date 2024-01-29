@@ -4,12 +4,12 @@ execVM "mechanics\spectator.sqf";
 switch (true) do {
 
 	case ("30Rnd_9x21_Red_Mag" in (vestItems player + uniformItems player + backpackItems player + assignedItems player)): {pickedRole = "tech", missionNamespace setVariable ["tech" + str side player, player]};
-	case ("Medikit" in (vestItems player + uniformItems player + backpackItems player + assignedItems player)): {pickedRole = "medic", missionNamespace setVariable ["medic" + str side player, player]};
+	case ("Medikit" in (vestItems player + uniformItems player + backpackItems player + assignedItems player)): {pickedRole = "medic", missionNamespace setVariable ["medic" + str side player, player], execVM "roles\medic\medic.sqf"};
 	case ("ACE_10Rnd_762x51_Mag_Tracer" in (vestItems player + uniformItems player + backpackItems player + assignedItems player)): {pickedRole = "sniper", missionNamespace setVariable ["sniper" + str side player, player]};
 	case ("ACE_HuntIR_monitor" in (vestItems player + uniformItems player + backpackItems player + assignedItems player)): {pickedRole = "scout", missionNamespace setVariable ["scout" + str side player, player]};
 	case ("30Rnd_45ACP_Mag_SMG_01_Tracer_Red" in (vestItems player + uniformItems player + backpackItems player + assignedItems player)): {pickedRole = "assassin", missionNamespace setVariable ["assassin" + str side player, player]};
 	case ("ACE_M26_Clacker" in (vestItems player + uniformItems player + backpackItems player + assignedItems player)): {pickedRole = "explosive", missionNamespace setVariable ["explosive" + str side player, player]};
-	case ("XXX" in (vestItems player + uniformItems player + backpackItems player + assignedItems player)): {pickedRole = "distractor", missionNamespace setVariable ["distractor" + str side player, player]};
+	case ("XXX" in (vestItems player + uniformItems player + backpackItems player + assignedItems player)): {pickedRole = "distractor", missionNamespace setVariable ["distractor" + str side player, player], execVM "roles\distractor\hackingDistractor.sqf", execVM "roles\distractor\shotsDistractor.sqf"};
 
 };
 switch (side player) do {

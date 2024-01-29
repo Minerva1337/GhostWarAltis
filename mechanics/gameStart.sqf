@@ -53,7 +53,7 @@ sleep 1;
 {["<t font ='EtelkaMonospaceProBold' align = 'center' size='0.9' color='#546b34'>" + "[ 1 ]"+"</t>",0,0.28,10,0,0,700] spawn BIS_fnc_dynamicText;} remoteExec ["call", 0];
 sleep 1;
 {["<t font ='EtelkaMonospaceProBold' align = 'center' size='0.9' color='#546b34'>" + "[ GO ]"+"</t>",0,0.28,1,0,0,700] spawn BIS_fnc_dynamicText;} remoteExec ["call", 0];
-["<t font ='EtelkaMonospaceProBold' align = 'center' size='0.3' color='#8d8d8d'>" + "GhostWar Version " + str versionNumber +"</t>",-1.01,1.35,9999,0,0,103] spawn BIS_fnc_dynamicText;
+{["<t font ='EtelkaMonospaceProBold' align = 'center' size='0.3' color='#8d8d8d'>" + "GhostWar Version " + str versionNumber +"</t>",-1.01,1.35,9999,0,0,103] spawn BIS_fnc_dynamicText;} remoteExec ["call", 0];
 if (hasInterface) then {
 
 	player switchMove "";

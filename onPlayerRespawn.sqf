@@ -3,7 +3,7 @@ loadedIn = true;
 execVM "mechanics\spectator.sqf";
 switch (true) do {
 
-	case ("30Rnd_9x21_Red_Mag" in (vestItems player + uniformItems player + backpackItems player + assignedItems player)): {
+	case ("ACE_MapTools" in (vestItems player + uniformItems player + backpackItems player + assignedItems player)): {
 		
 		pickedRole = "tech";
 		taskIcon = "intel";

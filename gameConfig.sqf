@@ -3,7 +3,7 @@
 		versionNumber = 0.1;									// Game-Version of the files for future reference
 		gameTime = 900; 										// Round time in seconds
 		outOfMapKillTime = 10;									// Seconds when players out of map are killed
-		randomWeather = true;									// Different weather and Times every game. If false: Sunny, 12pm
+		// randomWeather = true;									// Different weather and Times every game. If false: Sunny, 12pm
 
 // Watchtower
 
@@ -17,7 +17,7 @@
 
 	// Tech
 
-		techAvailable = false;									// If tech is available
+		techAvailable = true;									// If tech is available
 		techActionTime = 10;									// Seconds to initiate the ability
 		techMarkingTime = 3;									// Seconds the enemies are marked (x2 wegen script)
 		techCooldown = 120;										// Seconds until ability is available again

@@ -15,7 +15,7 @@ class CfgRoles {
 	};
 
 class CfgRespawnInventory //config that calls in game respawn load-outs
-	{
+{
 	class techEast {
 		displayName = "Tech";
 		icon = "\A3\Ui_f\data\GUI\Cfg\Ranks\sergeant_gs.paa";
@@ -25,7 +25,7 @@ class CfgRespawnInventory //config that calls in game respawn load-outs
 		backpack = "B_AssaultPack_khk";
 		weapons[] = {"hgun_PDW2000_F", "hgun_Pistol_heavy_01_F", "Throw", "Put"};
 		magazines[] = {"30Rnd_9x21_Red_Mag", "30Rnd_9x21_Red_Mag", "30Rnd_9x21_Red_Mag", "30Rnd_9x21_Red_Mag", "30Rnd_9x21_Red_Mag", "30Rnd_9x21_Red_Mag", "30Rnd_9x21_Red_Mag", "30Rnd_9x21_Red_Mag", "30Rnd_9x21_Red_Mag", "30Rnd_9x21_Red_Mag", "SmokeShell", "11Rnd_45ACP_Mag", "11Rnd_45ACP_Mag", "11Rnd_45ACP_Mag", "HandGrenade", "30Rnd_9x21_Mag", "11Rnd_45ACP_Mag"};
-		items[] = {"ACE_EarPlugs", "FirstAidKit", "FirstAidKit"};
+		items[] = {"ACE_EarPlugs", "FirstAidKit", "FirstAidKit", "ACE_MapTools"};
 		linkedItems[] = {"V_PlateCarrierSpec_blk", "H_HelmetB_black", "G_Bandanna_blk", "ItemMap", "ItemCompass", "ItemWatch", "ItemGPS", "NVGoggles_OPFOR", "optic_Holosight", "acc_flashlight_pistol", "optic_MRD"};
 		};
 	class techWest {
@@ -37,7 +37,7 @@ class CfgRespawnInventory //config that calls in game respawn load-outs
 		backpack = "B_AssaultPack_khk";
 		weapons[] = {"hgun_PDW2000_F", "hgun_Pistol_heavy_01_F", "Throw", "Put"};
 		magazines[] = {"30Rnd_9x21_Red_Mag", "30Rnd_9x21_Red_Mag", "30Rnd_9x21_Red_Mag", "30Rnd_9x21_Red_Mag", "30Rnd_9x21_Red_Mag", "30Rnd_9x21_Red_Mag", "30Rnd_9x21_Red_Mag", "30Rnd_9x21_Red_Mag", "30Rnd_9x21_Red_Mag", "30Rnd_9x21_Red_Mag", "SmokeShell", "11Rnd_45ACP_Mag", "11Rnd_45ACP_Mag", "11Rnd_45ACP_Mag", "HandGrenade", "30Rnd_9x21_Mag", "11Rnd_45ACP_Mag"};
-		items[] = {"ACE_EarPlugs", "FirstAidKit", "FirstAidKit"};
+		items[] = {"ACE_EarPlugs", "FirstAidKit", "FirstAidKit", "ACE_MapTools"};
 		linkedItems[] = {"V_PlateCarrierSpec_rgr", "H_HelmetB_snakeskin", "G_Bandanna_blk", "ItemMap", "ItemCompass", "ItemWatch", "ItemGPS", "NVGoggles_OPFOR", "optic_Holosight", "acc_flashlight_pistol", "optic_MRD"};
 		};
 	class medicEast {
@@ -159,15 +159,39 @@ class CfgRespawnInventory //config that calls in game respawn load-outs
 		magazines[] = {"30Rnd_65x39_caseless_mag_Tracer", "30Rnd_65x39_caseless_mag_Tracer", "30Rnd_65x39_caseless_mag_Tracer", "30Rnd_65x39_caseless_mag_Tracer", "30Rnd_65x39_caseless_mag_Tracer", "30Rnd_65x39_caseless_mag_Tracer", "30Rnd_65x39_caseless_mag_Tracer", "30Rnd_65x39_caseless_mag_Tracer", "30Rnd_65x39_caseless_mag_Tracer", "30Rnd_65x39_caseless_mag_Tracer", "SmokeShell", "11Rnd_45ACP_Mag", "11Rnd_45ACP_Mag", "11Rnd_45ACP_Mag", "HandGrenade", "APERSMineDispenser_Mag", "DemoCharge_Remote_Mag", "ACE_30Rnd_65x39_caseless_mag_Tracer_Dim", "11Rnd_45ACP_Mag"};
 		items[] = {"ACE_EarPlugs", "FirstAidKit", "FirstAidKit", "ACE_M26_Clacker"};
 		linkedItems[] = {"V_PlateCarrierSpec_rgr", "H_HelmetB_snakeskin", "G_Bandanna_blk", "ItemMap", "ItemCompass", "ItemWatch", "ItemGPS", "NVGoggles_OPFOR", "ACE_SPIR", "optic_Holosight", "acc_flashlight_pistol", "optic_MRD"};
-		};		
-	};
+		};
+	class distractorEast {
+		displayName = "Distractor";
+		icon = "\A3\Ui_f\data\GUI\Cfg\Ranks\sergeant_gs.paa";
+		role = "Support";
+		show = "true";
+		uniformClass = "U_O_CombatUniform_ocamo";
+		backpack = "B_AssaultPack_khk";
+		weapons[] = {"hgun_PDW2000_F", "hgun_Pistol_heavy_01_F", "Throw", "Put"};
+		magazines[] = {"30Rnd_9x21_Red_Mag", "30Rnd_9x21_Red_Mag", "30Rnd_9x21_Red_Mag", "30Rnd_9x21_Red_Mag", "30Rnd_9x21_Red_Mag", "30Rnd_9x21_Red_Mag", "30Rnd_9x21_Red_Mag", "30Rnd_9x21_Red_Mag", "30Rnd_9x21_Red_Mag", "30Rnd_9x21_Red_Mag", "SmokeShell", "11Rnd_45ACP_Mag", "11Rnd_45ACP_Mag", "11Rnd_45ACP_Mag", "HandGrenade", "30Rnd_9x21_Mag", "11Rnd_45ACP_Mag"};
+		items[] = {"ACE_EarPlugs", "FirstAidKit", "FirstAidKit", "ACE_Cellphone"};
+		linkedItems[] = {"V_PlateCarrierSpec_blk", "H_HelmetB_black", "G_Bandanna_blk", "ItemMap", "ItemCompass", "ItemWatch", "ItemGPS", "NVGoggles_OPFOR", "optic_Holosight", "acc_flashlight_pistol", "optic_MRD"};
+		};
+	class distractorWest {
+		displayName = "Distractor";
+		icon = "\A3\Ui_f\data\GUI\Cfg\Ranks\sergeant_gs.paa";
+		role = "Support";
+		show = "true";
+		uniformClass = "U_B_CTRG_1";
+		backpack = "B_AssaultPack_khk";
+		weapons[] = {"hgun_PDW2000_F", "hgun_Pistol_heavy_01_F", "Throw", "Put"};
+		magazines[] = {"30Rnd_9x21_Red_Mag", "30Rnd_9x21_Red_Mag", "30Rnd_9x21_Red_Mag", "30Rnd_9x21_Red_Mag", "30Rnd_9x21_Red_Mag", "30Rnd_9x21_Red_Mag", "30Rnd_9x21_Red_Mag", "30Rnd_9x21_Red_Mag", "30Rnd_9x21_Red_Mag", "30Rnd_9x21_Red_Mag", "SmokeShell", "11Rnd_45ACP_Mag", "11Rnd_45ACP_Mag", "11Rnd_45ACP_Mag", "HandGrenade", "30Rnd_9x21_Mag", "11Rnd_45ACP_Mag"};
+		items[] = {"ACE_EarPlugs", "FirstAidKit", "FirstAidKit", "ACE_Cellphone"};
+		linkedItems[] = {"V_PlateCarrierSpec_rgr", "H_HelmetB_snakeskin", "G_Bandanna_blk", "ItemMap", "ItemCompass", "ItemWatch", "ItemGPS", "NVGoggles_OPFOR", "optic_Holosight", "acc_flashlight_pistol", "optic_MRD"};
+		};
+};
 
 class CfgSounds {
 	sounds[] = {}; 
 
-	class finish {
-		name="finish";
-		sound[]={"sounds\soft.ogg",2,1};
+	class watchtowerSuccess {
+		name="watchtowerSuccess";
+		sound[]={"sounds\watchtower\watchtowerSuccess.ogg",2,1};
 		titles[] = {};
 	};
 	
@@ -177,11 +201,29 @@ class CfgSounds {
 		titles[] = {};
 	};
 	
-	class hacking {
-		name="hacking";
-		sound[]={"sounds\hacking.ogg",10,1};
+	class watchtower {
+		name="watchtower";
+		sound[]={"sounds\watchtower\watchtower.ogg",10,1};
 		titles[] = {};
-	};		
+	};
+
+	class watchtowerMarked {
+		name="watchtowerMarked";
+		sound[]={"sounds\watchtower\watchtowerMarked.ogg",4,1};
+		titles[] = {};
+	};
+
+	class enemyKilled {
+		name="enemyKilled";
+		sound[]={"sounds\enemyKilled.ogg",4,1};
+		titles[] = {};
+	};
+
+	class friendKilled {
+		name="friendKilled";
+		sound[]={"sounds\friendKilled.ogg",4,1};
+		titles[] = {};
+	};	
 
 	class arma3 {
 		name="arma3";
@@ -248,4 +290,4 @@ class CfgTaskEnhancements
 	propagate    = 1; // 0: do not propagate (default), 1: propagate shared tasks to subordinates
 };
 
-enableDebugConsole = 1;
+enableDebugConsole = 2;

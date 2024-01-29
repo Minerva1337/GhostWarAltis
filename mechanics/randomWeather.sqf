@@ -1,5 +1,10 @@
-if (randomWeather == true) then {
+waitUntil {
 	
+	missionNamespace getVariable "randomWeather";
+	sleep 0.2;
+	randomWeather == true;
+
+};
 	_random = floor random 5;
 	switch (_random) do {
 

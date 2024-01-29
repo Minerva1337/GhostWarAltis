@@ -112,6 +112,7 @@
 		};
 		publicVariable "eastRoles";
 		publicVariable "westRoles";
+		publicVariable "randomWeather";
 		p1TaskIcon = "x";
 		p2TaskIcon = "x";
 		p3TaskIcon = "x";

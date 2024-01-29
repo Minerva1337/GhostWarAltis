@@ -17,7 +17,7 @@
 
 	// Tech
 
-		techAvailable = true;									// If tech is available
+		techAvailable = false;									// If tech is available
 		techActionTime = 10;									// Seconds to initiate the ability
 		techMarkingTime = 3;									// Seconds the enemies are marked (x2 wegen script)
 		techCooldown = 120;										// Seconds until ability is available again
@@ -31,7 +31,7 @@
 
 	// Sniper
 
-		sniperAvailable = false;									// If sniper is available
+		sniperAvailable = true;									// If sniper is available
 
 	// Scout
 
@@ -39,7 +39,7 @@
 
 	// Assassin
 
-		assassinAvailable = false;								// If assassin is available
+		assassinAvailable = true;								// If assassin is available
 
 	// Explosive
 

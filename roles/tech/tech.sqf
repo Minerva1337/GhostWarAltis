@@ -8,12 +8,12 @@ waitUntil {
 	sleep 0.2,
 		
 };
-if ((isNil techEast) or (isNil techWest)) then {
+if ((isNil "techeast") or (isNil "techwest")) then {
 
 	switch (true) do {
 
-		case (isNil techEast): {soloTech = techwest};
-		case (isNil techwest): {soloTech = techeast};
+		case (isNil "techEast"): {soloTech = techwest};
+		case (isNil "techwest"): {soloTech = techeast};
 		
 	};
 

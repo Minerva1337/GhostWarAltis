@@ -65,6 +65,7 @@ if (watchtowerAvailable) then {
 	watchtowerInit = execVM "watchtower\watchtower.sqf";
 
 };
+[[], "roles\tech\tech.sqf"] remoteExec ["execVM", 2];
 while {gameTime > 0} do {
 
 	switch (gameTime) do {

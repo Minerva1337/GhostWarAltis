@@ -1,25 +1,6 @@
-_arr = [];
 techeast = missionNamespace getVariable "techeast";
 techwest = missionNamespace getVariable "techwest";
-switch (techwest) do {
 
-	case p1: {_arr pushBack = p1};
-	case p2: {_arr pushBack = p2};
-	case p3TaskIcon: {_arr pushBack = p3};
-	case p4TaskIcon: {_arr pushBack = p4};
-	default {_arr pushBack = nil};
-
-};
-
-switch ("intel") do {
-	
-	case p5TaskIcon: {_arr pushBack = p5};
-	case p6TaskIcon: {_arr pushBack = p6};
-	case p7TaskIcon: {_arr pushBack = p7};
-	case p8TaskIcon: {_arr pushBack = p8};
-	default {_arr pushBack = nil};
-	
-};
 waitUntil {	
 	
 	watchtowerAvailable = missionNamespace getVariable "watchtowerAvailable",
@@ -27,26 +8,15 @@ waitUntil {
 	sleep 0.2,
 		
 };
-if (nil in _arr) then {
+if ((techEast == nil) or (techWest == nil)) then {
 
-	switch (true) do {
+	switch (nil) do {
 
-		case ((_arr select 0) == (_arr select 1)): {};
-		case ((_arr select 0) == nil): {
-			
-			soloTechSide = west;
-			soloTech = _arr select 1;
+		case (techeast): {soloTech = techwest};
+		case (techwest): {soloTech = techeast};
 		
-		};
-		case ((_arr select 1) == nil): {
-			
-			soloTechSide = east;
-			soloTech = _arr select 0;
-		
-		};
-		
-	}; // Sortierung ob east oder west ist solo-Tech
-	
+	};
+
 	soloHoldActionID = [
 
 		soloTech,
@@ -84,6 +54,8 @@ if (nil in _arr) then {
 	soloTechCooldown = false;
 	publicVariable "soloHoldActionExists";
 	publicVariable "soloTechCooldown";
+
+
 	while {true} do {
 
 		watchtowerAvailable = missionNamespace getVariable "watchtowerAvailable",
@@ -143,7 +115,7 @@ if (nil in _arr) then {
 
 	eastHoldActionID = [
 
-		_arr select 1, // p1 / p2 / p3 / p4 (east)
+		techeast, // p1 / p2 / p3 / p4 (east)
 		"Mark enemies",
 		"\a3\ui_f\data\IGUI\Cfg\holdactions\holdAction_hack_ca.paa",
 		"\a3\ui_f\data\IGUI\Cfg\holdactions\holdAction_hack_ca.paa",
@@ -155,7 +127,7 @@ if (nil in _arr) then {
 			eastTechHacking = true;
 			publicVariable "eastTechHacking";
 					
-		},
+		}
 		{},
 		{ 
 		
@@ -166,8 +138,6 @@ if (nil in _arr) then {
 
 		
 		},
-		
-		
 		{
 		
 			// systemChat "Canceled";
@@ -175,7 +145,6 @@ if (nil in _arr) then {
 			publicVariable "eastTechHacking";
 		
 		},
-		
 		[],
 		techActionTime,
 		nil,
@@ -191,7 +160,7 @@ if (nil in _arr) then {
 
 	westHoldActionID = [
 
-		_arr select 0, // p5 / p6 / p7 / p8 (west)
+		techwest, // p5 / p6 / p7 / p8 (west)
 		"Mark enemies",
 		"\a3\ui_f\data\IGUI\Cfg\holdactions\holdAction_hack_ca.paa",
 		"\a3\ui_f\data\IGUI\Cfg\holdactions\holdAction_hack_ca.paa",
@@ -213,8 +182,6 @@ if (nil in _arr) then {
 			publicVariable "westHoldActionExists";
 		
 		},
-		
-		
 		{
 		
 			// systemChat "Canceled";
@@ -222,7 +189,6 @@ if (nil in _arr) then {
 			publicVariable "westTechHacking";
 		
 		},
-		
 		[],
 		techActionTime,
 		nil,
@@ -235,16 +201,21 @@ if (nil in _arr) then {
 	westTechCooldown = false;
 	publicVariable "westHoldActionExists";
 	publicVariable "westTechCooldown";
+
+
 	while {true} do {
 
 		watchtowerAvailable = missionNamespace getVariable "watchtowerAvailable",
 		eastTechHacking = missionNamespace getVariable "eastTechHacking",
 		westTechHacking = missionNamespace getVariable "westTechHacking",
+		westHoldActionExists = missionNamespace getVariable "westTechHacking",
+		eastHoldActionExists = missionNamespace getVariable "westTechHacking",
+
 		if (watchtowerAvailable == false) then {
 
 			if (eastHoldActionExists == true) then {
 				
-				[_arr select 1, eastHoldActionID] call BIS_fnc_holdActionRemove;
+				[techeast, eastHoldActionID] call BIS_fnc_holdActionRemove;
 				eastHoldActionExists = false;
 				eastTechHacking = false;
 				publicVariable "eastTechHacking";
@@ -252,7 +223,7 @@ if (nil in _arr) then {
 			};
 			if (westHoldActionExists == true) then {
 				
-				[_arr select 0, westHoldActionID] call BIS_fnc_holdActionRemove;
+				[techwest, westHoldActionID] call BIS_fnc_holdActionRemove;
 				westHoldActionExists = false;
 				westTechHacking = false;	
 				publicVariable "westTechHacking";
@@ -264,25 +235,25 @@ if (nil in _arr) then {
 
 		if ((eastTechHacking == true) && (westHoldActionExists = true)) then {
 
-			[_arr select 0, westHoldActionID] call BIS_fnc_holdActionRemove;
+			[techeast, westHoldActionID] call BIS_fnc_holdActionRemove;
 			westHoldActionExists = false;
 
 		}; // Wenn east-Spieler Fähigkeit benutzt -> west-Spieler entfernen
 
 		if ((westTechHacking == true) && (eastHoldActionExists = true)) then {
 
-			[_arr select 1, eastHoldActionID] call BIS_fnc_holdActionRemove;
+			[techwest, eastHoldActionID] call BIS_fnc_holdActionRemove;
 			eastHoldActionExists = false;
 
 		}; // Wenn west-Spieler Fähigkeit benutzt -> east-Spieler entfernen
 
 		if (watchtowerAvailable == true) then {
 
-			if ((eastHoldActionExists == false) && (eastTechCooldown == false) && (westTechHacking = false)) then {
+			if ((eastHoldActionExists == false) && (eastTechCooldown == false)) then {
 
 				eastHoldActionID = [
 
-					_arr select 1, // p1 / p2 / p3 / p4 (east)
+					techeast, // p1 / p2 / p3 / p4 (east)
 					"Mark enemies",
 					"\a3\ui_f\data\IGUI\Cfg\holdactions\holdAction_hack_ca.paa",
 					"\a3\ui_f\data\IGUI\Cfg\holdactions\holdAction_hack_ca.paa",
@@ -304,8 +275,6 @@ if (nil in _arr) then {
 						publicVariable "eastHoldActionExists";
 					
 					},
-					
-					
 					{
 					
 						// systemChat "Canceled";
@@ -313,7 +282,6 @@ if (nil in _arr) then {
 						publicVariable "eastTechHacking";
 					
 					},
-					
 					[],
 					techActionTime,
 					nil,
@@ -327,11 +295,11 @@ if (nil in _arr) then {
 				
 			}; // Wenn holdAction noch nicht existiert und alle Bedingungen erfüllt sind -> east-Spieler bekommt holdAction
 
-			if ((westHoldActionExists == false) && (westTechCooldown == false) && (eastTechHacking = false)) then {
+			if ((westHoldActionExists == false) && (westTechCooldown == false)) then {
 
 				westHoldActionID = [
 
-					_arr select 0, // p5 / p6 / p7 / p8 (west)
+					techwest, // p5 / p6 / p7 / p8 (west)
 					"Mark enemies",
 					"\a3\ui_f\data\IGUI\Cfg\holdactions\holdAction_hack_ca.paa",
 					"\a3\ui_f\data\IGUI\Cfg\holdactions\holdAction_hack_ca.paa",
@@ -353,8 +321,7 @@ if (nil in _arr) then {
 						publicVariable "westHoldActionExists";
 					
 					},
-					
-					
+
 					{
 					
 						// systemChat "Canceled";
@@ -362,7 +329,6 @@ if (nil in _arr) then {
 						publicVariable "westTechHacking";
 					
 					},
-					
 					[],
 					techActionTime,
 					nil,

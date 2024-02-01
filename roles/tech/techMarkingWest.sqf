@@ -54,7 +54,8 @@ if (isAliveP5) then {[(str westTaskID1), true, true] remoteExec ["BIS_fnc_delete
 if (isAliveP6) then {[(str westTaskID2), true, true] remoteExec ["BIS_fnc_deleteTask", 0, true]};
 if (isAliveP7) then {[(str westTaskID3), true, true] remoteExec ["BIS_fnc_deleteTask", 0, true]};
 if (isAliveP8) then {[(str westTaskID4), true, true] remoteExec ["BIS_fnc_deleteTask", 0, true]};
-sleep techCooldown;
+_realTechCooldown = techCooldown - techMarkingTime;
+sleep _realTechCooldown;
 eastTechCooldown = false;
 soloTechCooldown = false;
 publicVariable "eastTechHacking";

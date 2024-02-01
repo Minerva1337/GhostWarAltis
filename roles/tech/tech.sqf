@@ -8,12 +8,12 @@ waitUntil {
 	sleep 0.2,
 		
 };
-if ((techEast == nil) or (techWest == nil)) then {
+if ((isNil techEast) or (isNil techWest)) then {
 
-	switch (nil) do {
+	switch (true) do {
 
-		case (techeast): {soloTech = techwest};
-		case (techwest): {soloTech = techeast};
+		case (isNil techEast): {soloTech = techwest};
+		case (isNil techwest): {soloTech = techeast};
 		
 	};
 

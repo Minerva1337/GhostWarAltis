@@ -17,14 +17,14 @@
 
 	// Tech
 
-		techAvailable = true;									// If tech is available
+		techAvailable = false;									// If tech is available
 		techActionTime = 10;									// Seconds to initiate the ability
 		techMarkingTime = 3;									// Seconds the enemies are marked (x2 wegen script)
 		techCooldown = 120;										// Seconds until ability is available again
 
 	// Medic
 
-		medicAvailable = true;									// If medic is available
+		medicAvailable = false;									// If medic is available
 		healingMedicSleep = 200;								//How long it takes until Medic ability is ready again
 		medicHealingAreaX = 10;									//X Axis of the healing area
 		medicHealingAreaY = 10;									//Y Axis of the healing area

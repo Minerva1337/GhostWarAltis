@@ -6,7 +6,7 @@ while {_ctr} do {
 	_inArea = allPlayers inAreaArray "gameStart";	
 	_count1 = count _allPlayers;
 	_count2 = count _inArea;
-	[str _count2] remoteExec ["hint", 0]; // debug
+	// [str _count2] remoteExec ["hint", 0]; // debug
 	if (_count1 == _count2) exitWith {_ctr = false};
 	sleep 0.5;
 
@@ -60,15 +60,12 @@ if (hasInterface) then {
 
 };
 {player switchMove ""} remoteExec ["call", -2];
-if (watchtowerAvailable) then {
-	
-	watchtowerInit = execVM "watchtower\watchtower.sqf";
-
-};
+watchtowerStart = gameTime - watchtowerInitiate;
 while {gameTime > 0} do {
 
 	switch (gameTime) do {
 
+		case watchtowerStart: {if (watchtowerAvailable) then { watchtowerInit = execVM "watchtower\watchtower.sqf" }};
 		case 300: {{["<t font ='EtelkaMonospaceProBold' align = 'center' size='0.7' color='#b07609'>" + "[ 5 minutes remaining ]"+"</t>",0,-0.25,5,0,0,100] spawn BIS_fnc_dynamicText;} remoteExec ["call", 0]};
 		case 60: {{["<t font ='EtelkaMonospaceProBold' align = 'center' size='0.7' color='#b07609'>" + "[ 1 minute remaining ]"+"</t>",0,-0.25,5,0,0,100] spawn BIS_fnc_dynamicText;} remoteExec ["call", 0]};
 		case 30: {{["<t font ='EtelkaMonospaceProBold' align = 'center' size='0.7' color='#b07609'>" + "[ 30 seconds remaining ]"+"</t>",0,-0.25,5,0,0,100] spawn BIS_fnc_dynamicText;} remoteExec ["call", 0]};

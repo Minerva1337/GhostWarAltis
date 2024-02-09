@@ -3,7 +3,6 @@ _description = "Hack the watchtower to get information about the position of the
 _waypoint = "";
 watchtowerTaskID = watchtowerTaskID + 1;
 publicVariable "watchtowerTaskID";
-sleep watchtowerInitiate;
 [true, str watchtowerTaskID, [_description, _title, _waypoint], [laptop, true], "ASSIGNED", 0, true, "download", true] call BIS_fnc_taskCreate;
 [str watchtowerTaskID, true] call BIS_fnc_taskSetAlwaysVisible;
 watchtowerAvailable = true;
@@ -87,9 +86,3 @@ publicVariable "watchtowerAvailable";
 	false
 
 ] remoteExec ["bis_fnc_holdactionadd", 0];
-
-["Watchtower is now available"] remoteExec ["hint", 0];
-sleep 2;
-[""] remoteExec ["hintSilent", 0];
-
-

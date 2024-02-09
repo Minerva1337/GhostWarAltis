@@ -8,7 +8,7 @@
 // Watchtower
 
 		watchtowerAvailable = true;								// If watchtower is available
-		watchtowerInitiate = 90;								// Seconds until watchtower is available after gamestart
+		watchtowerInitiate = 120;								// Seconds until watchtower is available after gamestart
 		watchtowerHackingTime = 10;								// Seconds to hack watchtower
 		watchtowerMarkingTime = 30;								// Seconds the enemies are marked
 		watchtowerCooldown = 120;								// Seconds until watchtower is available again

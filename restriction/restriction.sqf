@@ -1,18 +1,25 @@
 _time = outOfMapKillTime;
-["restriction is on"] remoteExec ["hint", -2];
-sleep 1;
-[""] remoteExec ["hint", -2];
 while {_time > 0} do {
-
-	if ((player inArea trigger1)) exitWith {}; // or (player inArea trigger2) or (player inArea trigger3)		--> wird gebraucht wenn zwei extra Trigger beim Spawnbereich -> auf Malden nur ein großer trigger
-	hint _time;
-	_time = _time -1;
-	sleep 1;
-
-};
-
-if (_time == 0) then {
-
-	player setDamage 1;
-	
+    if (player inArea trigger1) then {
+        _time = 10;
+        titleText ["<t color='#ff0000' size='5'></t><br/>", "PLAIN", -1, true, true];
+    };
+    waitUntil {(player inArea trigger1) != true};
+    if (player inArea trigger1) then {
+        _time = 10;
+        hint "";
+    } else {
+        if (_time == 10) then {
+            titleText ["<t color='#ff0000' size='5'>Kehre zurück in den Spielbereich</t><br/>", "PLAIN", -1, true, true];
+            sleep 2;
+        };
+        titleText [format ["<t color='#ff0000' size='5'>%1 Sekunden</t><br/>", _time], "PLAIN",  -1, true, true];
+        _time = _time - 1;
+        sleep 1;
+        //hint str _time;
+        if (_time == 0) then {
+            player setDamage 1;
+            titleText ["<t color='#ff0000' size='5'></t><br/>", "PLAIN", -1, true, true];
+        };
+    };
 };

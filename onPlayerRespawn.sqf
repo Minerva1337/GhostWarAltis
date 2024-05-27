@@ -1,5 +1,6 @@
 player switchMove "HubSpectator_stand";
 [[], "mechanics\spectator.sqf"] remoteExec ["execVM", 0, true];
+nul = execVM "restriction\restriction.sqf";
 
 if  ("30Rnd_9x21_Red_Mag" in (vestItems player + uniformItems player + backpackItems player + assignedItems player)) then {
 	player setUnitTrait ["Engineer", true];

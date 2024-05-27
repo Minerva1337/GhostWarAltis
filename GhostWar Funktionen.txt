@@ -1,0 +1,26 @@
+Features
+
+- Spielbereichabgrenzung
+- Revive Systhem
+- Loadouts (Tech, Medic, Sniper, Scout, Assassin, Explosive, Distractor)
+- dynamisches Wetter/Uhrzeitsysthem
+- Watchtower (3D-Markierungen )
+- Rundenübergreifendes Punktesysthem
+- Configuration
+
+To Do bis zum Playtest:
+
+- alle Klassenfähigkeiten einbinden
+- UI standardisierung 
+- Nebel ausschalten
+- gameConfig.sqf Fertigstellen
+- neue Features ausprobieren
+- allgemeine Map-Anpassungen
+- möglw. weitere Map
+- Jede Klasse soll nur ein Mal gewählt werden können
+
+
+
+SPIELSTART
+
+Wenn alle Spieler auf Startposition Stehen: "GhostWar by MminervaArts (Version 1.0)"

@@ -177,11 +177,29 @@ class CfgSounds {
 		titles[] = {};
 	};
 	
-	class hacking {
-		name="hacking";
-		sound[]={"sounds\hacking.ogg",10,1};
+	class watchtower {
+		name="watchtower";
+		sound[]={"sounds\watchtower\watchtower.ogg",10,1};
 		titles[] = {};
-	};		
+	};
+
+	class marked {
+		name="marked";
+		sound[]={"sounds\marked.ogg",4,1};
+		titles[] = {};
+	};
+
+	class enemyKilled {
+		name="enemyKilled";
+		sound[]={"sounds\enemyKilled.ogg",4,1};
+		titles[] = {};
+	};
+
+	class friendKilled {
+		name="friendKilled";
+		sound[]={"sounds\friendKilled.ogg",4,1};
+		titles[] = {};
+	};	
 
 	class arma3 {
 		name="arma3";
@@ -248,4 +266,4 @@ class CfgTaskEnhancements
 	propagate    = 1; // 0: do not propagate (default), 1: propagate shared tasks to subordinates
 };
 
-enableDebugConsole = 1;
+enableDebugConsole = 2;

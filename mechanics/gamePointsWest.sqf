@@ -1,5 +1,5 @@
 //Script nur auf dem Server ausführen:
-//[[], "mechanics\gamePointsWest.sqf"] remoteExec ["execVM", 2];
+//[[], "mechanics\gamePointsWest.sqf"] remoteExec ["execVM", 2]; wird jetzt in gameWinning.sqf ausgeführt
 
 "Debugging - gamePointsWest läuft!" remoteExec ["hint", 0];		//Debugging
 

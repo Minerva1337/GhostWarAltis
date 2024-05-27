@@ -2,7 +2,7 @@ Features
 
 - Spielbereichabgrenzung
 - Revive Systhem
-- Loadouts (Tech, Medic, Sniper, Scout, Assassin, Explosive, Distractor)
+- Loadouts (Tech, Medic, Sniper, Scout, Assassin, Explosive, )
 - dynamisches Wetter/Uhrzeitsysthem
 - Watchtower (3D-Markierungen )
 - Rundenübergreifendes Punktesysthem
@@ -18,9 +18,24 @@ To Do bis zum Playtest:
 - allgemeine Map-Anpassungen
 - möglw. weitere Map
 - Jede Klasse soll nur ein Mal gewählt werden können
+- Distractor
 
 
 
 SPIELSTART
 
 Wenn alle Spieler auf Startposition Stehen: "GhostWar by MminervaArts (Version 1.0)"
+
+
+-------------------------------------------------
+Lukas - 27.05.2024
+GitHub: Basegame maldenSQF
+Buggs:
+- Task von Watchtower geht nicht weg wenn gehackt
+- Tastatur Sound wird noch nach hacken/abbrechen abgespielt
+
+Dinge zum testen:
+- Revive Systhem
+- Watchtower (3D-Markierungen)
+- Loadouts (Tech, Medic, Sniper, Scout, Assassin, Explosive)
+
